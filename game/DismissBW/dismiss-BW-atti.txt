@@ -1,0 +1,5 @@
+        <<case "Black Wolf">>
+          黑狼
+        <<if $NPCName[_i].state is "dismissed">>
+          <span class="red">躲进森林深处了。</span>
+        <<elseif $syndromewolves is 1>>

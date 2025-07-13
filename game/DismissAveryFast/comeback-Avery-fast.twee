@@ -1,0 +1,7 @@
+:: Avery Comeback Fast []
+艾弗里来找你复合了。
+<br><br>
+<<set $averyDismissalScene to 0>>
+<<npcset Avery state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

@@ -1,0 +1,32 @@
+:: dismiss all []
+你可以在这里放逐npc或者救回他们。
+
+<<if C.npc.Kylar.state isnot "prison">>
+	<<link [[放逐凯拉尔|Kylar Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[救回凯拉尔|Kylar Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Whitney.state isnot "dungeon">>
+	<<link [[放逐惠特尼|Whitney Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[救回惠特尼|Whitney Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Avery.state isnot "dismissed">>
+	<<link [[放逐艾弗里|Avery Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[艾弗里复合|Avery Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc["Black Wolf"].state isnot "dismissed">>
+	<<link [[放逐黑狼|BW Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[拉回黑狼|BW Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<link [[继续|Bedroom]]>><</link>>

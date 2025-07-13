@@ -1,0 +1,22 @@
+:: Widgets Black Wolf [widget]
+
+<<widget "dismissBW">>
+	<<npcset "Black Wolf" state "dismissed">>
+	<<if $loveInterest.primary is "Black Wolf">>
+		<<if $loveInterest.secondary isnot "None">>
+			<<set $loveInterest.primary to $loveInterest.secondary>>
+			<<set $loveInterest.secondary to "None">>
+		<<else>>
+			<<set $loveInterest.primary to "None">>
+		<</if>>
+		<span class = "red">黑狼不再是你的爱人了。</span>
+	<<elseif $loveInterest.secondary is "Black Wolf">>
+		<<set $loveInterest.secondary to "None">>
+		<span class = "red">黑狼不再是你的爱人了。</span>
+	<<elseif $syndromewolves is 1>>
+		<span class = "red">黑狼不能再作为你的爱人了。</span>
+	<<else>>
+		<span class = "red">黑狼躲进森林深处了。</span>
+	<</if>>
+	<br><br>
+<</widget>>

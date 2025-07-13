@@ -1,0 +1,6 @@
+:: BW Comeback Fast []
+你允许黑狼出现在你面前了。
+<br><br>
+<<npcset "Black Wolf" state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

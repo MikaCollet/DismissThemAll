@@ -1,0 +1,6 @@
+:: Avery Dismiss Fast []
+你甩了艾弗里！你可以在房间里回心转意。
+<br><br>
+<<dismissAvery>>
+
+<<link [[继续|dismiss all]]>><</link>>

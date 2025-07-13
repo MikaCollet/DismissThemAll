@@ -1,0 +1,1 @@
+<<if $syndromewolves is 1 and hasSexStat("deviancy", 3) and C.npc["Black Wolf"].state isnot "dismissed">>

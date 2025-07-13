@@ -1,0 +1,6 @@
+:: Whitney Comeback Fast []
+你把惠特尼救出来了。
+<br><br>
+<<npcset Whitney state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

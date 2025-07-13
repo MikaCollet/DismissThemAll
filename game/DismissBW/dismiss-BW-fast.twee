@@ -1,0 +1,6 @@
+:: BW Dismiss Fast []
+<<npc "Black Wolf">>黑狼害怕着你。在取得你的允许前，<<He>>应该不会出现在你面前了。
+<br><br>
+<<dismissBW>>
+
+<<link [[继续|dismiss all]]>><</link>>

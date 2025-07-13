@@ -1,0 +1,119 @@
+{
+	"name": "DissmissThemAll",
+	"version": "1.0.0",
+	"addonPlugin": [
+		{
+			"modName": "TweeReplacer",
+			"addonName": "TweeReplacerAddon",
+			"modVersion": "1.0.0",
+			"params": [
+				{
+					"passage": "Bedroom",
+					"findString": "/* Settings */",
+					"replace": "<<link [[放逐一切！|dismiss all]]>><</link>>\n<br>\n/* Settings */"
+				},
+				{
+					"passage": "Widgets Named Npcs",
+					"findString": "\t\t\t\t<<case \"Black Wolf\">>\n\t\t\t\t\t黑狼\n\t\t\t\t<<if $syndromewolves is 1>>",
+					"replaceFile": "game/DismissBW/dismiss-BW-atti.txt"
+				},
+				{
+					"passage": "Widgets Attitudes",
+					"findString": "<<if $syndromewolves is 1 and hasSexStat(\"deviancy\", 3)>>",
+					"replaceFile": "game/DismissBW/loveinterest-BW.txt"
+				},
+				{
+					"passage": "Widgets Mirror",
+					"findString": "<<if $syndromewolves is 1 and hasSexStat(\"deviancy\", 3)>>",
+					"replaceFile": "game/DismissBW/loveinterest-BW.txt"
+				},
+				{
+					"passage": "Wolf Cave Clearing",
+					"findString": "<<if $wolfpatrolsent gte 3>>",
+					"replace": "<<if $wolfpatrolsent gte 3 and C.npc[\"Black Wolf\"].state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Wolf Cave Clearing",
+					"findString": "<<if $wolfstate is \"cave\" and npcPregnancyEnding(\"Black Wolf\")>>",
+					"replace": "<<if C.npc[\"Black Wolf\"].state is \"dismissed\">>\n\t<<elseif $wolfstate is \"cave\" and npcPregnancyEnding(\"Black Wolf\")>>"
+				},
+				{
+					"passage": "Wolf Cave Clearing",
+					"findString": "<<if isPregnancyEnding() and !$possessed>>",
+					"replace": "<<if C.npc[\"Black Wolf\"].state isnot \"dismissed\" and isPregnancyEnding() and !$possessed>>"
+				},
+				{
+					"passage": "Wolf Cave Bed",
+					"findString": "<<if lastVisited(\"Wolf Relax\") is 1>>",
+					"replace": "<<if lastVisited(\"Wolf Relax\") is 1 and C.npc[\"Black Wolf\"].state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Wolf Cave Bed",
+					"findString": "<<if Time.dayState is \"night\" and $wolfstate",
+					"replace": "<<if C.npc[\"Black Wolf\"].state isnot \"dismissed\">> Time.dayState is \"night\" and $wolfstate"
+				},
+				{
+					"passage": "Wolf Cave",
+					"findString": "<<elseif npcPregnancyEnding(\"Black Wolf\") and !$possessed and $wolfstate is \"cave\">>",
+					"replace": "<<elseif C.npc[\"Black Wolf\"].state isnot \"dismissed\" and npcPregnancyEnding(\"Black Wolf\") and !$possessed and $wolfstate is \"cave\">>"
+				},
+				{
+					"passage": "Wolf Cave",
+					"findString": "<<if isPregnancyEnding() and !$possessed>>",
+					"replace": "<<if C.npc[\"Black Wolf\"].state isnot \"dismissed\" and isPregnancyEnding() and !$possessed>>"
+				},
+				{
+					"passage": "Pregnancy Birth Wolf Cave",
+					"findString": "<<set _minutes to _timeCalc % 60>>",
+					"replace": "<<set _minutes to _timeCalc % 60>>\n<<if C.npc[\"Black Wolf\"].state is \"dismissed\">>\n\t<<set $phase to 2>>\n<</if>>"
+				},
+				{
+					"passage": "Pregnancy Birth Hospital Wolf 3",
+					"findString": "<<link [[继续 (0:15)|Pregnancy Birth Wolf Cave 1]]>><<pass 15>><<endevent>><<set $phase to 3>><</link>>",
+					"replaceFile": "game/DismissBW/choose-pregnancy.txt"
+				},
+				{
+					"passage": "Pregnancy Birth Hospital Wolf 4",
+					"findString": "<<link [[继续 (0:15)|Pregnancy Birth Wolf Cave 1]]>><<pass 15>><<endevent>><<set $phase to 3>><</link>>",
+					"replaceFile": "game/DismissBW/choose-pregnancy.txt"
+				},
+				{
+					"passage": "Pregnancy Birth Wolf Rescue",
+					"findString": "<<link [[继续 (0:15)|Pregnancy Birth Wolf Cave 1]]>><<pass 15>><<endevent>><<set $phase to 3>><</link>>",
+					"replaceFile": "game/DismissBW/choose-pregnancy.txt"
+				},
+				{
+					"passage": "Pregnancy Birth Wolf Cave",
+					"findString": "<<link [[继续 (0:10)|Pregnancy Birth Wolf Cave 1]]>><<pass 10>><<strip>><<set $phase to 2>><</link>>",
+					"replaceFile": "game/DismissBW/choose-pregnancy2.txt"
+				},
+				{
+					"passage": "Wolf Cave Play",
+					"findString": "<<Weather.precipitation is \"none\" and $rng gte 80 and $wolfstate is \"cave\">>",
+					"replace": "Weather.precipitation is \"none\" and $rng gte 80 and $wolfstate is \"cave\" and C.npc[\"Black Wolf\"].state isnot \"dismissed\""
+				},
+				{
+					"passage": "Widgets Forest",
+					"findString": "<<if random(1, 2) is 1>>",
+					"replace": "<<if random(1, 2) is 1 or C.npc[\"Black Wolf\"].state is \"dismissed\">>"
+				}
+			]
+		}
+	],
+	"additionFile": [
+		"game/DismissBW/dismiss-BW-atti.txt",
+		"game/DismissBW/loveinterest-BW.txt",
+		"game/DismissBW/choose-pregnancy.txt",
+		"game/DismissBW/choose-pregnancy2.txt"
+	],
+	"dependenceInfo": [
+		{
+			"modName": "TweeReplacer",
+			"version": ">=1.0.0"
+		},
+		{
+			"modName": "ReplacePatcher",
+			"version": ">=1.0.0"
+		}
+	]
+}

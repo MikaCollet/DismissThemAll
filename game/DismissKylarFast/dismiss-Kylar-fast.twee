@@ -1,0 +1,6 @@
+:: Kylar Dismiss Fast []
+<<npc Kylar>>你放逐了凯拉尔！你可以在监狱或者房间里救回<<He>>。
+<br><br>
+<<dismissKylar>>
+
+<<link [[继续|dismiss all]]>><</link>>

@@ -1,0 +1,7 @@
+:: Kylar Comeback Fast []
+凯拉尔刑满释放了。
+<br><br>
+<<set $prison.kylar to 0>>
+<<npcset Kylar state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>
