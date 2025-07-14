@@ -1,0 +1,6 @@
+:: Eden Dismiss Fast []
+<<npc Eden>>伊甸去黑暗森林打猎了。<<He>>能够击败三体人吗？
+<br><br>
+<<dismissEden>>
+
+<<link [[继续|dismiss all]]>><</link>>

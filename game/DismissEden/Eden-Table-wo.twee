@@ -1,0 +1,31 @@
+:: Eden Table wo []
+<div id="passage-content">
+<<npc Eden>><<person1>>
+<<effects>>
+
+<<if Time.hour gte 0 and Time.hour lte 6>>
+	你在餐桌旁坐下。即将熄灭的炉火余烬在你身上投下了遥远的光芒。
+	<br><br>
+
+	<<link [[继续|Cabin House Actions wo]]>><<endevent>><</link>>
+<<elseif Time.hour lte 16>>
+	你在餐桌旁坐下来，凝视着窗外。森林里的树木在空地上轻轻摇曳。
+	<br><br>
+
+	<<link [[继续|Cabin House Actions wo]]>><<endevent>><</link>>
+<<elseif Time.hour lte 19>>
+  你在餐桌旁坐下，凝视着窗外。夕阳斜照着森林。
+  <br><br>
+
+  <<link [[继续|Cabin House Actions wo]]>><<endevent>><</link>>
+<<else>>
+	<<if Time.days % 2 is 0>>
+		你坐在餐桌旁，看着夜幕下的森林。树叶沙沙作响。<<stress -1>><<lstress>>
+	<<else>>
+		你坐在餐桌旁，看着夜幕下的森林。炉火噼啪作响。<<stress -1>><<lstress>>
+	<</if>>
+	<br><br>
+
+	<<link [[继续|Cabin House Actions wo]]>><<endevent>><</link>>
+<</if>>
+</div>

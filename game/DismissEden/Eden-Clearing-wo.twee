@@ -1,0 +1,52 @@
+:: Eden Clearing wo []
+<div id="passage-content">
+<<set $outside to 1>><<set $location to "cabin">><<effects>><<set $bus to "edenclearing">>
+
+你在伊甸小屋外的空地上。周围的树木非常高大，你必须伸长脖子才能看到天空。空地上有一小块种植圃。小屋后面是一处位于悬崖底部的泉水。
+<br><br>
+
+<<if $foresthunt gte 1>>
+	<span class="lblue">你在伊甸的小屋很安全。不管是什么在追捕你，最终都会无功而返。</span>
+	<br><br>
+	<<set $foresthunt to 0>>
+<</if>>
+
+<<if $stress gte $stressmax>>
+	<<if isPregnancyEnding()>>
+		<<pregnancyPassout "edencabinwo">>
+	<<else>>
+		<<link [[你眼前一黑……|Eden Cabin Passout wo]]>><</link>>
+	<</if>>
+
+
+<<elseif ($exposed gte 2 and $exhibitionism lte 74 or $exposed gte 1 and $exhibitionism lte 54) and isLoveInterest("Eden") and (Time.hour lte 8 or $daily.eden.hunting is 1 or Time.hour gte 17)>>
+	你不想让别人看到你这样！你冲到衣柜前。
+	<br><br>
+
+	<<link [[继续|Eden Wardrobe]]>><<endevent>><</link>>
+
+<<else>>
+	<<if $exposed is 1 and hasSexStat("exhibitionism", 4) or $exposed is 2 and hasSexStat("exhibitionism", 5)>>
+		<span class="lewd">你<<lewdness>>被展示出来时，你情不自禁地感到一种原始的兴奋。</span>
+		<br><br>
+	<<elseif $exposed gte 1>>
+		<span class="lewd">你<<lewdness>>让你很尴尬，但没关系，毕竟只有你一个人。</span>
+		<br><br>
+	<</if>>
+
+	<<if Weather.precipitation is "rain">>
+		雨水从上面的树枝上滴下来。
+		<br><br>
+	<<elseif Weather.precipitation is "snow">>
+		雪压弯了上面的树枝。
+		<br><br>
+	<</if>>
+
+  <<if Time.monthName is "November" and $edenprepare is 1>>
+    <<edenicon "fix">><<link [[修理小屋|Cabin Eden Prepare wo]]>><</link>>
+    <br><br>
+  <</if>>
+	<<clearingactionswo>>
+
+<</if>>
+</div>

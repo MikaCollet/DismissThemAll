@@ -1,0 +1,9 @@
+:: Eden Porch wo []
+<div id="passage-content">
+<<effects>>
+
+你在门廊下休息，听着森林的温柔声音。这让人感到平静。<<stress -1>><<lstress>>
+<br><br>
+
+<<link [[继续|Eden Clearing wo]]>><<endevent>><</link>>
+</div>

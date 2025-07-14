@@ -1,0 +1,25 @@
+:: Eden Chimney wo []
+<div id="passage-content">
+<<set $outside to 1>><<set $location to "cabin">><<effects>>
+<<wearProp "sponge">>
+<<switch $edenchimney>>
+	<<case 0>>
+		你擦洗着烟囱，烟灰一波一波地往下掉。你一直努力干活，直到自己累得无法继续。你查看起自己的成果。
+		烟囱仍然很脏，但看起来比以前好多了。
+	<<case 1>>
+		你擦洗烟囱的砖块，洗去几个月积攒下来的烟灰。
+		你每隔几分钟就让自己休息一下，呼吸新鲜空气。一轮工作下来，烟囱仍然很脏。
+	<<case 2>>
+		你继续擦洗烟囱。虽然这是一项艰巨的工作，但你至少取得了明显的进展。
+	<<case 3>>
+		你继续擦洗烟囱。它基本上已经干净了，但仍有一些烟灰残留。
+	<<default>>
+		你继续努力了一段时间，直到烟囱完全清洁干净。
+<</switch>>
+<<physique 4>>
+<<pass 3 hours>>
+<br><br>
+
+<<set $edenchimney += 1>>
+<br>
+</div>

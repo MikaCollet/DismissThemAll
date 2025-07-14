@@ -1,0 +1,7 @@
+:: Eden Comeback Fast []
+伊甸从黑暗森林回来了。
+<br><br>
+<<npcset Eden state "active">>
+<<set $edendays to 0>>
+
+<<link [[继续|dismiss all]]>><</link>>

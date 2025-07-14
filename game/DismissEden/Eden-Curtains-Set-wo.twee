@@ -1,0 +1,10 @@
+:: Eden Curtains Set wo []
+<div id="passage-content">
+<<effects>>
+
+你花了些时间把旧窗帘拆下来，再把新的窗帘装上去。完成后，你后退一步，欣赏自己努力的成果。
+它们无疑为小屋增添了一丝魅力，你对着自己的成果露出微笑。
+<br><br>
+
+<<link [[继续|Eden Cabin wo]]>><<endevent>><</link>>
+</div>

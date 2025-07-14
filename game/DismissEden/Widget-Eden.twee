@@ -1,0 +1,170 @@
+:: Widgets Eden [widget]
+
+<<widget "dismissEden">>
+	<<npcset Eden state "dismissed">>
+	<<if $loveInterest.primary is "Eden">>
+		<<if $loveInterest.secondary isnot "None">>
+			<<set $loveInterest.primary to $loveInterest.secondary>>
+			<<set $loveInterest.secondary to "None">>
+		<<else>>
+			<<set $loveInterest.primary to "None">>
+		<</if>>
+		<span class = "red">伊甸不再是你的爱人了。</span>
+	<<elseif $loveInterest.secondary is "Eden">>
+		<<set $loveInterest.secondary to "None">>
+		<span class = "red">伊甸不再是你的爱人了。</span>
+	<<elseif $syndromeeden is 1>>
+		<span class = "red">伊甸不能再作为你的爱人了。</span>
+	<<else>>
+		<span class = "red">伊甸去黑暗森林了。</span>
+	<</if>>
+	<br><br>
+<</widget>>
+
+<<widget "cabinotherswo">>
+	<<getouticon>><<link [[出去|Eden Clearing wo]]>><<endevent>><</link>>
+	<br><br>
+	<<link [[游戏设置|Cabin Settings]]>><<endevent>><</link>>
+	<br>
+	<<attitudesControlCheck>>
+	<<if $attitudesControl.showGoldLink is true>>
+		<span class="goldLink"><<link [[态度|Attitudes]]>><<endevent>><<set $attitudesExitPassage to $passage>><</link>></span><span class="red">!!</span>
+	<<else>>
+		<<link [[态度|Attitudes]]>><<endevent>><<set $attitudesExitPassage to $passage>><</link>>
+	<</if>>
+	<br>
+<</widget>>
+
+<<widget "clearingactionswo">>
+	<<edenicon>><<link [[进入小屋|Eden Cabin wo]]>><<endevent>><</link>>
+	<br><br>
+
+	<<furnitureicon "chair">><<link [[在门廊下休息 (0:15)|Eden Porch wo]]>><<stress -2>><<pass 15>><</link>><<lstress>>
+	<br><br>
+
+	<<if $edengarden is 0>>
+		<span class="purple">庄稼被杂草扼杀了。</span>
+		<br>
+
+		<<gardenicon "strangled">><<link [[清除杂草 (3:00)|Clearing Weeding]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
+		<br><br>
+	<<elseif $edengarden is 1>>
+		<span class="blue">庄稼被杂草缠住了。</span>
+		<br>
+
+		<<gardenicon "tangled">><<link [[清除杂草 (3:00)|Clearing Weeding]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
+		<br><br>
+	<<elseif $edengarden is 2>>
+		<span class="lblue">种植圃里杂草和蔬菜一样多。</span>
+		<br>
+
+		<<gardenicon "tangled">><<link [[清除杂草 (3:00)|Clearing Weeding]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
+		<br><br>
+	<<elseif $edengarden is 3>>
+		<span class="teal">庄稼田里几乎没有杂草，但还能变得更好一些。</span>
+		<br>
+
+		<<gardenicon "weeds">><<link [[清除杂草 (3:00)|Clearing Weeding]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
+		<br><br>
+	<<elseif $edengarden is 4>>
+		<span class="green">庄稼没有杂草。</span>
+		<br><br>
+	<</if>>
+
+	还有一些没有被利用的光秃秃的种植圃。
+	<br>
+	<<gardenicon "plot">><<link [[检查|Eden Plots]]>><</link>>
+	<br><br>
+
+	<<if $edenshrooms is 0>>
+		<span class="purple">蘑菇桶几乎空了。</span>
+		<br>
+
+		<<tendingicon "mushroom">><<link [[采蘑菇 (1:00)|Clearing Mushrooms wo]]>><<pass 1 hour>><</link>>
+		<br><br>
+	<<elseif $edenshrooms is 1>>
+		<span class="blue">蘑菇桶几乎空了。</span>
+		<br>
+
+		<<tendingicon "mushroom">><<link [[采蘑菇 (1:00)|Clearing Mushrooms wo]]>><<pass 1 hour>><<npcincr Eden love 1>><</link>><<glove>>
+		<br><br>
+	<<elseif $edenshrooms is 2>>
+		<span class="lblue">蘑菇桶半满了。</span>
+		<br>
+
+		<<tendingicon "mushroom">><<link [[采蘑菇 (1:00)|Clearing Mushrooms wo]]>><<pass 1 hour>><<npcincr Eden love 1>><</link>><<glove>>
+		<br><br>
+	<<elseif $edenshrooms is 3>>
+		<span class="teal">蘑菇桶快满了。</span>
+		<br>
+
+		<<tendingicon "mushroom">><<link [[采蘑菇 (1:00)|Clearing Mushrooms wo]]>><<pass 1 hour>><<npcincr Eden love 1>><</link>><<glove>>
+		<br><br>
+	<<elseif $edenshrooms is 4>>
+		<span class="green">蘑菇桶里装满了蕈类。</span>
+		<br><br>
+	<</if>>
+
+	<<if $edenspring is 0>>
+		<span class="purple">泉水里满是断枝和浮木。</span>
+		<br>
+
+		<<lakeicon "pond twigs">><<link [[清理碎片(0:30)|Clearing Debris]]>><<tiredness 6>><</link>><<gtiredness>>
+		<br><br>
+	<<elseif $edenspring is 1>>
+		<span class="blue">泉底还是有一些沉底的枝条。</span>
+		<br>
+
+		<<lakeicon "pond twigs">><<link [[清理碎片(0:30)|Clearing Debris]]>><<tiredness 6>><</link>><<gtiredness>>
+		<br><br>
+	<<elseif $edenspring is 2>>
+		<span class="lblue">透过水面浮着的枝条你已经可以看到泉底了。</span>
+		<br>
+
+		<<lakeicon "pond twigs">><<link [[清理碎片(0:30)|Clearing Debris]]>><<tiredness 6>><</link>><<gtiredness>>
+		<br><br>
+	<<elseif $edenspring is 3>>
+		<span class="teal">小树枝浮在泉水表面。</span>
+		<br>
+
+		<<lakeicon "pond twigs">><<link [[清理碎片(0:30)|Clearing Debris]]>><<tiredness 6>><</link>><<gtiredness>>
+		<br><br>
+	<<elseif $edenspring is 4>>
+		<<if Weather.waterTemperature gt 15>>
+			<span class="green">泉水清澈见底。</span>
+		<<else>>
+			<span class="purple">泉水很干净，但是水太冷了。</span>
+		<</if>>
+		<br>
+
+		<<if Weather.waterTemperature lte 5>>
+			<<set _edenSpringStress to 6>>
+		<<elseif Weather.waterTemperature lte 15>>
+			<<set _edenSpringStress to 4>>
+		<<elseif Weather.waterTemperature lte 35>>
+			<<set _edenSpringStress to -6>>
+		<<else>>
+			<<set _edenSpringStress to -8>>
+		<</if>>
+
+		<<lakeicon "pond">><<link [[在泉水中放松(0:30)|Clearing Spring]]>><<unset $edenpush>><<endevent>><<pass 30>><<stress _edenSpringStress>><</link>>
+		<<if Weather.waterTemperature lte 5>>
+			<<ggstress>>
+		<<elseif Weather.waterTemperature lte 15>>
+			<<gstress>>
+		<<elseif Weather.waterTemperature lte 35>>
+			<<lstress>>
+		<<else>>
+			<<llstress>>
+		<</if>>
+		<br>
+	<</if>>
+
+	<<if $edenHotSpring>>
+		<<lakeicon "firepit">><<link [[检查加热器|Clearing Heater]]>><</link>>
+		<br><br>
+	<</if>>
+
+	<<foresticon>><<link [[进入森林 (0:10)|Forest]]>><<endevent>><<pass 10>><<set $forest to 60>><<if $edenFluidsCheck is "clean">><<set $edenFluidsCheck to "cleanLeave">><</if>><</link>>
+	<br>
+<</widget>>

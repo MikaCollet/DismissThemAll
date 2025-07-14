@@ -1,0 +1,10 @@
+:: Eden Pillow Set wo []
+<div id="passage-content">
+<<effects>>
+
+你把新地毯铺在壁炉旁，把枕头放在它周围。当你完成后，你退后了一步，欣赏自己的工作成果。
+布置看起来相当舒适，你充满了成就感。
+<br><br>
+
+<<link [[继续|Eden Cabin wo]]>><<endevent>><</link>>
+</div>

@@ -1,0 +1,23 @@
+:: Eden Wall wo []
+<div id="passage-content">
+<<set $outside to 1>><<set $location to "cabin">><<effects>>
+
+<<switch $edenwall>>
+	<<case 0>>
+		你封住了一些裂缝，但墙壁还远远没有修好。
+	<<case 1>>
+		又一个裂缝被封堵了，墙壁变得更加坚固，但你还有很长的路要走。
+	<<case 2>>
+		你继续处理墙上的裂缝，墙壁看起来已经很坚固了，但仍然存在一些裂缝。
+	<<case 3>>
+		你继续处理墙上的裂缝。墙壁几乎已经完全修复好了。
+	<<default>>
+		你封住了最后的几道裂缝。你敲了几下墙来测试它的坚固性。
+<</switch>>
+<<physique 3>>
+<<pass 3 hours>>
+<br><br>
+
+<<set $edenwall += 1>>
+<br>
+</div>

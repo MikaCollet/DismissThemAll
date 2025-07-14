@@ -1,0 +1,4 @@
+<<widget "foresthuntstart">>
+  <<if C.npc["Black Wolf"].state is "dismissed" and C.npc.Eden.state is "dismissed">>
+    一股寒意涌上你的脊背，你打了个寒颤。<span class="green">但这只是你的错觉，追捕你的东西已经不在了。</span>
+  <<else>>

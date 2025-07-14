@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -13,6 +13,7 @@
 					"replace": "<<link [[放逐一切！|dismiss all]]>><</link>>\n<br>\n/* Settings */"
 				},
 				{
+					"comment": "下面开始是黑狼的",
 					"passage": "Widgets Named Npcs",
 					"findString": "\t\t\t\t<<case \"Black Wolf\">>\n\t\t\t\t\t黑狼\n\t\t\t\t<<if $syndromewolves is 1>>",
 					"replaceFile": "game/DismissBW/dismiss-BW-atti.txt"
@@ -63,7 +64,7 @@
 					"replace": "<<if C.npc[\"Black Wolf\"].state isnot \"dismissed\" and isPregnancyEnding() and !$possessed>>"
 				},
 				{
-					"passage": "Pregnancy Birth Wolf Cave",
+					"passage": "Pregnancy Birth Wolf Cave 1",
 					"findString": "<<set _minutes to _timeCalc % 60>>",
 					"replace": "<<set _minutes to _timeCalc % 60>>\n<<if C.npc[\"Black Wolf\"].state is \"dismissed\">>\n\t<<set $phase to 2>>\n<</if>>"
 				},
@@ -89,13 +90,199 @@
 				},
 				{
 					"passage": "Wolf Cave Play",
-					"findString": "<<Weather.precipitation is \"none\" and $rng gte 80 and $wolfstate is \"cave\">>",
+					"findString": "Weather.precipitation is \"none\" and $rng gte 80 and $wolfstate is \"cave\"",
 					"replace": "Weather.precipitation is \"none\" and $rng gte 80 and $wolfstate is \"cave\" and C.npc[\"Black Wolf\"].state isnot \"dismissed\""
 				},
 				{
 					"passage": "Widgets Forest",
 					"findString": "<<if random(1, 2) is 1>>",
-					"replace": "<<if random(1, 2) is 1 or C.npc[\"Black Wolf\"].state is \"dismissed\">>"
+					"replace": "<<if (C.npc.Eden.state isnot \"dismissed\" and random(1, 2) is 1) or C.npc[\"Black Wolf\"].state is \"dismissed\">>"
+				},
+				{
+					"comment": "下面开始是伊甸的",
+					"passage": "Widgets Forest",
+					"findString": "<<widget \"foresthuntstart\">>",
+					"replaceFile": "game/DismissAll/nothing-chase-forest.txt"
+				},
+				{
+					"passage": "Widgets Named Npcs",
+					"findString": "\t\t<<case \"Ivory Wraith\">>\n\t\t\t<<if $wraith>>",
+					"replaceFile": "game/DismissEden/dismiss-Eden-atti.txt"
+				},
+				{
+					"passage": "Widgets Attitudes",
+					"findString": "<<if $syndromeeden is 1>>",
+					"replaceFile": "game/DismissEden/loveinterest-Eden.txt"
+				},
+				{
+					"passage": "Widgets Mirror",
+					"findString": "<<if $syndromeeden is 1>>",
+					"replaceFile": "game/DismissEden/loveinterest-Eden.txt"
+				},
+				{
+					"passage": "Widgets Forest",
+					"findString": "<<set $foresthunt to 1>>\n\t<<endevent>>\n\t<br><br>",
+					"replace": "<<set $foresthunt to 1>>\n\t<<endevent>>\n\t<br><br>\n\t<</if>>"
+				},
+				{
+					"passage": "Widgets Events Street",
+					"findString": "<<elseif $dangerevent lte 90>>",
+					"replace": "<<elseif $dangerevent lte 90 and C.npc.Eden.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Journal",
+					"findString": "<<if $syndromeeden gte 1>>",
+					"replace": "<<if $syndromeeden gte 1 and C.npc.Eden.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Journal",
+					"findString": "<<if $halloween_eden is 1>>",
+					"replace": "<<if $halloween_eden is 1 and C.npc.Eden.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Journal",
+					"findString": "$valentines_eden is 1",
+					"replace": "$valentines_eden is 1 and C.npc.Eden.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Widgets Journal",
+					"findString": "if $syndromeeden is 1 and $edenfreedom gte 1",
+					"replace": "if C.npc.Eden.state isnot \"dismissed\" and $syndromeeden is 1 and $edenfreedom gte 1"
+				},
+				{
+					"passage": "Widgets Journal",
+					"findString": "<<if $eden_asylum_window is 1 and $location is \"asylum\">>",
+					"replace": "<<if C.npc.Eden.state isnot \"dismissed\" and $eden_asylum_window is 1 and $location is \"asylum\">>"
+				},
+				{
+					"passage": "Widgets Journal",
+					"findString": "<<if $daily.eden.distract gte 1 and $location is \"asylum\">>",
+					"replace": "<<if C.npc.Eden.state isnot \"dismissed\" and $daily.eden.distract gte 1 and $location is \"asylum\">>"
+				},
+				{
+					"passage": "Rent Intro",
+					"findString": "<<elseif $rentsale is 1>>",
+					"replace": "<<elseif C.npc.Eden.state isnot \"dismissed\" and $rentsale is 1>>"
+				},
+				{
+					"passage": "Widgets Forest",
+					"findString": "<<if _args[0] isnot \"hunter\" and isLoveInterest(\"Eden\")>>",
+					"replace": "<<if _args[0] isnot \"hunter\" and isLoveInterest(\"Eden\") and C.npc.Eden.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Asylum Cell",
+					"findString": "<<elseif $daily.eden.distract gte 1 and Time.hour is 21 and $daily.eden.distract isnot 4>>",
+					"replace": "<<elseif $daily.eden.distract gte 1 and Time.hour is 21 and $daily.eden.distract isnot 4 and C.npc.Eden.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Asylum Cell",
+					"findString": "<<if $eden_asylum_window is 1 and Time.hour gte 22>>",
+					"replace": "<<if $eden_asylum_window is 1 and Time.hour gte 22 and C.npc.Eden.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Asylum Exercise",
+					"findString": "C.npc.Eden.love gte 100",
+					"replace": "C.npc.Eden.state isnot \"dismissed\" and C.npc.Eden.love gte 100"
+				},
+				{
+					"passage": "Asylum Socialise",
+					"findString": "C.npc.Eden.love gte 100",
+					"replace": "C.npc.Eden.state isnot \"dismissed\" and C.npc.Eden.love gte 100"
+				},
+				{
+					"passage": "Asylum",
+					"findString": "<<elseif $daily.eden.distract gte 1 and Time.hour gte 21 and $daily.eden.distract isnot 4>>",
+					"replace": "<<elseif C.npc.Eden.state isnot \"dismissed\" and $daily.eden.distract gte 1 and Time.hour gte 21 and $daily.eden.distract isnot 4>>"
+				},
+				{
+					"passage": "Asylum",
+					"findString": "<<if $daily.eden.distract is 1>>",
+					"replace": "<<if C.npc.Eden.state isnot \"dismissed\" and $daily.eden.distract is 1>>"
+				},
+				{
+					"passage": "Asylum",
+					"findString": "<<if $daily.eden.asylumDisarm is 1>>",
+					"replace": "<<if C.npc.Eden.state isnot \"dismissed\" and $daily.eden.asylumDisarm is 1>>"
+				},
+				{
+					"passage": "Bondage Wolf Rape Finish",
+					"findString": "<<if $syndromeeden gte 1>>",
+					"replace": "<<if C.npc.Eden.state isnot \"dismissed\" and $syndromeeden gte 1>>"
+				},
+				{
+					"passage": "Cabin Actions",
+					"findString": "<<if Time.hour gte 0 and Time.hour lte 6>>",
+					"replace": "<<if C.npc.Eden.state isnot \"dismissed\" and Time.hour gte 0 and Time.hour lte 6>>"
+				},
+				{
+					"passage": "Cabin Actions",
+					"findString": "<<if $nextPassageCheck is \"Eden Cabin Bed\">>",
+					"replace": "<<if C.npc.Eden.state isnot \"dismissed\" and $nextPassageCheck is \"Eden Cabin Bed\">>"
+				},
+				{
+					"passage": "Pregnancy2",
+					"findString": "\t\t\t<<case \"edencabin\">>",
+					"replaceFile": "game/DismissEden/pregnancy2.txt"
+				},
+				{
+					"passage": "Pregnancy2",
+					"findString": "\"Asylum Sleep\",\"Cabin Sleep\",",
+					"replace": "\"Asylum Sleep\",\"Cabin Sleep\",\"Cabin Sleep wo\","
+				},
+				{
+					"passage": "Forest",
+					"findString": "<<if $edenfreedom gte 1 or $syndromeeden gte 1>>",
+					"replace": "<<if $edenfreedom gte 1 or $syndromeeden gte 1>>\n\t\t\t<<if C.npc.Eden.state is \"dismissed\">>\n\t\t\t\t<<edenicon>><<link [[伊甸的小屋 (0:10)|Eden Clearing wo]]>><<pass 10>><</link>>"
+				},
+				{
+					"passage": "Forest",
+					"findString": "if $edenFluidsCheck is \"cleanLeave\"",
+					"replace": "elseif $edenFluidsCheck is \"cleanLeave\""
+				},
+				{
+					"passage": "Eden Stock",
+					"findString": "<<link [[继续|Cabin House Actions]]>><<endevent>><</link>>",
+					"replaceFile": "game/DismissEden/return.txt"
+				},
+				{
+					"passage": "Eden Sweep",
+					"findString": "<<link [[继续|Cabin House Actions]]>><<endevent>><</link>>",
+					"replaceFile": "game/DismissEden/return.txt"
+				},
+				{
+					"passage": "Eden Salve",
+					"findString": "<<link [[继续|Cabin House Actions]]>><<endevent>><</link>>",
+					"replaceFile": "game/DismissEden/return.txt"
+				},
+				{
+					"passage": "Eden Soap",
+					"findString": "<<link [[继续|Cabin House Actions]]>><<endevent>><</link>>",
+					"replaceFile": "game/DismissEden/return.txt"
+				},
+				{
+					"passage": "Eden Kitchen",
+					"findString": "<<link [[离开|Eden Cabin]]>><<endevent>><</link>>",
+					"replaceFile": "game/DismissEden/return-cabin.txt"
+				},
+				{
+					"passage": "Clearing Debris",
+					"findString": "<<link [[继续|Eden Clearing]]>><<endevent>><</link>>",
+					"replaceFile": "game/DismissEden/return-clearing.txt"
+				},
+				{
+					"passage": "Clearing Spring",
+					"findString": "if $danger gte (9900 - $allure)",
+					"replace": "if $danger gte (9900 - $allure) and C.npc.Eden.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Clearing Heater",
+					"findString": "<<link [[返回|Eden Clearing]]>><<endevent>><</link>>",
+					"replaceFile": "game/DismissEden/return-clearing2.txt"
+				},
+				{
+					"passage": "Eden Plots",
+					"findString": "<<link [[离开|Eden Clearing]]>><<endevent>><</link>>",
+					"replaceFile": "game/DismissEden/return-clearing3.txt"
 				}
 			]
 		}
@@ -104,7 +291,16 @@
 		"game/DismissBW/dismiss-BW-atti.txt",
 		"game/DismissBW/loveinterest-BW.txt",
 		"game/DismissBW/choose-pregnancy.txt",
-		"game/DismissBW/choose-pregnancy2.txt"
+		"game/DismissBW/choose-pregnancy2.txt",
+		"game/DismissEden/pregnancy2.txt",
+		"game/DismissEden/dismiss-Eden-atti.txt",
+		"game/DismissEden/loveinterest-Eden.txt",
+		"game/DismissAll/nothing-chase-forest.txt",
+		"game/DismissEden/return.txt",
+		"game/DismissEden/return-cabin.txt",
+		"game/DismissEden/return-clearing.txt",
+		"game/DismissEden/return-clearing2.txt",
+		"game/DismissEden/return-clearing3.txt"
 	],
 	"dependenceInfo": [
 		{

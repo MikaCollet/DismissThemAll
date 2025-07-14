@@ -1,0 +1,14 @@
+      <<case "edencabinwo">>
+        <!--
+				<<if $_pregnancy.potentialFathers.find(father => father.source === "Eden")>>
+					Eden thinks it's his child?
+				<<else>>
+				<</if>>
+				-->
+				<<endevent>>
+				你的大腿感到湿润，你开始感到剧烈的疼痛。你就要分娩了。
+				<br><br>
+
+				你跌跌撞撞地走进森林，但宫缩的疼痛开始折磨你。孤身一人在这杳无人烟的森林里，你甚至不知道该何去何从。
+				在你停下来之前，你走了一段不知道多远的路，精疲力尽，无法继续下去。肾上腺素从你的身体里消失了。你的左侧传来了树枝断裂声。
+      <<case "edencabin">>

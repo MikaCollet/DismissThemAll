@@ -1,0 +1,31 @@
+:: Eden Blanket One wo []
+<div id="passage-content">
+<<effects>>
+你收集了一些动物皮毛，开始缝纫。这是一项缓慢的工作，但你还是缝好了一截毯子。
+<br><br>
+
+<<link [[继续|Cabin House Actions wo]]>><</link>>
+</div>
+
+
+:: Eden Blanket Two wo []
+<div id="passage-content">
+<<effects>>
+你收集了更多的毛皮，把它们缝在一起。毯子越来越大了。
+<br><br>
+
+<<link [[继续|Cabin House Actions wo]]>><</link>>
+</div>
+
+
+:: Eden Blanket Three wo []
+<div id="passage-content">
+<<effects>>
+/* eden is already generated
+<<npc Eden>><<person1>>*/
+你将剩下的毛皮缝入毯子，检查起自己最终的成品。你用手顺着毯子抚摸过它柔软的皮毛表面，想着把它放在哪里。
+环顾小屋四周，你的目光被吸引到那张双人沙发上。你把它铺在上面，后退一步，对自己的工作满意地点点头。
+<br><br>
+
+<<link [[继续|Cabin House Actions wo]]>><</link>>
+</div>

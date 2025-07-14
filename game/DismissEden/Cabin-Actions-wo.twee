@@ -1,0 +1,36 @@
+:: Cabin Actions wo []
+<div id="passage-content">
+<<effects>><<getTarget true>>
+
+前面摆着一张大垫子，上面铺着动物皮。
+<br>
+<<if $nextPassageCheck is "Eden Cabin Bed" or $nextPassageCheck is "Eden Cabin Bed wo">>
+	<span class="nextLink"><<bedicon "eden">><<link [[睡觉|Eden Cabin Bed wo]]>><<endevent>><</link>></span>
+<<else>>
+  <<bedicon "eden">><<link [[睡觉|Eden Cabin Bed wo]]>><<endevent>><</link>>
+<</if>>
+<br>
+<<roomoptions>>
+<<pregnancyTest "Eden Cabin">>
+<br>
+你的衣服正放在角落里。
+<br>
+<<wardrobeicon>><<link [[衣柜|Eden Wardrobe]]>><<endevent>><</link>>
+<br>
+<<if playerHasSexToys()>>
+	<<sextoysicon>><<link [[性玩具|Sextoys Inventory]]>><<set $sextoyInvReturnLink to $passage>><</link>>
+	<br>
+<</if>>
+<<if $nextPassageCheck is "Eden Mirror">>
+	<span class="nextLink"><<mirroricon>><<link [[镜子|Eden Mirror]]>><<preMirror>><<endevent>><</link>></span>
+<<else>>
+	<<mirroricon>><<link [[镜子|Eden Mirror]]>><<preMirror>><<endevent>><</link>>
+<</if>>
+<br><br>
+
+<<if $nextPassageCheck is "Eden Cabin" or $nextPassageCheck is "Eden Cabin wo">>
+	<<getouticon>><span class="nextLink"><<link [[回去|Eden Cabin wo]]>><<endevent>><</link>></span>
+<<else>>
+	<<getouticon>><<link [[回去|Eden Cabin wo]]>><<endevent>><</link>>
+<</if>>
+</div>

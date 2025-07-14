@@ -22,6 +22,13 @@
 <</if>>
 <br>
 
+<<if C.npc.Eden.state isnot "dismissed">>
+	<<link [[放逐伊甸|Eden Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[伊甸回来|Eden Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
 <<if C.npc["Black Wolf"].state isnot "dismissed">>
 	<<link [[放逐黑狼|BW Dismiss Fast]]>><</link>>
 <<else>>
