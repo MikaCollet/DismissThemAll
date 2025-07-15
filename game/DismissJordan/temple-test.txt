@@ -1,0 +1,15 @@
+<<temple_effects>><<effects>>
+<<if C.npc.Jordan.state is "dismissed" and $temple_chastity_timer lte 0>>
+  <span class="gold">应该到你定时的贞洁检测了，但是约旦现在还在处理重要的事。你的贞洁检测将在下次检查。</span>
+  <br>
+  <<if $player.virginity.temple is false>>
+    <span class="green">说实话，你松了一口气。</span>
+    <br>
+  <</if>>
+  <<set $temple_chastity_timer to 30>>
+  <br>
+<<elseif $escape_temple_test is true and $temple_chastity_timer lte 0>>
+  <span class="gold">你使用了某种神奇的力量让约旦进入幻觉以为贞洁检测做过了，但其实并没有。</span>
+  <<set $temple_chastity_timer to 30>>
+  <br><br>
+<</if>>

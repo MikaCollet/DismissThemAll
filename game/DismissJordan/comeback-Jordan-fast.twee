@@ -1,0 +1,6 @@
+:: Jordan Comeback Fast []
+约旦的事情办完了。
+<br><br>
+<<npcset Jordan state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

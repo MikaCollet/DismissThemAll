@@ -1,0 +1,6 @@
+:: Ban Temple Test []
+你禁用了神殿的贞洁检测。
+<<set $escape_temple_test to true>>
+<br><br>
+
+<<link [[继续|dismiss all]]>><</link>>

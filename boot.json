@@ -283,6 +283,127 @@
 					"passage": "Eden Plots",
 					"findString": "<<link [[离开|Eden Clearing]]>><<endevent>><</link>>",
 					"replaceFile": "game/DismissEden/return-clearing3.txt"
+				},
+				{
+					"comment": "下面开始是约旦的",
+					"passage": "Dance Job Stage Explore 2",
+					"findString": "<<if $jordan_ritual_dance lt 4>>",
+					"replace": "<<if $jordan_ritual_dance lt 4 and C.npc.Jordan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Dance Job Stage Explore Look",
+					"findString": "<<if $skulduggerysuccess is 1>>",
+					"replace": "<<if $skulduggerysuccess is 1 and C.npc.Jordan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Sydney Temple Pure",
+					"findString": "<<elseif Time.dayState is \"night\" or Time.dayState is \"dusk\">>",
+					"replaceFile": "game/DismissJordan/Sydney-temple-pure.txt"
+				},
+				{
+					"passage": "Temple",
+					"findString": "<<if Time.dayState isnot \"night\" and Time.dayState isnot \"dusk\">>",
+					"replaceFile": "game/DismissJordan/dismiss-Jordan-temple.txt"
+				},
+				{
+					"passage": "Temple",
+					"findString": "<<temple_effects>><<effects>>",
+					"replaceFile": "game/DismissJordan/temple-test.txt"
+				},
+				{
+					"passage": "Temple",
+					"findString": "C.npc.Jordan.init is 1",
+					"replace": "C.npc.Jordan.init is 1 and C.npc.Jordan.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Temple",
+					"findString": "<<if $temple_rank is \"monk\" and !$confessionsTaken>>",
+					"replace": "<<if $temple_rank is \"monk\" and !$confessionsTaken and C.npc.Jordan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Sydney Walk Beach",
+					"findString": "<<elseif $temple_rank is undefined or $temple_rank is \"prospective\">>",
+					"replaceFile": "game/DismissJordan/Sydney-walk-beach.txt"
+				},
+				{
+					"passage": "Sydney Walk School",
+					"findString": "<br>\n<<else>>",
+					"replace": "<br>\n<<else>>\n\t<<if C.npc.Jordan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Sydney Walk School",
+					"findString": "<<if $daily.sydney.wake is true>>",
+					"replaceFile": "game/DismissJordan/Sydney-walk-school.txt"
+				},
+				{
+					"passage": "Sydney Walk Shopping",
+					"findString": "<<elseif $temple_rank is undefined or $temple_rank is \"prospective\">>",
+					"replaceFile": "game/DismissJordan/Sydney-walk-beach.txt"
+				},
+				{
+					"passage": "Widgets Temple",
+					"findString": "elseif $temple_jordan_prayer is undefined",
+					"replace": "elseif $temple_jordan_prayer is undefined and C.npc.Jordan.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Temple Quarters Rape Finish",
+					"findString": "<<link [[继续|Temple Jordan Room]]>><</link>>",
+					"replaceFile": "game/DismissJordan/peek-Jordan.txt"
+				},
+				{
+					"passage": "Temple Garden Work",
+					"findString": "<<if $rng gte 81>>\n\t\t<<npc Jordan>>",
+					"replace": "<<if $rng gte 81 and C.npc.Jordan.state isnot \"dismissed\">>\n\t\t<<npc Jordan>>"
+				},
+				{
+					"passage": "Temple Confess",
+					"findString": "$weekly.jordanConfessionCheckin and $confessionsTaken gte 5",
+					"replace": "$weekly.jordanConfessionCheckin and $confessionsTaken gte 5 and C.npc.Jordan.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Temple Confess Self",
+					"findString": "<<if $player.virginity.temple isnot true and $temple_rank isnot \"prospective\" and $temple_rank isnot undefined>>",
+					"replace": "<<if $player.virginity.temple isnot true and $temple_rank isnot \"prospective\" and $temple_rank isnot undefined and C.npc.Jordan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Temple",
+					"findString": "($temple_rank is \"monk\" or $temple_rank is \"priest\")",
+					"replace": "($temple_rank is \"monk\" or $temple_rank is \"priest\") and (C.npc.Jordan.state isnot \"dismissed\" or $temple_bailey isnot undefined)"
+				},
+				{
+					"passage": "Temple",
+					"findString": "$daily.jordanMissing isnot 1",
+					"replace": "$daily.jordanMissing isnot 1 and C.npc.Jordan.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Temple",
+					"findString": "and $jordan_ritual_dance is undefined",
+					"replace": "and $jordan_ritual_dance is undefined and C.npc.Jordan.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Sydney Temple Corrupt",
+					"findString": "<<elseif $temple_rank is undefined or $temple_rank is \"prospective\">>",
+					"replaceFile": "game/DismissJordan/Sydney-temple-corrupt.txt"
+				},
+				{
+					"passage": "Pregnancy2",
+					"findString": "<<if C.npc.Jordan.init is 1>>",
+					"replace": "<<if C.npc.Jordan.init is 1 and C.npc.Jordan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Temple",
+					"findString": "<<if Time.weekDay is 1 and Time.hour gte 11 and Time.hour lte 12>>",
+					"replace": "<<if Time.weekDay is 1 and Time.hour gte 11 and Time.hour lte 12 and C.npc.Jordan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Temple",
+					"findString": "<<case \"mass\">>",
+					"replaceFile": "game/DismissJordan/temple-Sydney-mass.txt"
+				},
+				{
+					"passage": "Temple",
+					"findString": "<<case \"sleep\">>",
+					"replace": "<</if>>\n\t\t\t\t<<case \"sleep\">>"
 				}
 			]
 		}
@@ -300,7 +421,15 @@
 		"game/DismissEden/return-cabin.txt",
 		"game/DismissEden/return-clearing.txt",
 		"game/DismissEden/return-clearing2.txt",
-		"game/DismissEden/return-clearing3.txt"
+		"game/DismissEden/return-clearing3.txt",
+		"game/DismissJordan/Sydney-temple-pure.txt",
+		"game/DismissJordan/temple-test.txt",
+		"game/DismissJordan/Sydney-walk-beach.txt",
+		"game/DismissJordan/Sydney-walk-school.txt",
+		"game/DismissJordan/peek-Jordan.txt",
+		"game/DismissJordan/Sydney-temple-corrupt.txt",
+		"game/DismissJordan/temple-Sydney-mass.txt",
+		"game/DismissJordan/dismiss-Jordan-temple.txt"
 	],
 	"dependenceInfo": [
 		{

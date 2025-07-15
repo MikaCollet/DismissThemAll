@@ -1,0 +1,4 @@
+<<case "mass">>
+<<if C.npc.Jordan.state is "dismissed">>
+  <span class="teal">你可以看到悉尼带着园艺用品在神殿进进出出。</span>
+<<else>>

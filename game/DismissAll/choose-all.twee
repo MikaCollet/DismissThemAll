@@ -36,4 +36,18 @@
 <</if>>
 <br>
 
+<<if C.npc.Jordan.state isnot "dismissed">>
+	<<link [[约旦办事|Jordan Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[约旦回来|Jordan Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if $escape_temple_test isnot true>>
+	<<link [[禁用贞洁检测|Ban Temple Test]]>><</link>>
+<<else>>
+	<<link [[启用贞洁检测|Allow Temple Test]]>><</link>>
+<</if>>
+<br>
+
 <<link [[继续|Bedroom]]>><</link>>

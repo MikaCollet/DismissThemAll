@@ -1,0 +1,14 @@
+:: Temple Jordan Room Empty []
+<div id="passage-content">
+<<set $outside to 0>><<set $location to "temple">><<temple_effects>><<effects>>
+你在一间狭长的卧室里。一扇高窗透进些许自然光，下面是床。门附近有一个武器架，上面放着金属棍、铁锤和鞭子。旁边的地板上躺着一面盾牌。
+<br><br>
+这个房间暂时没有人居住。你吱呀一声打开门，步入一条阴暗的石板走廊。
+<br><br>
+<<pass 10>>
+你发现自己身处迷宫般的大厅和楼梯之中。有很多木门，但都锁着。最后你终于找到了一扇可以打开的门。你走了过去，进入了主厅。
+<br><br>
+<<endevent>>
+<<link [[继续|Temple]]>><</link>>
+<br>
+</div>

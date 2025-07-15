@@ -1,0 +1,4 @@
+<<elseif C.npc.Jordan.state is "dismissed">>
+  悉尼露出笑颜，但很快便消失了。"约旦<<nnpc_brother "Jordan">>现在在处理一些重要的事情，暂时把神殿交给其他人管理了，所以这段时间神殿的管理很严。"
+  悉尼叹了口气，"我们可能得等约旦<<nnpc_brother "Jordan">>回来之后在做这件事了。"
+<<elseif $temple_rank is undefined or $temple_rank is "prospective">>

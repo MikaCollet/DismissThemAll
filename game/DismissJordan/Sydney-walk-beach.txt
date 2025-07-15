@@ -1,0 +1,3 @@
+<<elseif $temple_rank is undefined or $temple_rank is "prospective" and C.npc.Jordan.state is "dismissed">>
+  悉尼看起来很兴奋。"当然！等我跟神殿里的兄弟姐妹们说一声。"<<He>>小跑着离开，几分钟后便回来了。"可以了。"<<set _walk to true>>
+<<elseif $temple_rank is undefined or $temple_rank is "prospective">>

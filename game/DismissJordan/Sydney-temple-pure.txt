@@ -1,0 +1,3 @@
+<<elseif C.npc.Jordan.state is "dismissed">>
+  你告诉悉尼你准备好了。<<He>>听罢点点头。<<npc "Jordan">>"但我们得等到约旦<<nnpc_brother "Jordan">>回来……所以，得等<<He>>处理完<<his>>的事情。"<<npc "Sydney">>
+<<elseif Time.dayState is "night" or Time.dayState is "dusk">>

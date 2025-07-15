@@ -1,0 +1,4 @@
+<<else>>
+  你们一起离开了神殿。
+<</if>>
+<<if $daily.sydney.wake is true>>
