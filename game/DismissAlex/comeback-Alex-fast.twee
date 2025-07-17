@@ -1,0 +1,6 @@
+:: Alex Comeback Fast []
+艾利克斯从老家回到农场了。
+<br><br>
+<<npcset Alex state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

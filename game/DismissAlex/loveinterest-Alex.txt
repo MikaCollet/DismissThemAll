@@ -1,0 +1,1 @@
+<<if $farm_stage gte 7 and $alex_countdown is undefined and C.npc.Alex.state isnot "dismissed">>

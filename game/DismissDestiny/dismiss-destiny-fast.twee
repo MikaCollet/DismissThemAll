@@ -1,0 +1,20 @@
+:: destiny Dismiss Fast []
+
+<<if true>>
+  <br>
+  <span class="red">从那既定的命运中离去...</span>
+  <br>
+  <<if true>>
+    <br>
+    <span class="tentacle">从那深远的黑暗中解脱...</span>
+    <br>
+    <<if true>>
+    <br>
+    <span class="gold">金色的黎明...</span>
+    <br><br><br>
+    <<else>>
+  <<else>>
+<<else>>
+<</if>>
+
+<<link [[希望|Hope]]>><</link>>

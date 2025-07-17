@@ -1,0 +1,4 @@
+    <<if C.npc.Alex.state isnot "dismissed">>
+      <<link [[尖叫|Farm Yard Scream]]>><<handheldon>><</link>><<gdom "Alex">>
+      <br>
+    <</if>>

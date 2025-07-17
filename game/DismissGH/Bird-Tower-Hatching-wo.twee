@@ -1,0 +1,36 @@
+:: Bird Tower Hatching wo []
+<div id="passage-content">
+<<setTowerTemp>><<effects>>
+你看着蛋摇晃了一会儿，它的顶端出现了一条很细的裂纹。
+<br><br>
+<<your_bird_text "cap">>不在你的身边，这让你有点遗憾。
+<br><br>
+
+<<if $eggsHatched.length gte 2>>有一颗<</if>>蛋上面出现了一道裂口。
+
+<<childSelect $eggsHatched[0]>>
+<<if $children[$eggsHatched[0]].features.monster is "monster">>
+	一张出人意料的人类面孔出现在你眼前，<<childHe>>用小小的手将碎开的蛋壳推开。<<childhis>>颤鸣着，人生第一次慢慢睁开眼睛，观察着你。
+	<br><br>
+
+	<<childHe>>继续推动着蛋壳，想要到你身边。<<childHe>>出来一半后，蛋壳一下翻开，<<childHe>>从里面跌落出来。<<childHe>>的翅膀还只是两束从背后生长出来的皮肤和肌肉，上面并没有羽毛。尽管如此，你还是不禁认为自己的孩子美丽无比。
+<<else>>
+	一个小小的喙从里面伸了出来，把洞进一步拓宽。鸟宝宝一边冲你打招呼，一边继续推动蛋壳。<<childHe>>颤鸣着，人生第一次缓缓睁开了眼睛，观察着你。
+	<br><br>
+
+	<<childHe>>继续推动着蛋壳，想要到你身边。<<childHe>>出来一半后，蛋壳一下翻开，<<childHe>>从里面跌落出来。<<childHe>>的翅膀还只是两束从背后生长出来的皮肤和肌肉，上面并没有羽毛和色素。尽管如此，你还是不禁认为自己的孩子美丽无比。
+<</if>>
+<<if $eggsHatched.length is 2>>
+	<<childHis>>兄弟姐妹的蛋很快也开始产生裂纹，你眼前出现了跟刚才一样的光景。
+<<elseif $eggsHatched.length gte 3>>
+	<<childHis>>兄弟姐妹们的蛋很快也开始产生裂纹，你眼前出现了跟刚才一样的光景。
+<</if>>
+<<bird_pass 15>>
+<br><br>
+
+你的小鹰们出生了。虽然你觉得“小鹰”这个名字很可爱，但也许你应该想出<<if $eggsHatched.length is 2>>一些合适的名字<<else>>一个合适的名字<</if>>。
+<<endevent>>
+<br><br>
+
+<<hatchUi "tower" "Bird Tower Hatching wo 2" 20>>
+</div>

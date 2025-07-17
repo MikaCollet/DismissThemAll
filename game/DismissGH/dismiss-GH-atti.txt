@@ -1,0 +1,3 @@
+      <<if $NPCName[_i].state is "dismissed">>
+        <span class="red">离开了。</span>
+      <<elseif $syndromebird is 1>>

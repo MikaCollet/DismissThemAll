@@ -1,0 +1,5 @@
+<<if C.npc["Great Hawk"].state isnot "dismissed">>
+  <<link [[继续|Bird Tower Passout]]>><<passout>><<endevent>><<bird_pass 30>><</link>>
+<<else>>
+  <<link [[继续|Bird Tower Passout wo]]>><<passout>><<endevent>><<bird_pass 30>><</link>>
+<</if>>

@@ -1,0 +1,4 @@
+<<bird_schedule>>
+<<if C.npc["Great Hawk"].state is "dismissed">>
+  <<set $bird.state to "dismissed">>
+<</if>>

@@ -1,0 +1,4 @@
+	<</if>>
+  <<if C.npc["Great Hawk"].state is "dismissed">>
+    <<set $bird.activity to "dismiss">>
+	<<elseif $bird.override>>

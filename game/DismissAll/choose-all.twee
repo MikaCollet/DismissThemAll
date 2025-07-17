@@ -36,10 +36,24 @@
 <</if>>
 <br>
 
+<<if C.npc.Alex.state isnot "dismissed">>
+	<<link [[放逐艾利克斯|Alex Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[艾利克斯回来|Alex Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
 <<if C.npc.Jordan.state isnot "dismissed">>
 	<<link [[约旦办事|Jordan Dismiss Fast]]>><</link>>
 <<else>>
 	<<link [[约旦回来|Jordan Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc["Great Hawk"].state isnot "dismissed">>
+	<<link [[放逐巨鹰|GH Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[拉回巨鹰|GH Comeback Fast]]>><</link>>
 <</if>>
 <br>
 
@@ -51,3 +65,8 @@
 <br>
 
 <<link [[继续|Bedroom]]>><</link>>
+
+<<if $awareness gte 1000>>
+	<br><br><br><br>
+	<<link [[放逐命运|destiny Dismiss Fast]]>><</link>><<dangerousText>><<note "???" "green">>
+<</if>>

@@ -1,0 +1,22 @@
+:: Widgets Great Hawk [widget]
+
+<<widget "dismissGH">>
+	<<npcset "Great Hawk" state "dismissed">>
+	<<if $loveInterest.primary is "Great Hawk">>
+		<<if $loveInterest.secondary isnot "None">>
+			<<set $loveInterest.primary to $loveInterest.secondary>>
+			<<set $loveInterest.secondary to "None">>
+		<<else>>
+			<<set $loveInterest.primary to "None">>
+		<</if>>
+		<span class = "red">巨鹰不再是你的爱人了。</span>
+	<<elseif $loveInterest.secondary is "Great Hawk">>
+		<<set $loveInterest.secondary to "None">>
+		<span class = "red">巨鹰不再是你的爱人了。</span>
+	<<elseif $syndromebird is 1>>
+		<span class = "red">巨鹰不能再作为你的爱人了。</span>
+	<<else>>
+		<span class = "red">巨鹰离开了。</span>
+	<</if>>
+	<br><br>
+<</widget>>

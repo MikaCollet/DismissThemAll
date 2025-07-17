@@ -1,0 +1,5 @@
+<<if C.npc["Great Hawk"].state is "dismissed">>
+  <<link [[继续 (0:30)|Bird Tower Hatching wo]]>><<bird_pass 30>><<set $phase to 1>><</link>>
+<<else>>
+  <<link [[继续 (0:30)|Bird Tower Hatching]]>><<bird_pass 30>><<set $phase to 1>><</link>>
+<</if>>

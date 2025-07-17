@@ -1,0 +1,10 @@
+:: Bird Tower Hatching wo 2 []
+<div id="passage-content">
+<<setTowerTemp>><<effects>>
+<<childSelect $eggsHatched[0]>>
+你小心地把最后一点蛋壳从<<if $eggsHatched.length is 2>><<childrenNames $eggsHatched>>身上弹开。它们看起来<<else>><<childname>>身上弹开。<<childHe>>看起来<</if>>如此柔软而脆弱。
+<br><br>
+
+<<link [[继续|Bird Tower]]>><<endevent>><<unset $eggsHatched>><<unset $eggsMoved>><</link>>
+<br>
+</div>

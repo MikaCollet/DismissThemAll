@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -404,6 +404,168 @@
 					"passage": "Temple",
 					"findString": "<<case \"sleep\">>",
 					"replace": "<</if>>\n\t\t\t\t<<case \"sleep\">>"
+				},
+				{
+					"comment": "下面开始是艾利克斯的",
+					"passage": "Widgets Named Npcs",
+					"findString": "<<if $alex_countdown is undefined and $farm_stage gte 7>>",
+					"replaceFile": "game/DismissAlex/dismiss-Alex-atti.txt"
+				},
+				{
+					"passage": "Widgets Attitudes",
+					"findString": "<<if $farm_stage gte 7 and $alex_countdown is undefined>>",
+					"replaceFile": "game/DismissAlex/loveinterest-Alex.txt"
+				},
+				{
+					"passage": "Widgets Mirror",
+					"findString": "<<if $farm_stage gte 7 and $alex_countdown is undefined>>",
+					"replaceFile": "game/DismissAlex/loveinterest-Alex.txt"
+				},
+				{
+					"passage": "Widgets Orgasm",
+					"findString": "<<elseif [\"shower\",\"tending\",\"admin\",\"clearing\"].includes($farm_work.alex)>>",
+					"replace": "<<elseif [\"shower\",\"tending\",\"admin\",\"clearing\"].includes($farm_work.alex) or C.npc.Alex.state is \"dismissed\">>"
+				},
+				{
+					"passage": "Farm Widgets",
+					"findString": "<<set _farm_alex_actions to _farm_work_time - $farm_work.time>>",
+					"replaceFile": "game/DismissAlex/Farm-Widgets-wo.txt"
+				},
+				{
+					"passage": "Farm Widgets",
+					"findString": "<<if Time.hour lt 21 or Time.hour gt 4>>",
+					"replace": "<<if Time.hour lt 21 or Time.hour gt 4 or C.npc.Alex.state is \"dismissed\">>"
+				},
+				{
+					"passage": "Farm Tending Group Alex Fail",
+					"findString": "<<effects>>",
+					"replaceFile": "game/DismissAlex/call-Alex.txt"
+				},
+				{
+					"passage": "Farm Tending Group Alex Fail",
+					"findString": "<br><br>",
+					"replace": "<</if>>\n<br><br>"
+				},
+				{
+					"passage": "Farm Tending Lurker Alex Fail",
+					"findString": "<<effects>>",
+					"replaceFile": "game/DismissAlex/call-Alex.txt"
+				},
+				{
+					"passage": "Farm Tending Lurker Alex Fail",
+					"findString": "<br><br>\n\n<<if $rng gte 71>>",
+					"replace": "<</if>>\n<br><br>\n\n<<if $rng gte 71>>"
+				},
+				{
+					"passage": "Farm Tending Scream Fail",
+					"findString": "<<effects>>",
+					"replaceFile": "game/DismissAlex/call-Alex.txt"
+				},
+				{
+					"passage": "Farm Tending Scream Fail",
+					"findString": "</span>\n<br><br>",
+					"replace": "<</if>>\n</span>\n<br><br>"
+				},
+				{
+					"passage": "Pregnancy2",
+					"findString": "talkedAboutPregnancy(\"pc\",\"Alex\")",
+					"replace": "talkedAboutPregnancy(\"pc\",\"Alex\") and C.npc.Alex.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Pregnancy Birth Hospital Alex",
+					"findString": "<<if $alexRescued>>",
+					"replace": "<<npcset Alex state \"active\">>\n<<if $alexRescued>>"
+				},
+				{
+					"passage": "Farm Yard",
+					"findString": "\t\t<<link [[尖叫|Farm Yard Scream]]>><<handheldon>><</link>><<gdom \"Alex\">>\n\t\t<br>",
+					"replaceFile": "game/DismissAlex/yard-scream.txt"
+				},
+				{
+					"comment": "下面开始是巨鹰的",
+					"passage": "Widgets Named Npcs",
+					"findString": "\t\t\t<<if $syndromebird is 1>>",
+					"replaceFile": "game/DismissGH/dismiss-GH-atti.txt"
+				},
+				{
+					"passage": "Widgets Attitudes",
+					"findString": "<<if $syndromebird is 1>>",
+					"replaceFile": "game/DismissGH/loveinterest-GH.txt"
+				},
+				{
+					"passage": "Widgets Mirror",
+					"findString": "<<if $syndromebird is 1>>",
+					"replaceFile": "game/DismissGH/loveinterest-GH.txt"
+				},
+				{
+					"passage": "Moor Widgets",
+					"findString": "<<widget \"moor_hunt_start\">>",
+					"replaceFile": "game/DismissAll/nothing-chase-moor.txt"
+				},
+				{
+					"passage": "Moor Widgets",
+					"findString": "\t\t<<link [[继续|Moor]]>><<set $eventskip to 1>><</link>>\n\t\t<br>\n\t<</if>>",
+					"replace": "\t\t<<link [[继续|Moor]]>><<set $eventskip to 1>><</link>>\n\t\t<br>\n\t<</if>>\n<</if>>"
+				},
+				{
+					"passage": "Bird Tower",
+					"findString": "<<link [[继续|Bird Tower Passout]]>><<passout>><<endevent>><<bird_pass 30>><</link>>",
+					"replaceFile": "game/DismissGH/choose-passout.txt"
+				},
+				{
+					"passage": "Widgets Bird",
+					"findString": "\t<</if>>\n\t<<if $bird.override>>",
+					"replaceFile": "game/DismissGH/bird-activity.txt"
+				},
+				{
+					"passage": "Bird Tower",
+					"findString": "\t<<else>>\n\t\t<<your_bird_text \"cap\">>出去打猎了。",
+					"replaceFile": "game/DismissGH/choose-activity.txt"
+				},
+				{
+					"passage": "Widgets Bird",
+					"findString": "\t<<set $bird.state to \"hunting\">>",
+					"replaceFile": "game/DismissGH/choose-state.txt"
+				},
+				{
+					"passage": "Bird Tower",
+					"findString": "<<bird_schedule>>",
+					"replaceFile": "game/DismissGH/set-bird-state.txt"
+				},
+				{
+					"passage": "Castle Fly",
+					"findString": "<<if $bird.state is \"home\">>",
+					"replace": "<<if $bird.state is \"home\" and C.npc[\"Great Hawk\"].state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Bird Tower Perch",
+					"findString": "\t<<else>>\n\t\t<<your_bird_text \"cap\">>出去打猎了。",
+					"replaceFile": "game/DismissGH/choose-activity.txt"
+				},
+				{
+					"passage": "Bird Tower",
+					"findString": "<<link [[继续 (0:30)|Bird Tower Hatching]]>><<bird_pass 30>><<set $phase to 1>><</link>>",
+					"replaceFile": "game/DismissGH/choose-hatching1.txt"
+				},
+				{
+					"passage": "Bird Tower",
+					"findString": "<<link [[继续 (0:30)|Bird Tower Hatching]]>><<bird_pass 30>><</link>>",
+					"replaceFile": "game/DismissGH/choose-hatching2.txt"
+				},
+				{
+					"passage": "Bird Tower Brood",
+					"findString": "<<link [[继续 (0:30)|Bird Tower Hatching]]>><<bird_pass 30>><<set $phase to 1>><</link>>",
+					"replaceFile": "game/DismissGH/choose-hatching1.txt"
+				},
+				{
+					"passage": "Castle",
+					"findString": "<<elseif $syndromebird is 1>>",
+					"replaceFile": "<<elseif $syndromebird is 1 and C.npc[\"Great Hawk\"].state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Moor Abduction Walk",
+					"findString": "<<elseif $rng gte 61>>",
+					"replaceFile": "<<elseif $rng gte 61 and C.npc[\"Great Hawk\"].state isnot \"dismissed\">>"
 				}
 			]
 		}
@@ -429,7 +591,22 @@
 		"game/DismissJordan/peek-Jordan.txt",
 		"game/DismissJordan/Sydney-temple-corrupt.txt",
 		"game/DismissJordan/temple-Sydney-mass.txt",
-		"game/DismissJordan/dismiss-Jordan-temple.txt"
+		"game/DismissJordan/dismiss-Jordan-temple.txt",
+		"game/DismissAlex/dismiss-Alex-atti.txt",
+		"game/DismissAlex/loveinterest-Alex.txt",
+		"game/DismissAlex/Farm-Widgets-wo.txt",
+		"game/DismissAlex/yard-scream.txt",
+		"game/DismissAlex/call-Alex.txt",
+		"game/DismissGH/dismiss-GH-atti.txt",
+		"game/DismissGH/loveinterest-GH.txt",
+		"game/DismissAll/nothing-chase-moor.txt",
+		"game/DismissGH/choose-passout.txt",
+		"game/DismissGH/bird-activity.txt",
+		"game/DismissGH/choose-activity.txt",
+		"game/DismissGH/choose-state.txt",
+		"game/DismissGH/set-bird-state.txt",
+		"game/DismissGH/choose-hatching1.txt",
+		"game/DismissGH/choose-hatching2.txt"
 	],
 	"dependenceInfo": [
 		{

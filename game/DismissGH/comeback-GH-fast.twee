@@ -1,0 +1,6 @@
+:: GH Comeback Fast []
+巨鹰回来了。
+<br><br>
+<<npcset "Great Hawk" state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

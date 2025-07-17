@@ -1,0 +1,6 @@
+	<<else>>
+    <<if C.npc["Great Hawk"].state is "dismissed">>
+      <<your_bird_text "cap">>离开了。
+    <<else>>
+      <<your_bird_text "cap">>出去打猎了。
+    <</if>>

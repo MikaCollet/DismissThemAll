@@ -1,0 +1,30 @@
+:: Pregnancy Birth Wolf Cave wo 1 []
+<div id="passage-content">
+<<set $outside to 0>><<set $location to "wolf_cave">><<effects>>
+
+<<set _pregnancy to getPregnancyObject()>>
+<<if _pregnancy.totalBirthEvents gte 5>>
+	<<set _min to 15>>
+	<<set _max to 60>>
+<<elseif _pregnancy.totalBirthEvents gte 3>>
+	<<set _min to 30>>
+	<<set _max to 120>>
+<<else>>
+	<<set _min to 60>>
+	<<set _max to 180>>
+<</if>>
+
+<<set _max to Math.floor(_max * (1 + Math.floor(_pregnancy.fetus.length * 0.2)))>>
+<<set _min to Math.floor(_min * (1 + Math.floor(_pregnancy.fetus.length * 0.2)))>>
+
+<<set _timeCalc to random(_min, _max)>>
+<<set _hours to Math.floor(_timeCalc / 60)>>
+<<set _minutes to _timeCalc % 60>>
+<<set $phase to $phase is 2 ? 1 : 2>>
+你辗转反侧，试图找到一个舒服的位置，但没有成功。
+<br><br>
+你的呼吸越来越重，你的宫缩越来越难以忍受。当你继续分娩的时候，疼痛变得太过剧烈，你无法忍受。视线变得一片漆黑。
+<br><br>
+
+<<link [["继续 (0"+_hours+":"+(_minutes lt 10 ? "0": "")+_minutes+")"|Pregnancy Birth Wolf Cave wo 2]]>><<playerPrebirth>><</link>>
+</div>

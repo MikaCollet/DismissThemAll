@@ -1,0 +1,20 @@
+:: Widgets Alex [widget]
+
+<<widget "dismissAlex">>
+	<<npcset Alex state "dismissed">>
+	<<if $loveInterest.primary is "Alex">>
+		<<if $loveInterest.secondary isnot "None">>
+			<<set $loveInterest.primary to $loveInterest.secondary>>
+			<<set $loveInterest.secondary to "None">>
+		<<else>>
+			<<set $loveInterest.primary to "None">>
+		<</if>>
+		<span class = "red">艾利克斯暂时不是你的爱人了。</span>
+	<<elseif $loveInterest.secondary is "Alex">>
+		<<set $loveInterest.secondary to "None">>
+		<span class = "red">艾利克斯暂时不是你的爱人了。</span>
+	<<else>>
+		<span class = "red">艾利克斯回老家了。</span>
+	<</if>>
+	<br><br>
+<</widget>>

@@ -1,0 +1,11 @@
+<<widget "moor_hunt_start">>
+  <<if C.npc["Great Hawk"].state is "dismissed">>
+    <<if $syndromebird is 1>>
+      <<npc "Great Hawk">>
+      你感觉到你的<<beasttype>>。<span class="red">但这只是你的错觉，你的<<beasttype>>现在离开了。</span>
+    <<else>>
+      你感觉到似乎有什么恐怖的东西盯上了你。<span class="green">但这只是你的错觉，那个东西现在离开了。</span>
+    <</if>>
+    <br><br>
+    <<link [[继续|Moor]]>><<set $eventskip to 1>><</link>>
+  <<else>>
