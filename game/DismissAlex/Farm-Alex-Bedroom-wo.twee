@@ -1,0 +1,74 @@
+:: Farm Alex Bedroom wo []
+<div id="passage-content">
+<<set $wardrobe_location to "alexFarm">>
+<<effects>><<getTarget true>>
+<<wearoutfit>>
+<<farm_work_update>>
+你在艾利克斯的卧室里。这里和你的卧室很像，衣服从衣柜里滚落，桌子上乱七八糟。这扇窗户能俯瞰大路和远处的荒原。<<if C.npc.Alex.pregnancy.ultraSoundWallPic is true>>你最近一次B超检查的影像挂在墙上。<</if>>
+<br><br>
+
+<<if $stress gte $stressmax and !$possessed>>
+	<<passoutfarmroad>>
+
+<<elseif npcIsPregnant("Alex") and !talkedAboutPregnancy("Alex","pc") and npcBellySize("Alex") gte 1>>
+	<<alex_cottage_pregnancy_reveal>>
+
+<<else>>
+	<<if $farm_attack_timer is 0 and Time.hour gte 21 and !$possessed>>
+		<<npc Alex>><<person1>>
+		你听到了喊叫。艾利克斯赶了回来，在外面冲着你大喊。<span class="red">“<<nnpc_Hes Remy>>来了，”</span><<he>>说道，“是雷米，我们可以做到的。去准备一下，我去
+		<<if $farm.tower_guard>>
+			提醒一下$farm.tower_guard。”
+		<<else>>
+			看看能不能定位到他们的位置。”
+		<</if>>
+		<br><br>
+
+		<<farm_assault_intro>>
+		<br><br>
+
+		<<link [[去做准备|Farm Assault Wardrobe]]>><<endevent>><<set $phase to 3>><</link>>
+		<<exit>>
+		<br>
+	<</if>>
+	<<if $farm_stage gte 7>>
+		这里有一张桌子。你可以安排农场项目。
+		<br>
+		<<farmicon "alexdesk">><<link [[坐在桌子前|Farm Upgrades]]>><</link>>
+		<br><br>
+	<</if>>
+	<<if $earSlime.event and $earSlime.noSleep>>
+		<<if $possessed>>
+			<<ind>><span class="purple">你脑袋里的史莱姆很安静。</span>
+		<<else>>
+			<<ind>><span class="red">史莱姆想要你在上床睡觉前<<print $earSlime.event.replace("go running or swimming naked for","光着身子跑步或游泳").replace("study at the school library while naked for","光着身子在学校图书馆学习").replace(" an hour","1个小时").replace(" two hours","2个小时").replace("only wear feminine clothes for a while","暂时只穿女性服装").replace("only wear masculine clothes for a while","暂时只穿男性服装").replace("steal something","偷点东西").replace("go commando","不穿内衣").replace("masturbate to orgasm","自慰高潮").replace("fully expose yourself while working as a model in town","在镇上当模特时一丝不挂").replace("use the farm equipment to empty your breasts of milk","用农场的设备榨干最后一滴奶").replace("use the farm equipment to empty your penis of semen","用农场的设备榨干最后一滴精").replace("have sex with someone or something","与某人或某物做爱").replace("have sex with someone","与某人做爱").replace("only sleep naked from now on","从现在开始光着身子睡觉").replace("go running or swimming for","跑步或游泳").replace("ejaculate into someone's vagina","射在某人的小穴里").replace("get sperm into your","用精子灌入自己的").replace(" vagina","阴道").replace(" anus","菊花").replace("get your own sperm into your","用自己的精子灌入自己的").replace("masturbate and orgasm at least","自慰高潮至少").replace(" five times","5次").replace(" ten times","10次")>>。</span>
+		<</if>>
+		<br>
+	<<elseif $alex_bed_spurned isnot 1>>
+		<<farmicon "alexbed">><<link [[脱光并爬到艾利克斯床上|Farm Alex Bed]]>><<undressSleep "farm alex bed">><</link>>
+		<br>
+		<<if $earSlime.alwaysSleepNaked is false>>
+			<<farmicon "alexbed">><<link [[爬到艾利克斯床上|Farm Alex Bed]]>><</link>>
+		<<else>>
+			<<icon "cross.png" "infront">>
+			<<farmicon "alexbed">>
+			<<if $possessed>>
+				<span class="purple">史莱姆很安静。</span>
+			<<else>>
+				<span class="purple">史莱姆不允许你在穿着衣服的情况下睡觉。</span>
+			<</if>>
+		<</if>>
+		<br>
+	<</if>>
+	<br>
+	<<if $nextPassageCheck is "Farm Bedroom">>
+		<span class="nextLink"><<link [[你的房间 (0:01)|Farm Bedroom]]>><<pass 1>><</link>></span>
+	<<else>>
+		<<set _farmbed to ($loveInterest.primary is "Alex" or $loveInterest.secondary is "Alex") ? "alex" : "farm">>
+		<<bedicon _farmbed>><<link [[你的房间 (0:01)|Farm Bedroom]]>><<pass 1>><</link>>
+	<</if>>
+	<br>
+	<<main_hall_icon>><<link [[下楼 (0:01)|Farm Cottage wo]]>><<pass 1>><</link>>
+	<br>
+<</if>>
+</div>

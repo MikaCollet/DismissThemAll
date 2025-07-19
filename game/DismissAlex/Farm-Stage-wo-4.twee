@@ -1,0 +1,14 @@
+:: Farm Stage wo 4 []
+<div id="passage-content">
+<<effects>>
+
+“工作会多起来，”<<he>>在电话的那一头说道。“但我们将获得稳定的利润。从现在开始，你每小时可以得到<<moneyGainDisplay 30>>。”
+<br><br>
+<<He>>看起来有些愧疚。“我本该在你身边的，但即使没有我你也做得很好。谢谢你。”<<gglove>><<lldom>><<npcincr Alex love 3>><<npcincr Alex dom -3>>
+<br><br>
+
+<<set $farm.wage to 30>>
+
+<<link [[继续|Farm Work]]>><<endevent>><</link>>
+<br>
+</div>

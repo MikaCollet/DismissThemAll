@@ -18,3 +18,95 @@
 	<</if>>
 	<br><br>
 <</widget>>
+
+<<widget "farm_fight_options_wo">>
+	<<link [[砸门|Farm Fight wo]]>><<set $farm_fight.action to "bash">><</link>><<physiquedifficulty 10000 20000>>
+	<br>
+	<<if $farm_fight.toolbox is 1>>
+		<<link [[用锤子把门砸开|Farm Fight wo]]>><<set $farm_fight.action to "hammer">><</link>><<physiquedifficulty 5000 15000>>
+		<br>
+		<<link [[拧开门的螺丝|Farm Fight wo]]>><<set $farm_fight.action to "unscrew">><</link>>
+		<br>
+	<</if>>
+	<<if $farm_fight.sheet is 1>>
+		<<if $farm_fight.chainsaw is 2>>
+			<<link [[锯门|Farm Fight wo]]>><<set $farm_fight.action to "chainsaw">><</link>>
+			<br>
+		<<elseif $farm_fight.chainsaw is 1>>
+			<<if $farm_fight.cupboard is 1>>
+				<<link [[给链锯加油|Farm Fight wo]]>><<set $farm_fight.action to "refuel">><</link>>
+				<br>
+			<</if>>
+		<<elseif $farm_fight.chainsaw is undefined>>
+			<<link [[弄清楚如何打开链锯的开关|Farm Fight wo]]>><<set $farm_fight.action to "science">><</link>><<skill_difficulty `currentSkillValue("science")` "科学" 1 700>>
+			<br>
+		<</if>>
+	<</if>>
+	<<if $farm_fight.shelf is undefined or $farm_fight.toolbox is undefined or $farm_fight.cupboard is undefined or $farm_fight.rakes is undefined or $farm_fight.sheet is undefined>>
+		<<link [[搜索货棚内|Farm Fight Search]]>><<set $farm_fight.action to 0>><</link>>
+		<br>
+	<</if>>
+<</widget>>
+
+<<widget "farm_fight_destory">>
+	<<switch $farm_fight.stage>>
+		<<case 0>>
+			<<person3>><<person>>，<span class="teal"><<person1>><<person>>和<<person3>><<person>>在惊吓着牲畜。</span>
+		<<case 1>>
+			<span class="lblue"><<person2>><<person>>和<<person4>><<person>>在对着畜棚拳打脚踢。</span>
+		<<case 2>>
+			<span class="lblue">一个<<person5>><<person>>破坏着田中种植的种子。</span>
+		<<case 3>>
+			<span class="blue">牲畜在暴徒的惊吓下四处乱窜。</span>
+		<<case 4>>
+			<span class="blue"><<person1>><<person>>和<<person4>><<person>>闯进了艾利克斯的小屋。</span>
+		<<case 5>>
+			你不知道<<person1>><<person>>和<<person4>><<person>>在屋子里干什么，但<span class="purple">你知道肯定不是好事。</span>
+		<<case 6>>
+			<span class="purple"><<person5>><<person>>提着一桶汽油接近了农田。</span>
+		<<case 7>>
+			<span class="pink"><<person5>><<person>>将汽油洒在了农田上。</span>
+		<<case 8>>
+			<span class="pink"><<person5>><<person>>在手中擦燃了火柴。</span>
+		<<case 9>>
+			<span class="red">火焰升腾而起。</span>
+		<<default>>
+			<span class="red">火焰仍然在熊熊燃烧，暴徒们在火焰下手舞足蹈。</span>
+	<</switch>>
+	<<set $farm_fight.stage += 1>>
+<</widget>>
+
+<<widget "farm_cottage_options_wo">>
+	<<set _farmbed to ($loveInterest.primary is "Alex" or $loveInterest.secondary is "Alex") ? "alex" : "farm">>
+	<<bedicon _farmbed>><<link [[你的房间 (0:01)|Farm Bedroom]]>><<pass 1>><<endevent>><</link>>
+	<br>
+	<<farmicon "alexbed">><<link [[艾利克斯的房间 (0:01)|Farm Alex Bedroom wo]]>><<pass 1>><<endevent>><</link>>
+	<br>
+	<<kitchenicon "stove_farm">><<link [[厨房 (0:01)|Farm Kitchen]]>><<pass 1>><</link>>
+	<br>
+	<<if $farm.stock>>
+		<<tendingicon "basket">><<link [[检查库存|Farm Stock]]>><<endevent>><</link>>
+		<br>
+	<</if>>
+	<br>
+
+	<<if C.npc.Alex.pregnancy.nursery is true>>
+		<<if $exposed gt 0 or ["split dress", "short ballgown", "large towel", "cropped hoodie", "slut shirt,", "tie-front top", "towel top"].includes($worn.upper.name) or ["split dress skirt", "short ballgown skirt", "micro pleated skirt", "miniskirt", "towel skirt"].includes($worn.lower.name)>>
+			<span class="pink">你的穿着不合规矩，不能进入育儿室。</span>
+		<<elseif $liquidcount gte 1>>
+			<span class="pink">在进入育儿室之前，你应该把自己清洗干净。</span>
+		<<else>>
+			<<childicon "crib">><<link [[育儿室|Childrens Home]]>><<set $exitPassage to $passage>><</link>>
+		<</if>>
+		<br><br>
+
+	<</if>>
+
+	<<getouticon>><<link [[出去 (0:01)|Farm Work]]>>
+		<<pass 1>><<endevent>>
+		<<if $farm_stage gte 7 and ((hasSexStat("exhibitionism", 5) and $exposed gte 2) or (hasSexStat("exhibitionism", 4) and $exposed gte 1))>>
+			<<set $farm_naked to 1>>
+		<</if>>
+	<</link>>
+	<br>
+<</widget>>

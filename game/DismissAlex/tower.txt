@@ -1,0 +1,13 @@
+<<elseif $farm.build_finished.includes("tower 1") and C.npc.Alex.state is "dismissed">>
+  <<run $farm.build_finished.delete("tower 1")>>
+	<span class="gold">一座瞭望塔守卫着田野。</span>你站在它的底部。它的顶部若隐若现。
+	<br><br>
+	你爬上木楼梯，到达顶层。上方有个顶棚，但其他地方都是敞开的。你可以看到整个农场，其中一个方向能够看见荒原，另一个方向甚至能看见大海。
+	<br><br>
+	<span class="purple">你得雇一个人，</span>让人晚上到这里站岗，防止雷米<<nnpc_he Remy>>在半夜的时候搞破坏。你摇了摇栏杆，看起来很结实。<span class="gold">镇上有一家酒吧，酒吧就在镇子的入口，你觉得可以试试在酒馆里招人。
+	<br><br>
+	<<set $farm.tower_guard_can_hire to true>>
+
+	<<link [[继续|Farm Work]]>><<endevent>><</link>>
+	<br>
+<<elseif $farm.build_finished.includes("tower 1")>>

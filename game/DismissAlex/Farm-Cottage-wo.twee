@@ -1,0 +1,91 @@
+:: Farm Cottage wo []
+<div id="passage-content">
+<<set $location to "alex_cottage">><<set $outside to 0>><<effects>>
+<<farm_work_update>>
+<<if $slimeFarmNakedStored is true>>
+	你将衣服穿好。
+	<<storeon "farmHidingSpot">>
+	<<exposure>>
+	<<unset $slimeFarmNakedStored>>
+<</if>>
+<<if $farm_stage gte 7>><<unset $farm_naked>><</if>>
+
+你在艾利克斯的小屋里，一楼的布局很紧凑，也很舒适。有间架设了现代电器的厨房，里面有张小桌子。客厅里面摆设着沙发和扶手椅。
+<br><br>
+
+<!-- Flavor text of Alex coming down, going up, or being upstairs -->
+<<if Time.hour is 21 and ($alex_to_bed is undefined or $farm_end isnot 1)>>
+	<<if $farm_end isnot 1>>
+		<<set $farm_end to 1>>
+	<</if>>
+	<<endevent>>
+	<br><br>
+<</if>>
+
+<!-- Main options of available actions -->
+
+<<if $farm.build_finished.includes("nursery")>>
+	<<run $farm.build_finished.delete("nursery")>>
+	<<set C.npc.Alex.pregnancy.nursery to true>>
+	<<unset $cottage_nursery_prep>>
+
+	一间新的育儿室建好了。<span class="gold">你和艾利克斯的孩子现在可以住在农场了。</span>
+	<br><br>
+	<<link [[继续|Farm Cottage wo]]>><</link>>
+
+<<elseif isPregnancyEnding()>>
+	<<pcFarmBirth>>
+
+<<elseif npcPregnancyEnding("Alex")>>
+	<<npc "Alex">>
+	“擦，操……”听到艾利克斯的喊声后，你赶忙冲了过去。
+	<br>
+
+	“没事吧？”你靠近了<<him>>，发现有液体正顺着<<his>>的大腿流淌而下。
+	<br>
+
+	“应该是快生了，”<<he>>说。
+	<br><br>
+
+	你感到心脏怦怦直跳，比往常更快。“我要带你去医院吗？”你问。<<gstress>><<stress 6>>
+	<br><br>
+
+	“不，没事的。我不喜欢那种地方。你可以叫本地医生来吗？”<<He>>说着从口袋里拿出手机，递给你。
+	<br><br>
+
+	<<link [[继续|Farm Alex Birth]]>><</link>>
+
+<<elseif npcIsPregnant("Alex") and !talkedAboutPregnancy("Alex","pc") and npcBellySize("Alex") gte 1>>
+	<<alex_cottage_pregnancy_reveal>>
+
+<<elseif ($farm_countdown lte 0 or $farm_countdown is undefined) and ($renttime lte -2 or ($renttime lte 0 and Time.hour gte 4 and Time.hour lte 21))>>
+	<<unset $farm_countdown>><<unset $baileyReunionScene>>
+	<span class="red">你听到有人敲门。</span>
+	<br><br>
+
+  <<link [[去应门|Farm Cottage wo Bailey]]>><<set $phase to 2>><</link>>
+  <br>
+
+<<elseif $stress gte $stressmax>>
+	<<passoutfarmroad>>
+
+<<elseif $farm_attack_timer is 0 and Time.hour gte 21>>
+	<<npc Alex>><<person1>>
+	今天是雷米入侵的日子，艾利克斯及时赶了回来。<span class="red">“<<nnpc_Hes Remy>>来了，”</span><<he>>说，“我们能做到的，去做好准备，我去
+	<<if $farm.tower_guard>>
+		提醒一下$farm.tower_guard。”
+	<<else>>
+		看看能不能定位到他们的位置。”
+	<</if>>
+	<br><br>
+
+	<<farm_assault_intro>>
+	<br><br>
+
+	<<link [[去做准备|Farm Assault Wardrobe]]>><<endevent>><<set $phase to 3>><</link>>
+	<br>
+  
+<<else>>
+	<<farm_cottage_options_wo>>
+<</if>>
+</div>

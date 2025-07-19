@@ -1,3 +1,3 @@
 <<if C.npc.Alex.state is "dismissed">>
-  回老家了。
+  <span class = "red">回老家了。</span>
 <<elseif $alex_countdown is undefined and $farm_stage gte 7>>

@@ -1,0 +1,15 @@
+:: Farm Stage wo 7 Break []
+<div id="passage-content">
+<<effects>>
+
+你用力撞在木门上。它动了一下，但依旧很坚固。
+<br><br>
+
+一个<<person2>><<person>>和一个<<person3>><<person>>正在到处寻找艾利克斯，<span class="green">不过你知道艾利克斯不在这里。</span>
+
+雷米向着<<nnpc_his "Remy">>的手下开口说了些什么，他们开始破坏起农场设施。
+<br><br>
+
+<<link [[继续|Farm Stage wo 7 2]]>><</link>>
+<br>
+</div>

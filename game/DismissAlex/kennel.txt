@@ -1,0 +1,8 @@
+<<elseif $farm.build_finished.includes("kennel 1") and C.npc.Alex.state is "dismissed">>
+  <<run $farm.build_finished.delete("kennel 1")>>
+	你听到了猎狗的咆哮声。你跟着声音找到了狗窝。<span class="gold">狗窝外面围了一个院子，作为<<farm_text_many dog>>的安全训练区。</span>你看着一条狗把人形假人的头扯了下来。
+	<br><br>
+
+	<<link [[继续|Farm Work]]>><<endevent>><</link>>
+	<br>
+<<elseif $farm.build_finished.includes("kennel 1")>>

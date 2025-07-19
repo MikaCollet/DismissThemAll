@@ -46,25 +46,25 @@
 		<span class="purple">庄稼被杂草扼杀了。</span>
 		<br>
 
-		<<gardenicon "strangled">><<link [[清除杂草 (3:00)|Clearing Weeding]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
+		<<gardenicon "strangled">><<link [[清除杂草 (3:00)|Clearing Weeding wo]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
 		<br><br>
 	<<elseif $edengarden is 1>>
 		<span class="blue">庄稼被杂草缠住了。</span>
 		<br>
 
-		<<gardenicon "tangled">><<link [[清除杂草 (3:00)|Clearing Weeding]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
+		<<gardenicon "tangled">><<link [[清除杂草 (3:00)|Clearing Weeding wo]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
 		<br><br>
 	<<elseif $edengarden is 2>>
 		<span class="lblue">种植圃里杂草和蔬菜一样多。</span>
 		<br>
 
-		<<gardenicon "tangled">><<link [[清除杂草 (3:00)|Clearing Weeding]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
+		<<gardenicon "tangled">><<link [[清除杂草 (3:00)|Clearing Weeding wo]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
 		<br><br>
 	<<elseif $edengarden is 3>>
 		<span class="teal">庄稼田里几乎没有杂草，但还能变得更好一些。</span>
 		<br>
 
-		<<gardenicon "weeds">><<link [[清除杂草 (3:00)|Clearing Weeding]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
+		<<gardenicon "weeds">><<link [[清除杂草 (3:00)|Clearing Weeding wo]]>><<tending 1>><<tiredness 12>><</link>><<gtiredness>><<gtending>>
 		<br><br>
 	<<elseif $edengarden is 4>>
 		<span class="green">庄稼没有杂草。</span>

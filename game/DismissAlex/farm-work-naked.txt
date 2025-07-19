@@ -1,0 +1,6 @@
+<<if C.npc.Alex.state is "dismissed">>
+  <<flaunting>>你从躲藏的地方走出来，准备干活。艾利克斯不在，看不到你这样。
+  <br><br>
+	<<link [[继续|Farm Work]]>><</link>>
+	<br>
+<<elseif $farm_naked_alex is 1 and hasSexStat("exhibitionism", 5)>>

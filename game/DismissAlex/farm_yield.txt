@@ -1,0 +1,11 @@
+  <<elseif $farm_yield_alex gte 1 and not (Time.hour lte 5 or Time.hour gte 22 or (Time.hour is 21 and $farm_end is 1)) and $farm_work.alex is "dismissed">>
+    农场的产量比预期的要好。
+    <br><br>
+    你打电话通知艾利克斯，<<nnpc_He "Alex">>因为<<nnpc_He "Alex">>最近不在农场而要执意多给你一些。
+    <span class="gold">你赚了<<moneyGain `$farm_yield_alex * 36`>>。</span>
+    <br><br>
+
+    <<link [[继续|Farm Work]]>><<endevent>><</link>>
+    
+    <<unset $farm_yield_alex>>
+  <<elseif $farm_yield_alex gte 1 and not (Time.hour lte 5 or Time.hour gte 22 or (Time.hour is 21 and $farm_end is 1)) and $farm_work.alex isnot "shower">>

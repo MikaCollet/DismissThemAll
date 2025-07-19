@@ -1,0 +1,11 @@
+<<elseif $farm.build_finished.includes("barn 1") and C.npc.Alex.state is "dismissed">>
+  <<run $farm.build_finished.delete("barn 1")>>
+	你进入牛棚。你看见中心的一个大型仪器。<span class="gold">是新的挤奶机，</span>一盏红灯，像一只眼睛一样，眨巴着闪烁起来。
+	<br><br>
+
+	<span class="green">你现在能够获得更多的牛奶了。</span>
+	<br><br>
+
+	<<link [[继续|Farm Work]]>><<endevent>><</link>>
+	<br>
+<<elseif $farm.build_finished.includes("barn 1")>>

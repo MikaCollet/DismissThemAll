@@ -1,0 +1,16 @@
+:: Farm Stage wo 11 []
+<div id="passage-content">
+<<effects>>
+
+你拿起种子端详。一股甜甜的香味飘了起来。<<drugs 30>><<garousal>>
+<br><br>
+你把这些种子收了起来。
+<br><br>
+
+<<set $plants_known.push("strange_flower")>>
+<span class="gold">你现在可以种植<<icon "tending/strange_flower.png">>诡异的花了。</span>
+<br><br>
+
+<<link [[继续|Farm Work]]>><<endevent>><</link>>
+<br>
+</div>

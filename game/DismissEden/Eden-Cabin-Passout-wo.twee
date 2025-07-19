@@ -2,9 +2,9 @@
 <div id="passage-content">
 <<set $outside to 0>><<set $location to "cabin">><<effects>>
 <<set $stress -= 2000>>
-<<npc Sydney>><<person1>>
+<<generate1>><<person1>>
 
-你在小屋的床上醒来。你扭头看向一边，发现悉尼正坐在你旁边。<<He>>也注意到了你的动作。
+你在小屋的床上醒来。你扭头看向一边，发现一个<<person>>正坐在你旁边。<<He>>也注意到了你的动作。
 <br><br>
 
 "你终于醒了。我很担心，"<<he>>说道。<<His>>的声音听起来如释重负。

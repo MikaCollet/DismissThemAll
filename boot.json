@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "1.3.1",
+	"version": "1.4.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -482,6 +482,181 @@
 					"replaceFile": "game/DismissAlex/yard-scream.txt"
 				},
 				{
+					"passage": "Farm Work",
+					"findString": "<<if $exhibitionism lt 75 and $exposed gte 2 and $farm_naked is 1>>",
+					"replace": "<<if $exhibitionism lt 75 and $exposed gte 2 and $farm_naked is 1 and C.npc.Alex.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "<<elseif $farm_attack_timer is 0 and Time.hour gte 21>>",
+					"replaceFile": "game/DismissAlex/farm-attack.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "($worn.lower.name.includes(\"towel\") or $worn.upper.name.includes(\"towel\"))",
+					"replace": "($worn.lower.name.includes(\"towel\") or $worn.upper.name.includes(\"towel\")) and C.npc.Alex.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "$farm_work.alex isnot undefined and $farm_work.alex isnot \"shower\"",
+					"replace": "$farm_work.alex isnot undefined and $farm_work.alex isnot \"shower\" and C.npc.Alex.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "elseif !npcIsPregnant(\"Alex\") and Time.hour gte 6",
+					"replace": "elseif !npcIsPregnant(\"Alex\") and C.npc.Alex.state isnot \"dismissed\" and Time.hour gte 6"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmVisitor>>",
+					"replaceFile": "game/DismissAlex/farm-visitor.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage4>>",
+					"replaceFile": "game/DismissAlex/farm-stage4.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage5>>",
+					"replaceFile": "game/DismissAlex/farm-stage5.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage6>>",
+					"replaceFile": "game/DismissAlex/farm-stage6.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage7>>",
+					"replaceFile": "game/DismissAlex/farm-stage7.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage8>>",
+					"replaceFile": "game/DismissAlex/farm-stage8.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage9>>",
+					"replaceFile": "game/DismissAlex/farm-stage9.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage10>>",
+					"replaceFile": "game/DismissAlex/farm-stage10.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage11>>",
+					"replaceFile": "game/DismissAlex/farm-stage11.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<farmStage12>>",
+					"replaceFile": "game/DismissAlex/farm-stage12.txt"
+				},
+				{
+					"passage": "Farm Work Naked",
+					"findString": "<<if $farm_naked_alex is 1 and hasSexStat(\"exhibitionism\", 5)>>",
+					"replaceFile": "game/DismissAlex/farm-work-naked.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "elseif $farm_stage gte 7 and C.npc.Alex.love gte 50",
+					"replace": "elseif $farm_stage gte 7 and C.npc.Alex.love gte 50 and C.npc.Alex.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "elseif $farm_stage gte 7 and C.npc.Alex.love gte 50",
+					"replace": "elseif $farm_stage gte 7 and C.npc.Alex.love gte 50 and C.npc.Alex.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "<<elseif Time.hour is 21 and $farm_end is undefined and $farm_stage lt 7>>",
+					"replaceFile": "game/DismissAlex/close-wage.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "<<elseif $farm.build_finished.includes(\"tower 1\")>>",
+					"replaceFile": "game/DismissAlex/tower.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "<<elseif $farm.build_finished.includes(\"woodland 3\")>>",
+					"replaceFile": "game/DismissAlex/woodland.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "<<elseif $farm.build_finished.includes(\"kennel 1\")>>",
+					"replaceFile": "game/DismissAlex/kennel.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "<<elseif $farm.build_finished.includes(\"barn 1\")>>",
+					"replaceFile": "game/DismissAlex/barn-1.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "<<elseif $farm.build_finished.includes(\"barn 2\")>>",
+					"replaceFile": "game/DismissAlex/barn-2.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "<<elseif $farm.build_finished.includes(\"parasites 1\")>>",
+					"replaceFile": "game/DismissAlex/parasites.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "(Time.hour gte 8 and Time.hour lte 15)",
+					"replace": "(Time.hour gte 8 and Time.hour lte 15) and C.npc.Alex.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t<<elseif $farm_yield_alex gte 1 and not (Time.hour lte 5 or Time.hour gte 22 or (Time.hour is 21 and $farm_end is 1)) and $farm_work.alex isnot \"shower\">>",
+					"replaceFile": "game/DismissAlex/farm_yield.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "艾利克斯冲了过来，",
+					"replace": "今天是雷米入侵的日子，艾利克斯及时赶了回来。"
+				},
+				{
+					"passage": "Farm Widgets",
+					"findString": "<<if $farm_stage isnot 12 and $farm_stage gte 7 and _actions is 0 and $farm_work.alex isnot \"clearing\" and ($exposed lt 2 or hasSexStat(\"exhibitionism\", 5))>>",
+					"replace": "<<if C.npc.Alex.state is \"dismissed\" or ($farm_stage isnot 12 and $farm_stage gte 7 and _actions is 0 and $farm_work.alex isnot \"clearing\" and ($exposed lt 2 or hasSexStat(\"exhibitionism\", 5)))>>"
+				},
+				{
+					"passage": "Farm Fight Search Toolbox",
+					"findString": "<<link [[继续|Farm Fight]]>><</link>>",
+					"replaceFile": "game/DismissAlex/search.txt"
+				},
+				{
+					"passage": "Farm Fight Search Cupboard",
+					"findString": "<<link [[继续|Farm Fight]]>><</link>>",
+					"replaceFile": "game/DismissAlex/search.txt"
+				},
+				{
+					"passage": "Farm Fight Search Rakes",
+					"findString": "<<link [[继续|Farm Fight]]>><</link>>",
+					"replaceFile": "game/DismissAlex/search.txt"
+				},
+				{
+					"passage": "Farm Fight Search Sheet",
+					"findString": "<<link [[继续|Farm Fight]]>><</link>>",
+					"replaceFile": "game/DismissAlex/search.txt"
+				},
+				{
+					"passage": "Farm Fight Search Shelf",
+					"findString": "<<link [[继续|Farm Fight]]>><</link>>",
+					"replaceFile": "game/DismissAlex/search.txt"
+				},
+				{
+					"passage": "Farm Work",
+					"findString": "\t\t\t<<farmicon \"cottage\">><<link [[小屋 (0:01)|Farm Cottage]]>><<pass 1>><</link>>",
+					"replaceFile": "game/DismissAlex/cottage.txt"
+				},
+				{
 					"comment": "下面开始是巨鹰的",
 					"passage": "Widgets Named Npcs",
 					"findString": "\t\t\t<<if $syndromebird is 1>>",
@@ -606,7 +781,29 @@
 		"game/DismissGH/choose-state.txt",
 		"game/DismissGH/set-bird-state.txt",
 		"game/DismissGH/choose-hatching1.txt",
-		"game/DismissGH/choose-hatching2.txt"
+		"game/DismissGH/choose-hatching2.txt",
+		"game/DismissAlex/farm-visitor.txt",
+		"game/DismissAlex/farm-attack.txt",
+		"game/DismissAlex/farm-stage4.txt",
+		"game/DismissAlex/farm-stage5.txt",
+		"game/DismissAlex/farm-stage6.txt",
+		"game/DismissAlex/farm-stage7.txt",
+		"game/DismissAlex/farm-stage8.txt",
+		"game/DismissAlex/farm-stage9.txt",
+		"game/DismissAlex/farm-stage10.txt",
+		"game/DismissAlex/farm-stage11.txt",
+		"game/DismissAlex/farm-stage12.txt",
+		"game/DismissAlex/farm-work-naked.txt",
+		"game/DismissAlex/close-wage.txt",
+		"game/DismissAlex/tower.txt",
+		"game/DismissAlex/woodland.txt",
+		"game/DismissAlex/kennel.txt",
+		"game/DismissAlex/barn-1.txt",
+		"game/DismissAlex/barn-2.txt",
+		"game/DismissAlex/parasites.txt",
+		"game/DismissAlex/farm_yield.txt",
+		"game/DismissAlex/search.txt",
+		"game/DismissAlex/cottage.txt"
 	],
 	"dependenceInfo": [
 		{

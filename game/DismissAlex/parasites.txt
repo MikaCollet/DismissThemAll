@@ -1,0 +1,8 @@
+<<elseif $farm.build_finished.includes("parasites 1") and C.npc.Alex.state is "dismissed">>
+	<<run $farm.build_finished.delete("parasites 1")>>
+	<span class="gold">你接近新建的寄生物畜棚。</span>
+	里面有足够的空间能容纳你的寄生物，还有一些照料它们的基本设施。
+	<br><br>
+	<<link [[继续|Farm Work]]>><<endevent>><</link>>
+	<br>
+<<elseif $farm.build_finished.includes("parasites 1")>>

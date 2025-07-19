@@ -1,0 +1,13 @@
+:: Farm Stage wo 7 2 []
+<div id="passage-content">
+<<effects>>
+
+雷米骑上<<nnpc_his Remy>>的马离开了，<<nnpc_his Remy>>的手下继续在农场大肆破坏。
+<br><br>
+
+<i>你需要打开门去找救援。</i>
+<br><br>
+
+<<farm_fight_init>>
+<<farm_fight_options_wo>>
+</div>

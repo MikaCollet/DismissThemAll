@@ -1,0 +1,11 @@
+:: Farm Visitor wo []
+<div id="passage-content">
+<<effects>>
+
+<<person2>>
+<<person>>离开了，你送了一口气。看来<<He>>就是艾利克斯说过的糟糕的家伙。
+<br><br>
+
+<<link [[继续|Farm Work]]>><<endevent>><</link>>
+<br>
+</div>

@@ -1,0 +1,29 @@
+:: Farm Stage wo 5 []
+<div id="passage-content">
+<<set $location to "alex_cottage">><<set _drink to $phase is 0 ? "茶" : "咖啡">><<effects>>
+
+你进去艾利克斯的小屋，开始制作饮料。
+<br><br>
+
+"谢谢你的款待，"雷米啜了一口<<his>>的_drink后说道。
+<br><br>
+"如你所见。我是来提供帮助的。艾利克斯今天不在，真是可惜。"
+<br><br>
+雷米又加了一勺糖说道，<<his>>的语气变得严厉起来，"就凭你们两个是不足以维持一个像样的农场的，更别提安全问题了。我大可以提供更多的帮助。"
+<br><br>
+"而且，"雷米直视着你，
+<<if $ridingschoolintro is undefined>>
+	"你应该去骑术学校看看，我应该能教你些东西。"<<he>>说道。
+<<elseif $livestock_intro isnot undefined and $cow gte 6>>
+	"你应该更明智地选择雇主，"<<he>>说道，"我可以保护你。"<<his>>的话将你从现实中带离。你眼前浮现出宁静的田野，还有自己被虐待的记忆。<<gstress>><<stress 6>>
+<<else>>
+	"你应该更明智地选择雇主，"<<he>>说道，"这边这个没有什么未来的。"
+<</if>>
+<br><br>
+雷米把空杯子放在盘子上。"谢谢你，"<<he>>起身说，"你可以花点时间重新考虑一下。我希望你能这么做，为了你自己。"
+<br><br>
+
+<<link [[继续|Farm Stage wo 5 2]]>><</link>>
+
+<br>
+</div>

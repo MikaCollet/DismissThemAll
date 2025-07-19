@@ -1,0 +1,13 @@
+:: Farm Fight End wo 2 []
+<div id="passage-content">
+<<effects>>
+
+"这<<girl>>是我的，"贝利继续说道，"这事就这么结了。"打手们没做任何抗议。他们沿着农场的小路离开了。
+<br><br>
+
+<<link [[面对贝利|Farm Fight End Confront wo]]>><</link>>
+<br>
+<<link [[威胁贝利|Farm Fight End Threaten wo]]>><</link>>
+<br>
+
+</div>

@@ -1,0 +1,14 @@
+<<elseif $farm_attack_timer is 0 and Time.hour gte 21 and C.npc.Alex.state is "dismissed">>
+	空气中弥漫着紧张的气息，<span class="red">雷米来了。尽管艾利克斯不再身边，你仍然相信自己可以做到。
+  <br>
+	<<if $farm.tower_guard>>
+		$farm.tower_guard也已经做好准备。
+	<</if>>
+	<br><br>
+
+	<<farm_assault_intro>>
+	<br><br>
+
+	<<link [[去做准备|Farm Assault Wardrobe]]>><<endevent>><<set $phase to 2>><</link>>
+	<br>
+<<elseif $farm_attack_timer is 0 and Time.hour gte 21>>

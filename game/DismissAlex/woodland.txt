@@ -1,0 +1,8 @@
+<<elseif $farm.build_finished.includes("woodland 3") and C.npc.Alex.state is "dismissed">> 
+  <<run $farm.build_finished.delete("woodland 3")>>
+	<<location "forest">>
+	<span class="gold">你探索了农场的新林地，现在它已经大到足以迷路了。</span>
+	<br><br>
+
+	<<link [[继续|Farm Work]]>><</link>>
+<<elseif $farm.build_finished.includes("woodland 3")>>

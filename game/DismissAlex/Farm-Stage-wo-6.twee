@@ -1,0 +1,57 @@
+:: Farm Stage wo 6 []
+<div id="passage-content">
+<<set $location to "alex_cottage">><<effects>>
+
+你听着艾利克斯在电话那头与<<his>>的<<if $pronoun is "m">>爸爸<<else>>妈妈<</if>>说话。<<He>>试图保持冷静，但无法抑制住兴奋的情绪。
+<br><br>
+
+"我和我的<<if $pronoun is "m">>爸爸<<else>>妈妈<</if>>住在附近，"<<he>>说着，不再试图掩饰<<his>>的兴奋。"我们马上过来。"
+<br><br>
+
+<<pass 5>>
+几分钟后，你看到艾利克斯先到了农场。
+<br><br>
+
+"我让<<if $pronoun is "m">>爸爸<<else>>妈妈<</if>>过一会再来，我先来准备一点东西。"艾利克斯说着。
+<br><br>
+
+<<if $exposed gte 1>>
+	<<He>>看了看你的<<lewdness>>，脸红了起来，就好像刚刚才想起来。"你、你需要穿点什么。"<<He>>赶紧爬上楼梯。
+
+	不一会儿，一叠东西从楼梯口掉了下来。
+
+	<<if $worn.upper.type.includes("naked") and $worn.lower.type.includes("naked")>>
+		是一件格子衬衫。<<upperwear 33>>
+		<<if C.npc.Alex.dom gte $npcdomhigh and C.npc.Alex.lust gte 10>>
+			接着是另一小叠东西，一条牛仔短裤。<<lowerwear 31>>
+		<<elseif playerBellySize() gte 8>>
+			又一包东西在你面前砰然落地。是一条运动裤。<<lowerwear 67>>
+		<<else>>
+			另一叠东西掉在你眼前，是一条牛仔裤。<<lowerwear 22>>
+		<</if>>
+	<<elseif $worn.upper.type.includes("naked")>>
+		是一件格子衬衫。<<upperwear 33>>
+	<<else>>
+		<<if C.npc.Alex.dom gte $npcdomhigh and C.npc.Alex.lust gte 10>>
+			是一条牛仔短裤。<<lowerwear 31>>
+		<<elseif playerBellySize() gte 8>>
+			是一条运动裤。<<lowerwear 67>>
+		<<else>>
+			是一条牛仔裤。<<lowerwear 22>>
+		<</if>>
+	<</if>>
+	<<if $upperwetstage gte 1 or $lowerwetstage gte 2>>
+		接着掉下来的是一条卷起来的毛巾。"擦干身体用的，"艾利克斯喊道。
+		<<dry>>
+	<</if>>
+	<br><br>
+
+	你在厨房里穿好了衣服。艾利克斯爬下了楼梯。
+<</if>>
+
+<<He>>进入小屋，开始烧水。
+<br><br>
+
+<<link [[继续|Farm Stage 6 3]]>><</link>>
+<br>
+</div>

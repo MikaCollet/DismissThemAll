@@ -1,0 +1,29 @@
+:: Farm Stage wo 10 Ask []
+<div id="passage-content">
+<<effects>>
+
+<<if $speech_attitude is "meek">>
+	"这太酷了，不过这是什么东西？"你说道。
+<<elseif $speech_attitude is "bratty">>
+	"不错，不过这是什么东西？"你说。
+<<else>>
+	"这很酷，不过这是什么东西？"你说道。
+<</if>>
+<br><br>
+
+<<person>>开心地笑了。"很高兴你这么想，"<<he>>说道。"这是专门用来捕捉荒原上这些独特的小生物的。它们被抓起来后活不了很长时间，<span class="blue">而且你一次只能携带一只。</span>"
+<br><br>
+"如果你想要的话，我也可以送给你一个。"<<He>>从肩上取下第二个网，递给了你，它很轻。
+<br><br>
+
+<span class="gold">你获得了"捕捉"技能，在遭遇潜伏者时可用。</span> <i>必须在设置中启用兽交和潜伏者开关才能出现与潜伏者的遭遇。</i>
+<<if $prof.net is undefined>>
+	<<set $prof.net to 0>>
+<</if>>
+<br>
+<span class="pink">你们的繁荣并没有被忽视。雷米会在<<nnpc_his Remy>>攻击期间投入更多资源。</span>
+<br><br>
+
+<<link [[继续|Farm Work]]>><<endevent>><</link>>
+<br>
+</div>

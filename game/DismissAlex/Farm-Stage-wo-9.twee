@@ -1,0 +1,43 @@
+:: Farm Stage wo 9 Catch []
+<div id="passage-content">
+<<effects>>
+
+<<if $danceSuccess>>
+	你扑向那个生物，<span class="green">设法用前臂将其按住，把它提了起来。</span>
+	<br><br>
+	你觉得你得打个电话问问艾利克斯。
+	<br><br>
+
+	"它们生活在荒原上，"艾利克斯说道，"光线会刺激到它们。我应该告诉你更多的。我马上赶过来。"
+	<br><br>
+	<<link [[继续|Farm Stage 9 Caught]]>><</link>>
+	<br>
+
+<<else>>
+	你扑向那个生物，<span class="red">但它突然朝一边蹿开，</span>你摔倒在<<if Weather.isSnow>>雪地里<<elseif Weather.precipitation is "rain">>泥泞里<<else>>地上<</if>>。它消失在了树篱下。<<gpain>><<pain 4>>
+	<br><br>
+
+	你觉得你得打个电话问问艾利克斯。
+	<br><br>
+
+	"它们生活在荒原，"艾利克斯说道，"有些东西我应该给你看看。我马上赶过来。"
+	<br><br>
+	<<link [[继续|Farm Stage 9 Empty]]>><</link>>
+	<br>
+<</if>>
+</div>
+
+:: Farm Stage wo 9 Leave []
+<div id="passage-content">
+<<effects>>
+
+那个生物消失在了树篱下。
+<br><br>
+
+你觉得你得打个电话问问艾利克斯。
+<br><br>
+"它们生活在荒原，"艾利克斯说道，"有些东西我应该给你看看。我马上赶过来。"
+<br><br>
+<<link [[继续|Farm Stage 9 Empty]]>><</link>>
+<br>
+</div>

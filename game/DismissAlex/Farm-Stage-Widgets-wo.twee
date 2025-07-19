@@ -1,0 +1,176 @@
+:: Farm Stage Widgets wo [widget]
+<<widget "farmVisitorwo">>
+	<<npc Alex>><<generate2>><<person2>>
+	"瞧瞧这是谁呀？"一个声音说道，你转身看去，一个<<person>>正倚靠在农田边缘的栅栏上，"艾利克斯为<<person1>><<himself>>找了一个助手，而且还是个可爱的小家伙。你为什么不把屁股挪过来让我好好瞧瞧呢？"
+	<br><br>
+
+	<<if $speech_attitude is "meek">>
+		"请，请离开！"你说道。"这里不欢迎你。"
+	<<elseif $speech_attitude is "bratty">>
+		"如果你不想被我踹飞，那就滚蛋。"你说道。
+	<<else>>
+		"心怀不轨的家伙，"你说道。"离农场远一点。"
+	<</if>>
+	<br><br>
+
+	<<person>>举起双手，但脸上没有露出恐惧的神情。"我可没闯进来。你瞧，我只是想知道艾利克斯是否重新考虑了我们的提议。"
+	<br><br>
+	"艾利克斯觉得有这个小镇<<girl>>就足够了吗？真有意思。"<<He>>转身沿着小路走来。
+	<br><br>
+
+	<<link [[继续|Farm Visitor wo]]>><<set $farm_stage to 3>><</link>>
+	<br>
+<</widget>>
+
+<<widget "farmStagewo4">>
+	<<npc Alex>><<person1>>
+	你做到了。你清理了第二块田地。
+	<br><br>
+
+	你通知了艾利克斯。
+
+	<<link [[继续|Farm Stage wo 4]]>><<set $phase to 1>><<set $farm_stage to 4>><<set $farm.clearing to 100>><</link>>
+<</widget>>
+
+<<widget "farmStagewo5">>
+	<<npc Remy 1>><<npc Alex 2>><<person1>>
+	又有一块田地可以种植了。你听到了小路上接近的马蹄声。
+	<br><br>
+	<<if $remySeen.includes("livestock")>>
+		一匹<<farm_text horse>>骑进了农场。在它的背上坐着雷米，<<if $pronoun is "m">><<his>>淡棕色的头发在微风中飘舞<<else>><<his>>淡棕色的头发被扎成一个整齐的发髻<</if>>。回忆起在<<his>>的农场受到的待遇，你十分紧张。然而，这一次<<his>>的眼中没有盛气凌人的恶意，<<his>>甚至没有认出你。
+		<br><br>
+		<<He>>下马，脱下手套。<<his>>朝你微笑。<<His>>的绿眼睛闪烁着光芒。
+		<br><br>
+		"艾利克斯不在吗？"<<he>>说道，"那就麻烦你替我转告<<nnpc_He "Alex">>，我来是为了商谈生意的。"
+		<br><br>
+	<<elseif $remySeen.includes("riding_school")>>
+		一匹<<farm_text horse>>被骑进了农场。雷米坐在它的背上，<<His>>是附近骑术学校的老板。<<if $pronoun is "m">><<His>>淡棕色的头发在微风中飘动<<else>><<His>>淡棕色的头发被扎成一个整齐的发髻<</if>>。
+		<br><br>
+		<<He>>下马，脱下手套。<<his>>朝你微笑。<<His>>的绿眼睛闪烁着光芒。
+		<br><br>
+		"艾利克斯不在吗？"<<he>>说道，"那就麻烦你替我转告<<nnpc_He "Alex">>，我来是为了商谈生意的。"
+		<br><br>
+	<<else>>
+		一匹<<farm_text horse>>踏进了农场。一个<<if $pronoun is "m">>长着淡棕色短发，发丝随着风飘扬的男人<<else>>系着整齐发髻的淡棕色头发女人<</if>>坐在<<farm_his horse>>背上。
+		<br><br>
+		<<personsimple>>下马，脱掉手套。<<He>>对你微笑。<<His>>的绿色眼睛闪闪发光。
+		<br><br>
+		"我想我们之前没见过，"<<he>>说着看向你。"我是雷米。经营着附近的骑术学校和自己的农场。看样子艾利克斯不在啊，那就麻烦你替我转告<<nnpc_He "Alex">>，我是来商谈生意的。"
+		<br><br>
+	<</if>>
+
+	你想起艾利克斯的礼仪。"茶还是咖啡？"
+	<br><br>
+
+	<<link [[茶|Farm Stage wo 5]]>><<wearProp "tea">><<set $phase to 0>><<stress -6>><<set $farm_stage to 5>><<set $farm.clearing to 100>><</link>><<lstress>>
+	<br>
+	<<link [[咖啡|Farm Stage wo 5]]>><<wearProp "coffee">><<set $phase to 1>><<tiredness -6>><<set $farm_stage to 5>><<set $farm.clearing to 100>><</link>><<ltiredness>>
+	<br>
+<</widget>>
+
+<<widget "farmStagewo6">>
+	<<npc Alex>><<person1>>
+	完成了。最后一块田地。你终于重建了农场。
+	<br><br>
+
+	你通知了艾利克斯。<<He>>看起来相当激动，急着通知自己的<<if $pronoun is "m">>爸爸<<else>>妈妈<</if>>。
+
+	<<link [[继续|Farm Stage wo 6]]>><<set $farm_stage to 6>><<set $farm.clearing to 100>><</link>>
+	<br>
+<</widget>>
+
+<<widget "farmStagewo7">>
+	<<npc Alex>><<person1>>
+	你好像有闻到了什么味道。空气中的气味很微弱，但能闻出来有东西在燃烧。
+	<br><br>
+	最好确认下安全。你决定去检查一下棚子。
+	<br><br>
+
+	<<link [[继续|Farm Stage wo 7]]>><<set $farm_countdown to 7>><<set $farm_stage to 7>><<set $alex_countdown to 3>><<set $wardrobes.alexFarm.unlocked to true>><</link>>
+<</widget>>
+
+<<widget "farmStagewo8">>
+	你观察第五片农田。不久前，这里还是一片混乱。
+	<br><br>
+	<<generate1>><<person1>>
+	你听到一个不熟悉的<<personsimple>>的声音。
+	<br><br>
+	"<<girl>>，你们这个农场前不久遭到过袭击吧？我来就是为了这个。"
+	<br><br>
+	"我可以为你们的农场提供设施支持，"<<person>>点头，"这些设施确实很贵，但想要保障安全，你就得一分钱一分货。这座瞭望塔可以让农场在遭受袭击时精确定位到敌人的位置。"
+	<br><br>
+	你伸出手，接过<<person>>递过来的详细信息。
+	<br><br>
+
+	<<if $speech_attitude is "meek">>
+		"我，我不能一个人做决定。"
+	<<elseif $speech_attitude is "bratty">>
+		"我们会考虑这件事的。"
+	<<else>>
+		"我要和艾利克斯商量一下。"
+	<</if>>
+	你说道。
+
+	那个<<person>>在离开的时候向你点了点头。
+	<br><br>
+
+	<<link [[继续|Farm Stage wo 8]]>><<set $farm.clearing to 100>><<set $farm_stage to 8>><<add_plot farm earth 3 large>><</link>>
+	<br>
+<</widget>>
+
+<<widget "farmStagewo9">>
+	你观察第六片农田。不久前，这里还是一片混乱。
+	<br><br>
+	<<npc Alex>><<person1>>
+	你听到从艾利克斯的小屋传来一声巨响。门突然打开，一个奇怪的多肢生物跳了出来，它被烟雾包围着。
+	<br><br>
+
+	<<link [[抓住它|Farm Stage wo 9 Catch]]>><<set $farm_stage to 9>><<set $farm.clearing to 100>><<add_plot farm earth 3 large>><</link>><<dancedifficulty 1 1000>>
+	<br>
+	<<link [[不管它|Farm Stage wo 9 Leave]]>><<set $farm_stage to 9>><<set $farm.clearing to 100>><<add_plot farm earth 3 large>><</link>>
+	<br>
+<</widget>>
+
+<<widget "farmStagewo10">>
+	你观察第七片农田。不久前，这里还是一片混乱。
+	<br><br>
+
+	<<generate1>><<person1>>
+	你听到一阵沙沙声。一个奇怪的皮革质地的生物从下面窜了出来。
+	<br><br>
+	<span class="green">一张网从你身后抛来，</span>落在这个生物身上。当这个生物被罩住时，网收紧了。上面系着一根绳子。你转过身来，看到了一个<<person>>。<<He>>把网收得更紧。
+	<br><br>
+	"成功了！"<<he>>自豪地大叫，举起蠕动的网，"这些害虫真的很难抓到。"
+	<br><br>
+	<<link [[询问|Farm Stage wo 10 Ask]]>><<set $farm_stage to 10>><<set $farm.clearing to 100>><<add_plot farm earth 3 large>><</link>>
+	<br>
+<</widget>>
+
+<<widget "farmStagewo11">>
+	你观察第八片农田。不久前，这里还是一片混乱。
+	<br><br>
+
+	你看到<<farm_fence>>的底部有凝视着一朵奇怪的紫色的花。你戳了戳花，种子落到了你手上。
+	<br><br>
+
+	你没有在任何书里看到过这种花。你不知道雷米为什么要种这些花，但或许你也可以试试。
+	<br><br>
+
+	<<link [[收起来|Farm Stage wo 11]]>><<set $farm_stage to 11>><<set $farm.clearing to 100>><<add_plot farm earth 3 large>><</link>>
+	<br>
+<</widget>>
+
+<<widget "farmStagewo12">>
+	你观察第九片农田。不久前，这里还是一片混乱。
+	<br><br>
+	这就是最后的一片田地了。你觉得这种时候应该通知一下艾利克斯。
+	<<npc Alex>><<person1>>
+	<<pass 5>>
+	艾利克斯从车上下来，不敢置信地望向这九片田地。
+	<br><br>
+
+	<<link [[牵手|Farm Stage 12 Hands]]>><<set $farm_stage to 12>><<set $farm.clearing to 100>><<npcincr Alex love 1>><<add_plot farm earth 3 large>><</link>><<handholdingvirginitywarning>><<glove>>
+	<br>
+	<<link [[拍拍后背|Farm Stage 12 Pat]]>><<set $farm_stage to 12>><<set $farm.clearing to 100>><<add_plot farm earth 3 large>><</link>>
+	<br>
+<</widget>>

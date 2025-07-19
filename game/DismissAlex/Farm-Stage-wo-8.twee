@@ -1,0 +1,19 @@
+:: Farm Stage wo 8 []
+<div id="passage-content">
+<<effects>>
+
+你通知了艾利克斯。
+<br><br>
+艾利克斯听起来有些纠结，"我确实在考虑安保项目。只是这些东西确实很贵。"
+<br><br>
+你听见艾利克斯喝了一口酒，"我们还需要人手来管理这些设施，"<<nnpc_He "Alex">>继续说道，"我想把这件事交给你来决定，我相信你会妥善处理这笔钱。"
+<br><br>
+
+<span class="gold">你现在可以在艾利克斯的卧室里购买农场进一步的升级。</span>
+<br>
+<span class="pink">你们的繁荣并没有被忽视。雷米会在<<nnpc_his Remy>>攻击期间投入更多资源。</span>
+<br><br>
+
+<<link [[继续|Farm Work]]>><<endevent>><</link>>
+<br>
+</div>
