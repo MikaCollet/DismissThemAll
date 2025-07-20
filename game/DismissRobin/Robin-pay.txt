@@ -1,0 +1,4 @@
+<</if>>
+<<if C.npc.Robin.state is "dismissed">>
+  <<payRobin>>
+<</if>>

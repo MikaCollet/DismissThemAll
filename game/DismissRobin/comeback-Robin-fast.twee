@@ -1,0 +1,12 @@
+:: Robin Comeback Fast []
+罗宾的交换生生活结束了。
+<br><br>
+<<npcset Robin state "active">>
+<<set $robineventnote to $robineventnotestore>>
+<<set $robinpaid to $robinpaidstore>>
+
+<<if $robinpaid is 1>>
+  <<set $rentmoney *= 2>>
+<</if>>
+
+<<link [[继续|dismiss all]]>><</link>>

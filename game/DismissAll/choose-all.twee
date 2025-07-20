@@ -1,6 +1,13 @@
 :: dismiss all []
 你可以在这里放逐npc或者救回他们。
 
+<<if C.npc.Robin.state isnot "dismissed">>
+	<<link [[放逐罗宾|Robin Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[罗宾回来|Robin Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
 <<if C.npc.Kylar.state isnot "prison">>
 	<<link [[放逐凯拉尔|Kylar Dismiss Fast]]>><</link>>
 <<else>>

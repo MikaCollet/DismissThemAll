@@ -1,0 +1,1 @@
+<<if $robinromance is 1 and C.npc.Robin.state isnot "dismissed">>

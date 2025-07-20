@@ -1,0 +1,8 @@
+  <<if C.npc.Robin.state is "dismissed">>
+    你望着卧室的门，期待着能有人来访。不过你想起来罗宾去当交换生了。
+		<br><br>
+    <<nnpc_He Robin>>也一定在想你吧。<<trauma -6>><<ltrauma>>
+    <br><br>
+		<<link [[继续|Bedroom]]>><</link>>
+		<br>
+  <<elseif $robinmissing isnot 0>>

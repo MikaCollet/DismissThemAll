@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -741,8 +741,188 @@
 					"passage": "Moor Abduction Walk",
 					"findString": "<<elseif $rng gte 61>>",
 					"replace": "<<elseif $rng gte 61 and C.npc[\"Great Hawk\"].state isnot \"dismissed\">>"
+				},
+				{
+					"comment": "下面开始是罗宾的",
+					"passage": "Widgets Named Npcs",
+					"findString": "\t\t\t<<if $robin.timer.hurt gte 2>>",
+					"replaceFile": "game/DismissRobin/dismiss-Robin-atti.txt"
+				},
+				{
+					"passage": "Widgets Attitudes",
+					"findString": "<<if $robinromance is 1>>",
+					"replaceFile": "game/DismissRobin/loveinterest-Robin.txt"
+				},
+				{
+					"passage": "Widgets Mirror",
+					"findString": "<<if $robinromance is 1>>",
+					"replaceFile": "game/DismissRobin/loveinterest-Robin.txt"
+				},
+				{
+					"passage": "Asylum Return",
+					"findString": "$robinmissing is 0",
+					"replace": "$robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Bedroom",
+					"findString": "if $robinpaid is 1 and $robinmissing is 0",
+					"replace": "if $robinpaid is 1 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Bedroom",
+					"findString": "C.npc.Robin.trauma gte 40 and $robinmissing is 0 and !$robinTraumaVisit",
+					"replace": "C.npc.Robin.trauma gte 40 and $robinmissing is 0 and !$robinTraumaVisit and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Bedroom",
+					"findString": "C.npc.Robin.trauma gte 40 and $robinmissing is 0 and !$robinTraumaVisit",
+					"replace": "C.npc.Robin.trauma gte 40 and $robinmissing is 0 and !$robinTraumaVisit and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Canteen Kylar Whitney Intervene Finish",
+					"findString": "$robinmissing is 0 and C.npc.Robin.init is 1",
+					"replace": "$robinmissing is 0 and C.npc.Robin.init is 1 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Canteen Kylar Whitney Intervene",
+					"findString": "$robinmissing is 0 and C.npc.Robin.init is 1",
+					"replace": "$robinmissing is 0 and C.npc.Robin.init is 1 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Cliff Street",
+					"findString": "$robinmissing is \"pillory\"",
+					"replace": "$robinmissing is \"pillory\" and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Cliff Street",
+					"findString": "$robinmissing is \"pillory\"",
+					"replace": "$robinmissing is \"pillory\" and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "English Play Watch",
+					"findString": "C.npc.Robin.init is 1 and $robinmissing is 0",
+					"replace": "C.npc.Robin.init is 1 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Lake Office Ask",
+					"findString": "<<if _robin_location isnot $robinmissing>>",
+					"replace": "<<if _robin_location isnot $robinmissing and C.npc.Robin.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Maths Project Stim",
+					"findString": "$robinmissing is 0 and C.npc.Robin.init is 1 and $location is \"home\"",
+					"replace": "$robinmissing is 0 and C.npc.Robin.init is 1 and $location is \"home\" and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Ocean Breeze Work",
+					"findString": "C.npc.Robin.init gte 1 and $robinmissing is 0",
+					"replace": "C.npc.Robin.init gte 1 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Orphanage Christmas",
+					"findString": "if $robinmissing is 0",
+					"replace": "if $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Orphanage",
+					"findString": "Time.monthDay is 25 and $robinmissing is 0",
+					"replace": "Time.monthDay is 25 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Orphanage",
+					"findString": "Time.monthDay is 25 and $robinmissing is 0",
+					"replace": "Time.monthDay is 25 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Orphanage",
+					"findString": "!$fromRobinRoom and $robinmissing is 0",
+					"replace": "!$fromRobinRoom and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Orphanage",
+					"findString": "$robinmissing is 0 and !$robinTraumaVisit",
+					"replace": "$robinmissing is 0 and !$robinTraumaVisit and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Robin Room Naked",
+					"findString": "$robinmissing isnot 0",
+					"replace": "$robinmissing isnot 0 or C.npc.Robin.state is \"dismissed\""
+				},
+				{
+					"passage": "Robin's Room Entrance",
+					"findString": "<<elseif $robinmissing isnot 0>>",
+					"replaceFile": "game/DismissRobin/Robin-note.txt"
+				},
+				{
+					"passage": "Sleep",
+					"findString": "$robinmissing is 0 and C.npc.Robin.init is 1",
+					"replace": "$robinmissing is 0 and C.npc.Robin.init is 1 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Whitney Chat",
+					"findString": "C.npc.Robin.init is 1 and $robinmissing is 0",
+					"replace": "C.npc.Robin.init is 1 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Widgets Home",
+					"findString": "$robinmissing is 0 and !$robinTraumaVisit",
+					"replace": "$robinmissing is 0 and !$robinTraumaVisit and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Widgets Home",
+					"findString": "$robin.timer.hurt lt 1 and $robinmissing is 0",
+					"replace": "$robin.timer.hurt lt 1 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Widgets Journal",
+					"findString": "$halloween_robin is 1 and $robinmissing is 0",
+					"replace": "$halloween_robin is 1 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Widgets Orphanage Christmas",
+					"findString": "\t<<if $robinmissing isnot 0>>",
+					"replaceFile": "game/DismissRobin/Robin-Christmas.txt"
+				},
+				{
+					"passage": "Widgets School Events",
+					"findString": "$robinmissing is 0",
+					"replace": "$robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Widgets Sleep",
+					"findString": "$robindebtknown isnot 1 and $kylarbed isnot 1 and $robinmissing is 0",
+					"replace": "$robindebtknown isnot 1 and $kylarbed isnot 1 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Widgets Sleep",
+					"findString": "$kylarbed isnot 1 and $robinmissing is 0 and $robin.timer.hurt is 0",
+					"replace": "$kylarbed isnot 1 and $robinmissing is 0 and $robin.timer.hurt is 0 and C.npc.Robin.state isnot \"dismissed\""
+				},
+				{
+					"passage": "Bailey's Office Robin 2",
+					"findString": "<</if>>",
+					"replaceFile": "game/DismissRobin/Robin-pay.txt"
 				}
 			]
+		},
+		{
+			"modName": "ReplacePatcher",
+			"addonName": "ReplacePatcherAddon",
+			"modVersion": "1.0.0",
+			"params": {
+				"js": [
+					{
+						"from": "else if (V.robinlocationoverride && V.robinlocationoverride.during.includes(Time.hour))",
+						"to": "else if (C.npc.Robin.state === \"dismissed\") {\n\t\tT.robin_location = \"dismissed\";\n\t} else if (V.robinlocationoverride && V.robinlocationoverride.during.includes(Time.hour))",
+						"fileName": "ingame.js"
+					},
+					{
+						"from": "if (V.robinpaid === 1)",
+						"to": "if (V.robinpaid === 1 or C.npc.Robin.state === \"dismissed\")",
+						"fileName": "time.js"
+					}
+				]
+			}
 		}
 	],
 	"additionFile": [
@@ -803,7 +983,12 @@
 		"game/DismissAlex/parasites.txt",
 		"game/DismissAlex/farm_yield.txt",
 		"game/DismissAlex/search.txt",
-		"game/DismissAlex/cottage.txt"
+		"game/DismissAlex/cottage.txt",
+		"game/DismissRobin/dismiss-Robin-atti.txt",
+		"game/DismissRobin/loveinterest-Robin.txt",
+		"game/DismissRobin/Robin-note.txt",
+		"game/DismissRobin/Robin-Christmas.txt",
+		"game/DismissRobin/Robin-pay.txt"
 	],
 	"dependenceInfo": [
 		{

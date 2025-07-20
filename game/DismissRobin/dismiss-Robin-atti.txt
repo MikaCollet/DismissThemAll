@@ -1,0 +1,3 @@
+      <<if C.npc.Robin.state is "dismissed">>
+        <span class = "red">在当交换生。</span>
+      <<elseif $robin.timer.hurt gte 2>>

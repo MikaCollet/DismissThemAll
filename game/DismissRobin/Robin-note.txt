@@ -1,0 +1,5 @@
+<<elseif C.npc.Robin.state is "dismissed">>
+  你走到罗宾的房间门口，门上有张纸条："去当交换生了！"
+	<br><br>
+	<<getouticon>><<link [[离开|Orphanage]]>><</link>>
+<<elseif $robinmissing isnot 0>>
