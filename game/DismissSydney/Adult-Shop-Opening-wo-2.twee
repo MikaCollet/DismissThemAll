@@ -1,0 +1,27 @@
+:: Adult Shop Opening wo 2 []
+<div id="passage-content">
+<<effects>>
+
+<<person1>>
+人群勉强排成了队。你现在能看见商店内部了，里面人满为患。西里斯从人群当中挤了出来，来到你的身边。
+<br><br>
+
+<<if $adultshopcontribution gte 12>>
+	"感谢你能来。可惜悉尼生病了来不了。"<<he>>说，"你帮了我这么多忙，现在要麻烦你最后一回。我雇了临时工帮我处理前台和做客服，不过我有个特殊的工作想要你做。"
+<<elseif $adultshopcontribution gte 1>>
+	"感谢你能来。可惜悉尼生病了来不了。"<<he>>说，"之前你帮过我的忙，现在要再麻烦你一回。我雇了临时工帮我处理前台和做客服，不过我有个特殊的工作想要你做。"
+<<else>>
+	"感谢你能来。可惜悉尼生病了来不了。"<<he>>说，"我想麻烦你一下，不过你也可以拒绝。我雇了临时工帮我处理前台和做客服，不过我有个特殊的工作想要你做。"
+<</if>>
+<br><br>
+
+西里斯继续道，"我想让你当个模特，那里有张床，就是让你穿着我们卖的睡衣躺在床上，没别的。"
+<br><br>
+
+
+<<link [[同意提供帮助|Adult Shop Opening Help wo]]>><<set $adultshopcontribution += 1>><<npcincr Sirris love 10>><</link>><<ggglove>>
+<br>
+
+<<link [[拒绝|Adult Shop Opening Refuse wo]]>><</link>>
+<br>
+</div>

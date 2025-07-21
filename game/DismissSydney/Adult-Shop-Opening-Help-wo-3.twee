@@ -1,0 +1,15 @@
+:: Adult Shop Opening Help wo 3 []
+<div id="passage-content">
+<<effects>>
+<<pass 50>>
+你躺在床上，看着顾客们与店员们来来往往。西里斯的生意似乎不错，<<person1>><<He>>四处奔波着，时不时停下来为客户介绍产品，不断地在店内寻找需要帮助的顾客——忙并快乐着。
+<br><br>
+
+你总算知道悉尼的勤奋劲是哪来的了。此刻，西里斯似乎更像是成年版的悉尼。你想着，不禁露出了笑容。
+<br><br>
+
+排队的人群已经全部进入了商店，店外仍然有一群人，不过好像是已经从店里出去的人。
+<br><br>
+
+<<link [[继续|Adult Shop Opening End wo]]>><<handheldon>><</link>>
+</div>

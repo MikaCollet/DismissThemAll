@@ -1,0 +1,12 @@
+:: Adult Shop Opening wo []
+<div id="passage-content">
+<<effects>>
+<<npc Sirris 1>>
+<<generate2>><<generate3>><<generate4>>
+前面的人群围着一家紫色灯饰的商店。"请有序排队！"某人的呼喊从喧嚣中传来。是西里斯，<<person1>><<he>>站在店门口，比众人高出一截——肯定是站在什么东西上。
+<br><br>
+西里斯发现了你，越过拥挤的人群朝你招手。
+<br><br>
+<<link [[继续|Adult Shop Opening wo 2]]>><</link>>
+<br>
+</div>

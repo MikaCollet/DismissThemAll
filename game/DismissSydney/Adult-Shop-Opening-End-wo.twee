@@ -1,0 +1,15 @@
+:: Adult Shop Opening End wo []
+<div id="passage-content">
+<<effects>>
+<<famemodel 100>>
+<<if playerBellyVisible()>><<famepregnancy `Math.ceil(playerBellySize() / 10)`>><</if>>
+<<person1>>
+某人的吆喝声盖过了顾客们的喧嚣。"感谢各位的光临。"是西里斯，站在一个台子上。店外的顾客们聚集在了窗户前。"我想要特别感谢一下我们的模特，请为<<pShe>献上热烈的掌声！"掌声随之响起，还伴随着几声口哨声。
+<br><br>
+
+"希望各位玩的开心，"西里斯接着说，"我们一周营业六天，每天<<ampm 21 00>>打烊，欢迎下次光临！"说完，<<He>>从台子上走了下来。
+<br><br>
+
+<<link [[继续|Adult Shop Opening End wo 2]]>><</link>>
+<br>
+</div>

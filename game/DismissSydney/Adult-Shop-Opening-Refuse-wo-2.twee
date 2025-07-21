@@ -1,0 +1,17 @@
+:: Adult Shop Opening Refuse wo 2 []
+<div id="passage-content">
+<<effects>>
+
+<<pass 50>>
+<<person1>>
+你挤进了店里。平时宽敞的商店，现在每排架子间都挤满了浏览商品的顾客。
+<br><br>
+某人的吆喝声盖过了顾客们的喧嚣。"感谢各位的光临。"是西里斯，站在一个台子上。许多顾客买完商品后还留在店外，现在他们又聚集在了窗户前。
+<br><br>
+
+"希望各位玩的开心，"西里斯接着说，"我们一周营业六天，每天<<ampm 21 00>>打烊。欢迎下次光临！"
+<br><br>
+
+<<link [[继续|Adult Shop Opening Refuse wo 3]]>><</link>>
+<br>
+</div>

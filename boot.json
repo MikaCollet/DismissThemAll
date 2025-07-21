@@ -923,6 +923,11 @@
 					"passage": "Widgets Sydney",
 					"findString": "\t<<if $sydney_location_override and $replayScene>>",
 					"replaceFile": "game/DismissSydney/Sydney-schedule.txt"
+				},
+				{
+					"passage": "Elk Street",
+					"findString": "\t\t\t\t<<shopicon \"adult\">><<link [[参加成人店开业典礼 (1:00)|Adult Shop Opening]]>><<pass 10>><</link>>",
+					"replaceFile": "game/DismissSydney/adult.txt"
 				}
 			]
 		},

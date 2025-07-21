@@ -1,0 +1,23 @@
+:: Adult Shop Opening End 2 []
+<div id="passage-content">
+<<effects>>
+
+/* Delete the cow-onesie */
+<<set $worn.head to clone(setup.clothes.head[0])>>
+<<set $worn.upper to clone(setup.clothes.upper[0])>>
+<<set $worn.lower to clone(setup.clothes.lower[0])>>
+/* Return clothing that was stored prior to event */
+<<storeon "adult shop opening">>
+你回到了后面的房间，找回了你的衣服并重新穿上，然后回到了店里。
+<br><br>
+
+<<if $adultshopcontribution>>
+	<<earnFeat "Opened Pandoras Box">>
+	<<if $adultshopcontribution gte 12>>
+		<<earnFeat "Opened Pandoras Cocks">>
+	<</if>>
+<</if>>
+
+<<link [[继续|Adult Shop]]>><<unlockAdultShop>><<endevent>><</link>>
+<br>
+</div>

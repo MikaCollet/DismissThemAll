@@ -1,0 +1,11 @@
+:: Adult Shop Opening Refuse wo []
+<div id="passage-content">
+<<effects>>
+
+<<person1>>
+"好吧，"西里斯的声音十分平静，但难掩其中的失望。"那希望你能玩的开心！"
+<br><br>
+
+<<link [[继续|Adult Shop Opening Refuse wo 2]]>><</link>>
+<br>
+</div>

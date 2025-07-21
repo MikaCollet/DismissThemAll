@@ -1,0 +1,28 @@
+:: Adult Shop Opening Onesie wo []
+<div id="passage-content">
+<<effects>>
+
+<<undressmid "adult shop opening">>
+<<upperwear 89>>
+
+你脱下了衣服，换上连体睡衣，衣服很合身。在公共场合穿这个很奇怪，但现在属于特殊情况。
+<br><br>
+
+你从后面的房间里走了出来。并没有多少人注意到你。
+<br><br>
+
+你走到床前，顾客们注意到了你，你躺在了床上。
+<br><br>
+
+"你也是商品吗？"一名<<person2>><<person>>笑了起来。
+<br><br>
+
+<<if hasSexStat("promiscuity", 4)>>
+	<<link [[是|Adult Shop Opening Help wo 2]]>><<set $phase to 2>><</link>><<promiscuous4>>
+	<br>
+<</if>>
+<<link [[调情|Adult Shop Opening Help wo 2]]>><<set $phase to 1>><</link>><<promiscuous1>>
+<br>
+<<link [[不是|Adult Shop Opening Help wo 2]]>><<set $phase to 0>><</link>>
+<br>
+</div>
