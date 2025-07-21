@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "1.5.0",
+	"version": "1.6.1",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -1017,7 +1017,8 @@
 		"game/DismissRobin/Robin-pay.txt",
 		"game/DismissSydney/dismiss-Sydney-atti.txt",
 		"game/DismissSydney/loveinterest-Sydney.txt",
-		"game/DismissSydney/Sydney-schedule.txt"
+		"game/DismissSydney/Sydney-schedule.txt",
+		"game/DismissSydney/adult.txt"
 	],
 	"dependenceInfo": [
 		{
