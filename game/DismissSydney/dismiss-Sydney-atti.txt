@@ -1,0 +1,3 @@
+      <<if C.npc.Sydney.state is "dismissed">>
+        <span class = "red">累倒了。</span>
+      <<elseif $sydneyromance is 1>>

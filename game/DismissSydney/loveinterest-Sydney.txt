@@ -1,0 +1,1 @@
+<<if $sydneyromance is 1 and C.npc.Sydney.state isnot "dismissed">>

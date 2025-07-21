@@ -1,0 +1,23 @@
+:: Widgets Sydney wo [widget]
+
+<<widget "dismissSydney">>
+	<<npcset Sydney state "dismissed">>
+
+	<<if $loveInterest.primary is "Sydney">>
+		<<if $loveInterest.secondary isnot "None">>
+			<<set $loveInterest.primary to $loveInterest.secondary>>
+			<<set $loveInterest.secondary to "None">>
+		<<else>>
+			<<set $loveInterest.primary to "None">>
+		<</if>>
+		<span class = "red">悉尼不再是你的爱人了。</span>
+	<<elseif $loveInterest.secondary is "Sydney">>
+		<<set $loveInterest.secondary to "None">>
+		<span class = "red">悉尼不再是你的爱人了。</span>
+	<<elseif $sydneyromance is 1>>
+		<span class = "red">悉尼不能再作为你的爱人了。</span>
+	<<else>>
+		<span class = "red">悉尼生病了。</span>
+	<</if>>
+	<br><br>
+<</widget>>

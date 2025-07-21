@@ -1,0 +1,3 @@
+  <<if C.npc.Sydney.state is "dismissed">>
+    <<set _sydney_location to "dismissed">>
+  <<elseif $sydney_location_override and $replayScene>>

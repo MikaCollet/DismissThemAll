@@ -771,12 +771,12 @@
 				{
 					"passage": "Bedroom",
 					"findString": "C.npc.Robin.trauma gte 40 and $robinmissing is 0 and !$robinTraumaVisit",
-					"replace": "C.npc.Robin.trauma gte 40 and $robinmissing is 0 and !$robinTraumaVisit and C.npc.Robin.state isnot \"dismissed\""
+					"replace": "C.npc.Robin.trauma gte 40 and C.npc.Robin.state isnot \"dismissed\" and $robinmissing is 0 and !$robinTraumaVisit"
 				},
 				{
 					"passage": "Bedroom",
 					"findString": "C.npc.Robin.trauma gte 40 and $robinmissing is 0 and !$robinTraumaVisit",
-					"replace": "C.npc.Robin.trauma gte 40 and $robinmissing is 0 and !$robinTraumaVisit and C.npc.Robin.state isnot \"dismissed\""
+					"replace": "C.npc.Robin.trauma gte 40 and C.npc.Robin.state isnot \"dismissed\" and $robinmissing is 0 and !$robinTraumaVisit"
 				},
 				{
 					"passage": "Canteen Kylar Whitney Intervene Finish",
@@ -787,16 +787,6 @@
 					"passage": "Canteen Kylar Whitney Intervene",
 					"findString": "$robinmissing is 0 and C.npc.Robin.init is 1",
 					"replace": "$robinmissing is 0 and C.npc.Robin.init is 1 and C.npc.Robin.state isnot \"dismissed\""
-				},
-				{
-					"passage": "Cliff Street",
-					"findString": "$robinmissing is \"pillory\"",
-					"replace": "$robinmissing is \"pillory\" and C.npc.Robin.state isnot \"dismissed\""
-				},
-				{
-					"passage": "Cliff Street",
-					"findString": "$robinmissing is \"pillory\"",
-					"replace": "$robinmissing is \"pillory\" and C.npc.Robin.state isnot \"dismissed\""
 				},
 				{
 					"passage": "English Play Watch",
@@ -826,12 +816,12 @@
 				{
 					"passage": "Orphanage",
 					"findString": "Time.monthDay is 25 and $robinmissing is 0",
-					"replace": "Time.monthDay is 25 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+					"replace": "Time.monthDay is 25 and C.npc.Robin.state isnot \"dismissed\" and $robinmissing is 0"
 				},
 				{
 					"passage": "Orphanage",
 					"findString": "Time.monthDay is 25 and $robinmissing is 0",
-					"replace": "Time.monthDay is 25 and $robinmissing is 0 and C.npc.Robin.state isnot \"dismissed\""
+					"replace": "Time.monthDay is 25 and C.npc.Robin.state isnot \"dismissed\" and $robinmissing is 0"
 				},
 				{
 					"passage": "Orphanage",
@@ -902,6 +892,37 @@
 					"passage": "Bailey's Office Robin 2",
 					"findString": "<</if>>",
 					"replaceFile": "game/DismissRobin/Robin-pay.txt"
+				},
+				{
+					"passage": "Bailey's Office",
+					"findString": "$robinpaid isnot 1 and $robindebtknown is 1",
+					"replace": "$robinpaid isnot 1 and $robinpaidstore isnot 1 and $robindebtknown is 1"
+				},
+				{
+					"passage": "Bailey's Office",
+					"findString": "$robinpaid isnot 1 and $robindebtknown is 1",
+					"replace": "$robinpaid isnot 1 and $robinpaidstore isnot 1 and $robindebtknown is 1"
+				},
+				{
+					"comment": "下面开始是悉尼的",
+					"passage": "Widgets Named Npcs",
+					"findString": "\t\t\t<<if $sydneyromance is 1>>",
+					"replaceFile": "game/DismissSydney/dismiss-Sydney-atti.txt"
+				},
+				{
+					"passage": "Widgets Attitudes",
+					"findString": "<<if $sydneyromance is 1>>",
+					"replaceFile": "game/DismissSydney/loveinterest-Sydney.txt"
+				},
+				{
+					"passage": "Widgets Mirror",
+					"findString": "<<if $sydneyromance is 1>>",
+					"replaceFile": "game/DismissSydney/loveinterest-Sydney.txt"
+				},
+				{
+					"passage": "Widgets Sydney",
+					"findString": "\t<<if $sydney_location_override and $replayScene>>",
+					"replaceFile": "game/DismissSydney/Sydney-schedule.txt"
 				}
 			]
 		},
@@ -918,7 +939,7 @@
 					},
 					{
 						"from": "if (V.robinpaid === 1)",
-						"to": "if (V.robinpaid === 1 or C.npc.Robin.state === \"dismissed\")",
+						"to": "if (V.robinpaid === 1 || C.npc.Robin.state === \"dismissed\")",
 						"fileName": "time.js"
 					}
 				]
@@ -988,7 +1009,10 @@
 		"game/DismissRobin/loveinterest-Robin.txt",
 		"game/DismissRobin/Robin-note.txt",
 		"game/DismissRobin/Robin-Christmas.txt",
-		"game/DismissRobin/Robin-pay.txt"
+		"game/DismissRobin/Robin-pay.txt",
+		"game/DismissSydney/dismiss-Sydney-atti.txt",
+		"game/DismissSydney/loveinterest-Sydney.txt",
+		"game/DismissSydney/Sydney-schedule.txt"
 	],
 	"dependenceInfo": [
 		{

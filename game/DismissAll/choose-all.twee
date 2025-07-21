@@ -8,6 +8,13 @@
 <</if>>
 <br>
 
+<<if C.npc.Sydney.state isnot "dismissed">>
+	<<link [[放逐悉尼|Sydney Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[悉尼回来|Sydney Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
 <<if C.npc.Kylar.state isnot "prison">>
 	<<link [[放逐凯拉尔|Kylar Dismiss Fast]]>><</link>>
 <<else>>

@@ -1,0 +1,6 @@
+:: Sydney Comeback Fast []
+悉尼病好了。
+<br><br>
+<<npcset Sydney state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>
