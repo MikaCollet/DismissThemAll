@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "1.6.1",
+	"version": "2.0.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -928,6 +928,112 @@
 					"passage": "Elk Street",
 					"findString": "\t\t\t\t<<shopicon \"adult\">><<link [[参加成人店开业典礼 (1:00)|Adult Shop Opening]]>><<pass 10>><</link>>",
 					"replaceFile": "game/DismissSydney/adult.txt"
+				},
+				{
+					"comment": "下面开始是布莱尔的",
+					"passage": "Brothel Raid Escape",
+					"findString": "<<link [[等待 (1:00)|Brothel Raid Escape 2]]>><<pass 60>><<endevent>><<npc Briar>><<person1>><</link>>",
+					"replaceFile": "game/DismissBriar/brothel-raid.txt"
+				},
+				{
+					"passage": "Widgets Dance Audience",
+					"findString": "<<elseif $rng gte 99>>",
+					"replace": "<<elseif $rng gte 99 and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Dance Audience",
+					"findString": "<<elseif $rng gte 99>>",
+					"replace": "<<elseif $rng gte 99 and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Dance Audience",
+					"findString": "<<elseif $rng gte 99>>",
+					"replace": "<<elseif $rng gte 99 and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Brothel Machine Investigate",
+					"findString": "<<getouticon>><<link [[离开|Brothel Stage]]>><</link>>",
+					"replaceFile": "game/DismissBriar/brothel-stage-wo.txt"
+				},
+				{
+					"passage": "Brothel Machine Investigate 2",
+					"findString": "<<link [[继续|Brothel Stage]]>><</link>>",
+					"replaceFile": "game/DismissBriar/brothel-stage-wo2.txt"
+				},
+				{
+					"passage": "Brothel Dressing Room",
+					"findString": "<<if isPubfameTaskAccepted(\"briar\") and $pubfame.briar.distract isnot 2>>",
+					"replace": "<<if isPubfameTaskAccepted(\"briar\") and $pubfame.briar.distract isnot 2 and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<elseif $briarPunishment gte 1>>",
+					"replace": "<<elseif $briarPunishment gte 1 and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<elseif $brothelshowdata.missed>>",
+					"replace": "<<elseif $brothelshowdata.missed and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<elseif $brothel_escortjob and ($brothel_escortjob.missed is true or $brothel_escortjob.escape is true)>>",
+					"replace": "<<elseif $brothel_escortjob and ($brothel_escortjob.missed is true or $brothel_escortjob.escape is true) and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<if $brotheljob is 1 and $fame.prostitution gte 30 and not $brothelshowdata.intro>>",
+					"replace": "<<if $brotheljob is 1 and $fame.prostitution gte 30 and not $brothelshowdata.intro and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<elseif $brotheljob is 1 and $fame.prostitution gte 200 and $brothelshowdata.intro is 1>>",
+					"replace": "<<elseif $brotheljob is 1 and $fame.prostitution gte 200 and $brothelshowdata.intro is 1 and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<stripclubicon>><<link [[成为一名舞者|Brothel Dance]]>>\n\t<<timeTrackingStart \"brothel\">><<timeTrackingStart \"brothelDanceTips\">>\n\t<<set $dancestart to 1>><<stress -4>><<tiredness 4>>\n<</link>><<lstress>><<gtiredness>>",
+					"replaceFile": "game/DismissBriar/brothel-dance.txt"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<brothelicon \"stage\">><<link [[走到舞台后面|Brothel Stage]]>><</link>>",
+					"replaceFile": "game/DismissBriar/brothel-stage-wo3.txt"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<officeicon>><<link [[布莱尔的办公室 (0:03)|Briar's Office]]>><<pass 3>><</link>>",
+					"replaceFile": "game/DismissBriar/briar-office.txt"
+				},
+				{
+					"passage": "Brothel Private Sex Finish",
+					"findString": "<<if crimeSumCurrent() gte 4500 and $brothel_raid gte 1 and $brothel_thief gte $rng>>",
+					"replace": "<<if crimeSumCurrent() gte 4500 and $brothel_raid gte 1 and C.npc.Briar.state isnot \"dismissed\" and $brothel_thief gte $rng>>"
+				},
+				{
+					"passage": "Rent Intro",
+					"findString": "<<if $tutorial is 0>>",
+					"replaceFile": "game/DismissBriar/never-underground-intro.txt"
+				},
+				{
+					"passage": "Underground Intro",
+					"findString": "<<set $outside to 0>><<set $location to \"underground\">><<effects>>",
+					"replaceFile": "game/DismissBriar/destory-underground-intro.txt"
+				},
+				{
+					"passage": "Underground Intro",
+					"findString": "</div>",
+					"replace": "<</if>>\n</div>"
+				},
+				{
+					"passage": "Hospital Arrest Molestation",
+					"findString": "<span id=\"next\"><<link [[继续|Hospital Arrest Molestation Finish]]>><</link>></span><<nexttext>>",
+					"replaceFile": "game/DismissBriar/hospital-arrest.txt"
+				},
+				{
+					"passage": "Underground Intro",
+					"findString": "\t<<npc Robin 1>><<generate2>><<generate3>><<generate4>>\n<</if>>",
+					"replace": "\t<<npc Robin 1>><<generate2>><<generate3>><<generate4>>\n<<else>>\n\t<<generate1>><<generate2>><<generate3>>\n<</if>>"
 				}
 			]
 		},
@@ -1018,7 +1124,16 @@
 		"game/DismissSydney/dismiss-Sydney-atti.txt",
 		"game/DismissSydney/loveinterest-Sydney.txt",
 		"game/DismissSydney/Sydney-schedule.txt",
-		"game/DismissSydney/adult.txt"
+		"game/DismissSydney/adult.txt",
+		"game/DismissBriar/brothel-raid.txt",
+		"game/DismissBriar/brothel-stage-wo.txt",
+		"game/DismissBriar/brothel-stage-wo2.txt",
+		"game/DismissBriar/brothel-stage-wo3.txt",
+		"game/DismissBriar/brothel-dance.txt",
+		"game/DismissBriar/briar-office.txt",
+		"game/DismissBriar/never-underground-intro.txt",
+		"game/DismissBriar/destory-underground-intro.txt",
+		"game/DismissBriar/hospital-arrest.txt"
 	],
 	"dependenceInfo": [
 		{
