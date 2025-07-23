@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -1034,6 +1034,17 @@
 					"passage": "Underground Intro",
 					"findString": "\t<<npc Robin 1>><<generate2>><<generate3>><<generate4>>\n<</if>>",
 					"replace": "\t<<npc Robin 1>><<generate2>><<generate3>><<generate4>>\n<<else>>\n\t<<generate1>><<generate2>><<generate3>>\n<</if>>"
+				},
+				{
+					"comment": "下面开始是查里的",
+					"passage": "Dance Studio",
+					"findString": "<<set $outside to 0>><<set $location to \"dance_studio\">><<effects>>",
+					"replaceFile": "game/DismissCharlie/dance-studio.txt"
+				},
+				{
+					"passage": "Dance Studio",
+					"findString": "</div>",
+					"replace": "<</if>>\n</div>"
 				}
 			]
 		},
@@ -1133,7 +1144,8 @@
 		"game/DismissBriar/briar-office.txt",
 		"game/DismissBriar/never-underground-intro.txt",
 		"game/DismissBriar/destory-underground-intro.txt",
-		"game/DismissBriar/hospital-arrest.txt"
+		"game/DismissBriar/hospital-arrest.txt",
+		"game/DismissCharlie/dance-studio.txt"
 	],
 	"dependenceInfo": [
 		{
