@@ -1045,6 +1045,52 @@
 					"passage": "Dance Studio",
 					"findString": "</div>",
 					"replace": "<</if>>\n</div>"
+				},
+				{
+					"passage": "Yoga Classes Change Room",
+					"findString": "<<getinicon>><<link [[进入|Yoga Classes Enter]]>><</link>>",
+					"replaceFile": "game/DismissCharlie/yoga-enter1.txt"
+				},
+				{
+					"passage": "Yoga Classes Change Room",
+					"findString": "<<getinicon>><<link [[脱光|Yoga Classes Enter]]>><<strip>><</link>><<exhibitionist5>>",
+					"replaceFile": "game/DismissCharlie/yoga-enter2.txt"
+				},
+				{
+					"comment": "下面开始是达里尔的",
+					"passage": "Widgets Dance Audience",
+					"findString": "<<elseif $rng gte 49>>",
+					"replace": "<<elseif $rng gte 49 and C.npc.Darryl.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Dance Audience",
+					"findString": "<<if $rng gte 99>>",
+					"replace": "<<if $rng gte 99 and C.npc.Darryl.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Events Bartending",
+					"findString": "<<elseif $rng gte 11>>",
+					"replace": "<<elseif $rng gte 11 or C.npc.Darryl.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Events Bartending",
+					"findString": "<<link [[告诉达里尔|Bartending VIP Darryl]]>><</link>>",
+					"replaceFile": "game/DismissDarryl/tell-Darrly1.txt"
+				},
+				{
+					"passage": "Widgets Events Bartending",
+					"findString": "<<link [[告诉达里尔|Bartending Listen Darryl]]>><</link>>",
+					"replaceFile": "game/DismissDarryl/tell-Darrly2.txt"
+				},
+				{
+					"passage": "Widgets Events Bartending",
+					"findString": "但你也许应该通知达里尔",
+					"replace": "但你也许应该通知<<if C.npc.Darryl.state isnot \"dismissed\">>达里尔<<else>>保安<</if>>"
+				},
+				{
+					"passage": "Connudatus Street",
+					"findString": "达里尔",
+					"replace": "<<if C.npc.Darryl.state isnot \"dismissed\">>达里尔<<else>>有人<</if>>"
 				}
 			]
 		},
@@ -1145,7 +1191,11 @@
 		"game/DismissBriar/never-underground-intro.txt",
 		"game/DismissBriar/destory-underground-intro.txt",
 		"game/DismissBriar/hospital-arrest.txt",
-		"game/DismissCharlie/dance-studio.txt"
+		"game/DismissCharlie/dance-studio.txt",
+		"game/DismissCharlie/yoga-enter1.txt",
+		"game/DismissCharlie/yoga-enter2.txt",
+		"game/DismissDarryl/tell-Darrly1.txt",
+		"game/DismissDarryl/tell-Darrly2.txt"
 	],
 	"dependenceInfo": [
 		{
