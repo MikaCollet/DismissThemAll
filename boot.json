@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "2.1.0",
+	"version": "2.3.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -1091,6 +1091,147 @@
 					"passage": "Connudatus Street",
 					"findString": "达里尔",
 					"replace": "<<if C.npc.Darryl.state isnot \"dismissed\">>达里尔<<else>>有人<</if>>"
+				},
+				{
+					"comment": "下面开始是多伦的",
+					"passage": "Doren Entrance",
+					"findString": "<<if Time.hour is 16>>",
+					"replaceFile": "game/DismissDoren/entrance.txt"
+				},
+				{
+					"passage": "Widgets Park",
+					"findString": "<<elseif $rng gte 41 and C.npc.Doren.init is 1>>",
+					"replace": "<<elseif $rng gte 41 and C.npc.Doren.init is 1 and C.npc.Doren.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Canteen Lunch Whitney Milking Strip Finish",
+					"findString": "<<if $delinquency lt 400>>",
+					"replace": "<<if $delinquency lt 400 and C.npc.Doren.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Bully Fight",
+					"findString": "<<if $delinquency lt 400>>",
+					"replace": "<<if $delinquency lt 400 and C.npc.Doren.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Leave Whitney Strip",
+					"findString": "<<if $delinquency lt 400>>",
+					"replace": "<<if $delinquency lt 400 and C.npc.Doren.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Whitney Roof Show Oral",
+					"findString": "\t<<enableSchoolRescue \"delinquency\">>",
+					"replace": "\t<<if C.npc.Doren.state isnot \"dismissed\">>\n\t\t<<enableSchoolRescue \"delinquency\">>\n\t<</if>>"
+				},
+				{
+					"passage": "Whitney Roof Railing Rape",
+					"findString": "\t<<enableSchoolRescue \"delinquency\">>",
+					"replace": "\t<<if C.npc.Doren.state isnot \"dismissed\">>\n\t\t<<enableSchoolRescue \"delinquency\">>\n\t<</if>>"
+				},
+				{
+					"passage": "Whitney Roof Bully Watch",
+					"findString": "<<if $rng gte 51>>",
+					"replace": "<<if $rng gte 51 and C.npc.Doren.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Whitney Roof Bully Mean Fight",
+					"findString": "<<if $delinquency lt 400>>",
+					"replace": "<<if $delinquency lt 400 and C.npc.Doren.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Infirmary Wakeup",
+					"findString": "$dorenintro gte 1",
+					"replace": "$dorenintro gte 1 and C.npc.Doren.state isnot \"dismissed\""
+				},
+				{
+					"passage": "School Infirmary Wakeup",
+					"findString": "<<if $schoolstate is \"afternoon\">>",
+					"replace": "<<if $schoolstate is \"afternoon\" or (if $schoolstate is \"third\" and C.npc.Doren.state is \"dismissed\")>>"
+				},
+				{
+					"passage": "English Classroom",
+					"findString": "<<if $schoolstate is \"third\">>",
+					"replace": "<<checkClass $schoolstate>>\n<<if $schoolstate is \"third\" and $onClass is 1>>"
+				},
+				{
+					"passage": "English Classroom",
+					"findString": "<<if $schoollesson is 1>>",
+					"replace": "<<if $schoollesson is 1 and $onClass is 1>>"
+				},
+				{
+					"passage": "School Green Climb",
+					"findString": "多伦",
+					"replace": "<<if C.npc.Doren.state isnot \"dismissed\">>多伦"
+				},
+				{
+					"passage": "School Green Climb",
+					"findString": "<<gcool>>",
+					"replace": "<</if>><<gcool>>"
+				},
+				{
+					"passage": "Hallways Pregnant Touch Rape",
+					"findString": "\t<<enableSchoolRescue \"Whitney\" \"delinquency\">>",
+					"replace": "\t<<if C.npc.Doren.state isnot \"dismissed\">>\n\t\t<<enableSchoolRescue \"Whitney\" \"delinquency\">>\n\t<</if>>"
+				},
+				{
+					"passage": "Hallways Exposed Tell",
+					"findString": "\t<<link [[保持不动|Hallways Exposed Still]]>><</link>><<difficulty 50>>",
+					"replaceFile": "game/DismissDoren/hallways.txt"
+				},
+				{
+					"passage": "Hallways Exposed Storeroom Window Rape",
+					"findString": "<<enable_rescue>>",
+					"replace": "<<if C.npc.Doren.state isnot \"dismissed\">>\n\t<<enable_rescue>>\n<</if>>"
+				},
+				{
+					"passage": "Hallways Exposed Gang",
+					"findString": "<<enable_rescue>><<enableSchoolRescue \"Whitney\">>",
+					"replace": "<<if C.npc.Doren.state isnot \"dismissed\">>\n\t<<enable_rescue>><<enableSchoolRescue \"Whitney\">>\n<</if>>"
+				},
+				{
+					"passage": "Maths Drugged Help",
+					"findString": "<<effects>>",
+					"replaceFile": "game/DismissDoren/maths-drug.txt"
+				},
+				{
+					"passage": "Maths Drugged Help",
+					"findString": "</div>",
+					"replace": "<</if>>\n</div>"
+				},
+				{
+					"passage": "Widgets School",
+					"findString": "<<elseif $schoolstate is \"second\">>",
+					"replace": "<<elseif $schoolstate is \"second\" and C.npc.Doren.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets School",
+					"findString": "<<elseif $schoolstate is \"third\" and Time.minute lte 58>>",
+					"replace": "<<elseif $schoolstate is \"third\" and Time.minute lte 58 and C.npc.Doren.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Bully Fight",
+					"findString": "<<alarmstate \"<span class='red'>没有人来帮助你，大概是因为你的不良名声。</span>\">>",
+					"replaceFile": "game/DismissDoren/nobody-rescue.txt"
+				},
+				{
+					"passage": "Bully Outside Fight",
+					"findString": "<<alarmstate \"<span class='red'>没有人来帮助你，大概是因为你的不良名声。</span>\">>",
+					"replaceFile": "game/DismissDoren/nobody-rescue.txt"
+				},
+				{
+					"passage": "Bully Panties Fight",
+					"findString": "<<alarmstate \"<span class='red'>没有人来帮助你，大概是因为你的不良名声。</span>\">>",
+					"replaceFile": "game/DismissDoren/nobody-rescue.txt"
+				},
+				{
+					"passage": "School Leave Whitney Freezing Fight",
+					"findString": "<<alarmstate \"<span class='red'>没有人来帮助你，大概是因为你的不良名声。</span>\">>",
+					"replaceFile": "game/DismissDoren/nobody-rescue.txt"
+				},
+				{
+					"passage": "School Leave Whitney Strip",
+					"findString": "<<alarmstate \"<span class='red'>没有人来帮助你，大概是因为你的不良名声。</span>\">>",
+					"replaceFile": "game/DismissDoren/nobody-rescue.txt"
 				}
 			]
 		},
@@ -1108,6 +1249,11 @@
 					{
 						"from": "if (V.robinpaid === 1)",
 						"to": "if (V.robinpaid === 1 || C.npc.Robin.state === \"dismissed\")",
+						"fileName": "time.js"
+					},
+					{
+						"from": "function dailySchoolEffects() {",
+						"to": "function dailySchoolEffects() {\n\tif (C.npc.Doren.state === \"dismissed\") {\n\t\tV.daily.school.attended.english = 1;\n\t}",
 						"fileName": "time.js"
 					}
 				]
@@ -1195,7 +1341,11 @@
 		"game/DismissCharlie/yoga-enter1.txt",
 		"game/DismissCharlie/yoga-enter2.txt",
 		"game/DismissDarryl/tell-Darrly1.txt",
-		"game/DismissDarryl/tell-Darrly2.txt"
+		"game/DismissDarryl/tell-Darrly2.txt",
+		"game/DismissDoren/entrance.txt",
+		"game/DismissDoren/hallways.txt",
+		"game/DismissDoren/maths-drug.txt",
+		"game/DismissDoren/nobody-rescue.txt"
 	],
 	"dependenceInfo": [
 		{
