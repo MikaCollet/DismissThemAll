@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "2.3.0",
+	"version": "2.4.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -1232,6 +1232,57 @@
 					"passage": "School Leave Whitney Strip",
 					"findString": "<<alarmstate \"<span class='red'>没有人来帮助你，大概是因为你的不良名声。</span>\">>",
 					"replaceFile": "game/DismissDoren/nobody-rescue.txt"
+				},
+				{
+					"comment": "下面开始是格威岚的",
+					"passage": "Eden Caged Caught Resist",
+					"findString": "<<if $location is \"forest\">>",
+					"replace": "<<if $location is \"forest\" and C.npc.Gwylan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Forest Shop",
+					"findString": "<div id=\"passage-content\">",
+					"replaceFile": "game/DismissGwylan/shop.txt"
+				},
+				{
+					"passage": "Forest Shop",
+					"findString": "</div>\n</div>",
+					"replace": "</div>\n<</if>>\n</div>"
+				},
+				{
+					"passage": "Robin Forest Shop",
+					"findString": "<<if !$robin_forest_visited>>",
+					"replace": "<<if !$robin_forest_visited or C.npc.Gwylan.state is \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Wraith",
+					"findString": "<<if $location is \"forest\">>",
+					"replace": "<<if $location is \"forest\" and C.npc.Gwylan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Forest",
+					"findString": "\t<<if $gwylan_rescue is 1>>",
+					"replaceFile": "game/DismissGwylan/rescue-fail.txt"
+				},
+				{
+					"passage": "Eden Caged Caught Resist",
+					"findString": "<<if $forest lte 20 and $gwylan_aborted isnot 1>>",
+					"replace": "<<if $forest lte 20 and $gwylan_aborted isnot 1 and C.npc.Gwylan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Forest",
+					"findString": "<<if $_eden_available or $forest lte 20>>",
+					"replace": "<<if $_eden_available or ($forest lte 20 and C.npc.Gwylan.state isnot \"dismissed\")>>"
+				},
+				{
+					"passage": "Widgets Forest",
+					"findString": "<<if $_eden_available and $forest lte 20>>",
+					"replace": "<<if $_eden_available and $forest lte 20 and C.npc.Gwylan.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Temperature Passout",
+					"findString": "<<if $forest lte 20>>",
+					"replace": "<<if $forest lte 20 and C.npc.Gwylan.state isnot \"dismissed\">>"
 				}
 			]
 		},
@@ -1345,7 +1396,9 @@
 		"game/DismissDoren/entrance.txt",
 		"game/DismissDoren/hallways.txt",
 		"game/DismissDoren/maths-drug.txt",
-		"game/DismissDoren/nobody-rescue.txt"
+		"game/DismissDoren/nobody-rescue.txt",
+		"game/DismissGwylan/shop.txt",
+		"game/DismissGwylan/rescue-fail.txt"
 	],
 	"dependenceInfo": [
 		{
