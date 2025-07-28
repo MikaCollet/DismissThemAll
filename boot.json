@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "2.4.0",
+	"version": "2.5.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -1283,6 +1283,142 @@
 					"passage": "Widgets Temperature Passout",
 					"findString": "<<if $forest lte 20>>",
 					"replace": "<<if $forest lte 20 and C.npc.Gwylan.state isnot \"dismissed\">>"
+				},
+				{
+					"comment": "下面开始是哈珀的",
+					"passage": "Asylum Intro",
+					"findString": "<<set $outside to 0>><<set $location to \"asylum\">><<asylumeffects>><<effects>>",
+					"replaceFile": "game/DismissHarper/destory-Asylum-intro.txt"
+				},
+				{
+					"passage": "Asylum Intro",
+					"findString": "</div>",
+					"replace": "<</if>>\n</div>"
+				},
+				{
+					"passage": "Hospital Bed Examination",
+					"findString": "<<elseif $trauma lt ($traumamax / 10) * 9>>",
+					"replace": "<<elseif $trauma lt ($traumamax / 10) * 9 or C.npc.Harper.state is \"dismissed\">>"
+				},
+				{
+					"passage": "Hospital Foyer",
+					"findString": "<<if $psych is 1 and $daily.harperVisit isnot 1>>",
+					"replace": "<<if $psych is 1 and $daily.harperVisit isnot 1 and C.npc.Harper.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Hospital Foyer",
+					"findString": "<<elseif $schoolPsych and $daily.harperVisit isnot 1>>",
+					"replace": "<<elseif $schoolPsych and $daily.harperVisit isnot 1 and C.npc.Harper.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Park",
+					"findString": "<<elseif $rng gte 21 and C.npc.Harper.init is 1>>",
+					"replace": "<<elseif $rng gte 21 and C.npc.Harper.init is 1 and C.npc.Harper.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets Journal",
+					"findString": "<<if $psych is 1 or $schoolPsych is 1>>",
+					"replace": "<<if $psych is 1 or $schoolPsych is 1 and C.npc.Harper.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Passout Infirmary",
+					"findString": "<<if $trauma lt ($traumamax / 10) * 9>>",
+					"replace": "<<if $trauma lt ($traumamax / 10) * 9 and C.npc.Harper.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Hospital Foyer",
+					"findString": "<<if $psych is 1>>",
+					"replace": "<<if $psych is 1 and C.npc.Harper.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Hospital Foyer",
+					"findString": "<<if C.npc.Alex.pregnancy.sample is true and playerIsPregnant() and !isPregnancyEnding()>>",
+					"replace": "<<if C.npc.Harper.state isnot \"dismissed\">>\n\t\t<<if C.npc.Alex.pregnancy.sample is true and playerIsPregnant() and !isPregnancyEnding()>>"
+				},
+				{
+					"passage": "Hospital Foyer",
+					"findString": "<<pillicon>><<link [[药房 (0:02)|Pharmacy]]>><<pass 2>><</link>>",
+					"replace": "<</if>>\n\t\t<<pillicon>><<link [[药房 (0:02)|Pharmacy]]>><<pass 2>><</link>>"
+				},
+				{
+					"passage": "Brothel Stage",
+					"findString": "<<elseif $brothelshowdata.type is \"virginity\" and unableTakeVirginity()>>",
+					"replaceFile": "game/DismissHarper/sell-treasure.txt"
+				},
+				{
+					"passage": "Livestock Job",
+					"findString": "<<if $rng gte 51 or $bestialitydisable isnot \"f\">>",
+					"replaceFile": "game/DismissHarper/Livestock-job.txt"
+				},
+				{
+					"passage": "Park Run Exposed",
+					"findString": "<<if random(1, 100) gte 95 and $cow gte 6 and $livestock_intro isnot undefined and $hospitalintro>>",
+					"replace": "<<if random(1, 100) gte 95 and $cow gte 6 and $livestock_intro isnot undefined and $hospitalintro and C.npc.Harper.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Park Run",
+					"findString": "<<if random(1, 100) gte 95 and $cow gte 6 and $livestock_intro isnot undefined and $hospitalintro>>",
+					"replace": "<<if random(1, 100) gte 95 and $cow gte 6 and $livestock_intro isnot undefined and $hospitalintro and C.npc.Harper.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Pharmacy Morning After pill passout",
+					"findString": "你认出了穿着白大褂的另一人，是哈珀医生，",
+					"replace": "<<if C.npc.Harper.state is \"dismissed\">>你看见了穿着白大褂的另一人，<<else>>你认出了穿着白大褂的另一人，是哈珀医生，<</if>>"
+				},
+				{
+					"passage": "Pregnancy Birth Hospital",
+					"findString": "<<set $first_birth to !$pregnancyStats.humanToysUnlocked>>",
+					"replaceFile": "game/DismissHarper/hospital-birth.txt"
+				},
+				{
+					"passage": "Pregnancy Birth Hospital",
+					"findString": "<<if $exposed lt 2 and $phase isnot 1>>",
+					"replace": "<</if>>\n<<if $exposed lt 2 and $phase isnot 1>>"
+				},
+				{
+					"passage": "Pregnancy Birth Hospital 2",
+					"findString": "一片朦胧中，你隐约听到了哈珀的声音。“正常人类",
+					"replace": "一片朦胧中，你隐约听到了<<if C.npc.Harper.state is \"dismissed\">>医生<<else>>哈珀<</if>>的声音。“正常人类"
+				},
+				{
+					"passage": "Pregnancy Birth Hospital 2",
+					"findString": "一片朦胧中，你隐约听到了哈珀的声音。\"不是人类。",
+					"replace": "一片朦胧中，你隐约听到了<<if C.npc.Harper.state is \"dismissed\">>医生<<else>>哈珀<</if>>的声音。\"不是人类。"
+				},
+				{
+					"passage": "Hospital Bed",
+					"findString": "<<set $stress -= 2000>>",
+					"replaceFile": "game/DismissHarper/hospital-bed.txt"
+				},
+				{
+					"passage": "Hospital Bed",
+					"findString": "<<link [[继续|Hospital Bed Examination]]>><</link>>",
+					"replace": "<</if>>\n<<link [[继续|Hospital Bed Examination]]>><</link>>"
+				},
+				{
+					"passage": "Hospital Bed Sydney",
+					"findString": "<<if $hospitalintro is 0>><<set $hospitalintro to 1>>",
+					"replaceFile": "game/DismissHarper/hospital-bed-Sydney.txt"
+				},
+				{
+					"passage": "Hospital Bed Sydney",
+					"findString": "<<link [[继续|Hospital Bed Examination Sydney]]>><</link>>",
+					"replace": "<</if>>\n<<link [[继续|Hospital Bed Examination Sydney]]>><</link>>"
+				},
+				{
+					"passage": "Hospital Bed Sydney",
+					"findString": "<<link [[继续|Hospital Bed Examination Sydney]]>><</link>>",
+					"replaceFile": "game/DismissHarper/hospital-bed-Sydney-exam.txt"
+				},
+				{
+					"passage": "Farm Alex Birth",
+					"findString": "<<link [[继续|Farm Alex Birth 2]]>><<handheldon>><</link>>",
+					"replaceFile": "game/DismissHarper/farm-Alex-birth.txt"
+				},
+				{
+					"passage": "Farm PC Birth",
+					"findString": "<<link [[继续|Farm PC Birth 2]]>><<handheldon>><</link>>",
+					"replaceFile": "game/DismissHarper/farm-PC-birth.txt"
 				}
 			]
 		},
@@ -1398,7 +1534,16 @@
 		"game/DismissDoren/maths-drug.txt",
 		"game/DismissDoren/nobody-rescue.txt",
 		"game/DismissGwylan/shop.txt",
-		"game/DismissGwylan/rescue-fail.txt"
+		"game/DismissGwylan/rescue-fail.txt",
+		"game/DismissHarper/destory-Asylum-intro.txt",
+		"game/DismissHarper/sell-treasure.txt",
+		"game/DismissHarper/Livestock-job.txt",
+		"game/DismissHarper/hospital-birth.txt",
+		"game/DismissHarper/hospital-bed.txt",
+		"game/DismissHarper/hospital-bed-Sydney.txt",
+		"game/DismissHarper/hospital-bed-Sydney-exam.txt",
+		"game/DismissHarper/farm-Alex-birth.txt",
+		"game/DismissHarper/farm-PC-birth.txt"
 	],
 	"dependenceInfo": [
 		{
