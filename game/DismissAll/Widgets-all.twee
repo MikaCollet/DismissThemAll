@@ -1,0 +1,30 @@
+:: Widgets all [widget]
+
+<<widget "checkClass">>
+  <<set $onClass to 0>>
+  <<switch _args[0]>>
+    <<case "first">>
+      <<if C.npc.Sirris.state isnot "dismissed">>
+        <<set $onClass to 1>>
+      <</if>>
+    <<case "second">>
+      <<if C.npc.River.state isnot "dismissed">>
+        <<set $onClass to 1>>
+      <</if>>
+    <<case "third">>
+      <<if C.npc.Doren.state isnot "dismissed">>
+        <<set $onClass to 1>>
+      <</if>>
+    <<case "fourth">>
+      <<if C.npc.Winter.state isnot "dismissed">>
+        <<set $onClass to 1>>
+      <</if>>
+  <</switch>>
+<</widget>>
+
+<<widget "checkCards">>
+  <<set $cards to 0>>
+  <<if C.npc.Leighton.state isnot "dismissed" and C.npc.Bailey.state isnot "dismissed" and C.npc.Quinn.state isnot "dismissed">>
+    <<set $cards to 1>>
+  <</if>>
+<</widget>>

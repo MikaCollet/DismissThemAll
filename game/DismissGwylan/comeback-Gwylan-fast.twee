@@ -1,0 +1,6 @@
+:: Gwylan Comeback Fast []
+格威岚又出现了。
+<br><br>
+<<npcset Gwylan state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

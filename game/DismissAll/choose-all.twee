@@ -71,6 +71,62 @@
 <</if>>
 <br>
 
+<<if C.npc.Briar.state isnot "dismissed">>
+	<<link [[放逐布莱尔|Briar Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[布莱尔归来|Briar Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Charlie.state isnot "dismissed">>
+	<<link [[放逐查里|Charlie Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[查里归来|Charlie Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Darryl.state isnot "dismissed">>
+	<<link [[放逐达里尔|Darryl Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[达里尔归来|Darryl Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Doren.state isnot "dismissed">>
+	<<link [[放逐多伦|Doren Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[多伦回来|Doren Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Gwylan.state isnot "dismissed">>
+	<<link [[放逐格威岚|Gwylan Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[格威岚回来|Gwylan Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Harper.state isnot "dismissed">>
+	<<link [[放逐哈珀|Harper Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[哈珀回来|Harper Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Landry.state isnot "dismissed">>
+	<<link [[放逐兰德里|Landry Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[兰德里回来|Landry Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
+<<if C.npc.Leighton.state isnot "dismissed">>
+	<<link [[放逐礼顿|Leighton Dismiss Fast]]>><</link>>
+<<else>>
+	<<link [[礼顿回来|Leighton Comeback Fast]]>><</link>>
+<</if>>
+<br>
+
 <<if $escape_temple_test isnot true>>
 	<<link [[禁用贞洁检测|Ban Temple Test]]>><</link>>
 <<else>>

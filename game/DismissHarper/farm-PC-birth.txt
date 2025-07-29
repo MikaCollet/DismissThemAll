@@ -1,0 +1,5 @@
+<<if C.npc.Harper.state isnot "dismissed">>
+  <<link [[继续|Farm PC Birth 2]]>><<handheldon>><</link>>
+<<else>>
+  <<link [[继续|Farm PC Birth wo 2]]>><<handheldon>><</link>>
+<</if>>

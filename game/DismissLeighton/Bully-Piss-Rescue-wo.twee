@@ -1,0 +1,40 @@
+:: Bully Piss Rescue wo []
+<div id="passage-content">
+<<effects>>
+
+<<if C.npc.Doren.state isnot "dismissed">>
+	<<He>>突然僵住，一只手搭在了<<his>>的肩膀上。是多伦。
+	<br><br>
+	“惠特尼，我刚才还在想，今天学校里怎么这么安静。你愿意告诉我，为什么今天早晨有人把学生内衣挂在旗杆上吗？”
+	<br><br>
+	惠特尼和<<his>>的朋友们忍不住笑了。“你不喜欢我挑的新旗子吗？”
+	<br><br>
+	多伦瞪着惠特尼。“来我办公室，现在。”
+	<br><br>
+	<<if $whitneyromance is 1 and C.npc.Whitney.love gte 20>>
+		惠特尼骂骂咧咧地放开你，并在你嘴唇上迅速留下一吻。“改天再说，骚货。”<<npcincr Whitney lust 5>><<glust>><<takeKissVirginity "Whitney" "loveInterest">>
+		<br><br>
+		<<He>>用力把你推到多伦身上，你们两个都摔在储物柜旁边。
+		<br><br>
+		多伦扶起你，对着惠特尼和<<his>>的朋友们迅速逃走的背影骂骂咧咧。<<nnpc_He "Doren">>转过头，“<<lass>>，你还好吗？”
+		<br><br>
+		你点了点头。
+		<br><br>
+		多伦不太放心地看了你一会，然后离开了。
+	<<else>>
+		惠特尼在被多伦抓走之前回头狠狠瞪了你一眼。<<His>>的朋友们很快四散逃走了。
+	<</if>>
+	<br><br>
+	你不太确定惠特尼是想要干什么，不过好在你不用多想了。
+	<br><br>
+<<else>>
+	礼顿和多伦都不在学校，你知道你不能依靠他人。
+	<br><br>
+	你瞅准机会，一头撞在惠特尼的肚子上。<<He>>往后退去，摔在了<<his>>的朋友身上。<<npcincr Whitney dom -5>>
+	<br><br>
+	你迅速地逃离了他们，没有人来阻止你。
+	<br><br>
+<</if>>
+<<link [[继续|School Toilets]]>><<endevent>><<set $eventskip to 1>><</link>>
+<br>
+</div>

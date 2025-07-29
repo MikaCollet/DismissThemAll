@@ -1,0 +1,9 @@
+<<if C.npc.Harper.state is "dismissed" and (C.npc.Niki.state is "dismissed" or $bestialitydisable isnot "f")>>
+  雷米带着你穿过通往谷仓的小路。你望向前方的道路，内心忐忑着将会被带到哪里去。
+  <br><br>
+  你是个孤儿，所以你总是不得不在命运的安排下随波逐流。你回想着你所遭受的苦难，在心中默默祈祷着，天边的云朵随着你的祈祷翻涌着。
+  <br><br>
+  "灵者本应翔于宇，善者终当脱苦缠。"从远处的天空中传来三声钟响，一道光芒笼罩在你身上，你失去了意识。
+  <br><br>
+  <<link [[继续|Livestock Job End]]>><<endevent>><</link>>
+<<if ($rng gte 51 or $bestialitydisable isnot "f" or C.npc.Niki.state is "dismissed") and C.npc.Harper.state isnot "dismissed">>

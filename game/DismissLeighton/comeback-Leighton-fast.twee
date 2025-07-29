@@ -1,0 +1,6 @@
+:: Leighton Comeback Fast []
+礼顿又回来了。
+<br><br>
+<<npcset Leighton state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

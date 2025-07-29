@@ -1,0 +1,5 @@
+<<if C.npc.Harper.state isnot "dismissed">>
+  <<link [[继续|Hospital Bed Examination Sydney]]>><</link>>
+<<else>>
+  <<link [[继续|Hospital Bed Examination Sydney wo]]>><</link>>
+<</if>>

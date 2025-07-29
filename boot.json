@@ -1,6 +1,6 @@
 {
 	"name": "DissmissThemAll",
-	"version": "2.5.0",
+	"version": "2.6.0",
 	"addonPlugin": [
 		{
 			"modName": "TweeReplacer",
@@ -936,6 +936,16 @@
 					"replaceFile": "game/DismissBriar/brothel-raid.txt"
 				},
 				{
+					"passage": "Pub",
+					"findString": "<<elseif $pubwhore gte 10 and $pubattack isnot 1>>",
+					"replace": "<<elseif $pubwhore gte 10 and $pubattack isnot 1 and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Pub",
+					"findString": "<<elseif $pubwhore gte 20>>",
+					"replace": "<<elseif $pubwhore gte 20 and C.npc.Briar.state isnot \"dismissed\">>"
+				},
+				{
 					"passage": "Widgets Dance Audience",
 					"findString": "<<elseif $rng gte 99>>",
 					"replace": "<<elseif $rng gte 99 and C.npc.Briar.state isnot \"dismissed\">>"
@@ -1419,6 +1429,218 @@
 					"passage": "Farm PC Birth",
 					"findString": "<<link [[继续|Farm PC Birth 2]]>><<handheldon>><</link>>",
 					"replaceFile": "game/DismissHarper/farm-PC-birth.txt"
+				},
+				{
+					"comment": "下面开始是兰德里的",
+					"passage": "Avery Pub Winter Refuse",
+					"findString": "<<elseif $pubintro is 1>>",
+					"replace": "<<elseif $pubintro is 1 and C.npc.Landry.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Pub",
+					"findString": "<<elseif ($fame.bestiality gte 400 or $fame.rape gte 400 or $fame.prostitution gte 400 or $fame.sex gte 400 or $fame.exhibitionism gte 400) and !$pubfame>>",
+					"replace": "<<elseif ($fame.bestiality gte 400 or $fame.rape gte 400 or $fame.prostitution gte 400 or $fame.sex gte 400 or $fame.exhibitionism gte 400) and !$pubfame and C.npc.Landry.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Pub",
+					"findString": "\t\t<<socialiseicon \"ask\">><<link [[找兰德里|Pub Landry]]>><<endevent>><</link>>",
+					"replace": "\t\t<<if C.npc.Landry.state isnot \"dismissed\">>\n\t\t\t<<socialiseicon \"ask\">><<link [[找兰德里|Pub Landry]]>><<endevent>><</link>>\n\t\t<</if>>"
+				},
+				{
+					"comment": "下面开始是礼顿的",
+					"passage": "Adult Shop Widgets",
+					"findString": "<<if Time.weekDay is 7 or Time.weekDay is 6>>",
+					"replace": "<<if Time.weekDay is 7 or Time.weekDay is 6 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Avery Widgets",
+					"findString": "<<widget \"avery_date_options\">>",
+					"replace": "<<widget \"avery_date_options\">>\n<<if $avery_location is 3>><<checkCards>><<if $cards is 0>><<set $avery_location to 0>><</if>><</if>>"
+				},
+				{
+					"passage": "Science Lesson",
+					"findString": "<<elseif $schoolevent is 0 and $schooleventtimer lte 0 and Time.weekDay isnot 6 and Time.minute lte 30>>",
+					"replace": "<<elseif $schoolevent is 0 and $schooleventtimer lte 0 and Time.weekDay isnot 6 and Time.minute lte 30 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Science Lesson",
+					"findString": "<<elseif $schoolevent is 1 and $schooleventtimer lte 0 and Time.weekDay isnot 6 and Time.minute lte 30>>",
+					"replace": "<<elseif $schoolevent is 1 and $schooleventtimer lte 0 and Time.weekDay isnot 6 and Time.minute lte 30 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Science Lesson",
+					"findString": "<<elseif $schoolevent is 2 and $schooleventtimer lte 0 and Time.weekDay isnot 6 and Time.minute lte 30>>",
+					"replace": "<<elseif $schoolevent is 2 and $schooleventtimer lte 0 and Time.weekDay isnot 6 and Time.minute lte 30 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Brothel",
+					"findString": "<<elseif C.npc.Leighton.init is 1 and $leightonbrothel is undefined and $brotheljob is 1 and Time.weekDay gte 6 and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<elseif C.npc.Leighton.init is 1 and $leightonbrothel is undefined and $brotheljob is 1 and Time.weekDay gte 6 and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets School Events",
+					"findString": "<<if $pillory.tenant.special.name is \"Leighton\">>",
+					"replace": "<<if $pillory.tenant.special.name is \"Leighton\" or C.npc.Leighton.state is \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets School Events",
+					"findString": "<<link [[继续|Bully Piss Rescue]]>><</link>>",
+					"replaceFile": "game/DismissLeighton/piss-rescue.txt"
+				},
+				{
+					"passage": "Widgets School Events",
+					"findString": "<<if fameSum(\"sex\",\"rape\",\"prostitution\",\"bestiality\") gte 4000 and $schoolfameblackmail is undefined>>",
+					"replace": "<<if fameSum(\"sex\",\"rape\",\"prostitution\",\"bestiality\") gte 4000 and $schoolfameblackmail is undefined and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets School Events",
+					"findString": "<<elseif [18, 19].includes($bullyevent) and C.npc.Whitney.dom gte 18 and ($watersportsdisable is \"f\" or $pillory.tenant.special.name isnot \"Leighton\")>>",
+					"replace": "<<elseif [18, 19].includes($bullyevent) and C.npc.Whitney.dom gte 18 and ($watersportsdisable is \"f\" or ($pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\")>>"
+				},
+				{
+					"passage": "Canteen Lunch Kylar",
+					"findString": "<<elseif C.npc.Kylar.love gte 60 and C.npc.Whitney.dom gte 16 and C.npc.Whitney.state isnot \"dungeon\" and $rng gte 80>>",
+					"replace": "<<elseif C.npc.Kylar.love gte 60 and C.npc.Whitney.dom gte 16 and C.npc.Whitney.state isnot \"dungeon\" and C.npc.Leighton.state isnot \"dismissed\" and $rng gte 80>>"
+				},
+				{
+					"passage": "Widgets Park",
+					"findString": "<<elseif $rng gte 61 and C.npc.Leighton.init is 1 and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<elseif $rng gte 61 and C.npc.Leighton.init is 1 and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Courtyard Crush Fight Finish",
+					"findString": "礼顿",
+					"replace": "<<if C.npc.Leighton.state isnot \"dismissed\">>礼顿<<else>>学校保安<</if>>"
+				},
+				{
+					"passage": "Hallways",
+					"findString": "<<if $schoolstate is \"afternoon\" and $detention gte 1 and $daily.school.detentionAttended isnot 1 and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<if $schoolstate is \"afternoon\" and $detention gte 1 and $daily.school.detentionAttended isnot 1 and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Head's Office",
+					"findString": "<<if Time.schoolDay and $schoolstate isnot \"early\" and $schoolstate isnot \"late\" and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<if Time.schoolDay and $schoolstate isnot \"early\" and $schoolstate isnot \"late\" and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "History Lesson Pillory",
+					"findString": "<<if $rng gte 51>>",
+					"replace": "<<if $rng gte 51 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Hallways Rape Finish",
+					"findString": "礼顿出现",
+					"replace": "<<if C.npc.Leighton.state isnot \"dismissed\">>礼顿<<else>>学校保安<</if>>出现"
+				},
+				{
+					"passage": "Hallways Rape Finish",
+					"findString": "礼顿无视",
+					"replace": "<<if C.npc.Leighton.state isnot \"dismissed\">>礼顿<<else>>保安<</if>>无视"
+				},
+				{
+					"passage": "Hallways Rape Finish",
+					"findString": "礼顿伸出",
+					"replace": "<<if C.npc.Leighton.state isnot \"dismissed\">>礼顿<<else>>保安<</if>>伸出"
+				},
+				{
+					"passage": "School Vending Machine Widget",
+					"findString": "<<elseif _event_selection is 3>>",
+					"replace": "<<elseif _event_selection is 3 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Cliff Street",
+					"findString": "<<if $mathsproject is \"ongoing\" and $mathsprojectdays is 0 and Time.dayState is \"day\" and $exposed lte 0>>",
+					"replace": "<<if $mathsproject is \"ongoing\" and $mathsprojectdays is 0 and Time.dayState is \"day\" and $exposed lte 0 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Cliff Street",
+					"findString": "<<if $scienceproject is \"ongoing\" and $scienceprojectdays is 0 and Time.dayState is \"day\" and $exposed lte 0>>",
+					"replace": "<<if $scienceproject is \"ongoing\" and $scienceprojectdays is 0 and Time.dayState is \"day\" and $exposed lte 0 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Swimming Lesson",
+					"findString": "<<if $swimnudecounter gte 10 and $swimall isnot 1>>",
+					"replace": "<<if $swimnudecounter gte 10 and $swimall isnot 1 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Pregnancy2",
+					"findString": "礼顿的",
+					"replace": "<<if C.npc.Leighton.state isnot \"dismissed\">>礼顿的<</if>>"
+				},
+				{
+					"passage": "School Changing Room Knees 2",
+					"findString": "<<set $outside to 0>><<schooleffects>><<effects>>",
+					"replaceFile": "game/DismissLeighton/change-room-knee.txt"
+				},
+				{
+					"passage": "School Changing Room Knees 2",
+					"findString": "<br><br>",
+					"replace": "<</if>>\n<br><br>"
+				},
+				{
+					"passage": "Sydney Walk",
+					"findString": "<<if $location is \"school\" and $detention gte 1 and $daily.school.detentionAttended isnot 1 and $headnodetention isnot 1 and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<if $location is \"school\" and $detention gte 1 and $daily.school.detentionAttended isnot 1 and $headnodetention isnot 1 and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Library",
+					"findString": "<<elseif _sydney_location is \"library\" and ($sydneyLeightonConfront is 1 or $leightonAssaulted is 1) and $exposed lte 0 and C.npc.Leighton.init is 1 and $pillory.tenant.special.name isnot \"Leighton\" and !$sydneyLeightonConfrontTimer>>",
+					"replace": "<<elseif _sydney_location is \"library\" and ($sydneyLeightonConfront is 1 or $leightonAssaulted is 1) and $exposed lte 0 and C.npc.Leighton.init is 1 and $pillory.tenant.special.name isnot \"Leighton\" and !$sydneyLeightonConfrontTimer and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Swimming Late",
+					"findString": "<<elseif (($delinquency gte 800 and $rng lte 90) or ($delinquency gte 500 and $rng lte 50) or $daily.school.swimmingLate) and $swimall isnot 1>>",
+					"replace": "<<elseif (($delinquency gte 800 and $rng lte 90) or ($delinquency gte 500 and $rng lte 50) or $daily.school.swimmingLate) and $swimall isnot 1 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Front Courtyard",
+					"findString": "<<elseif Time.weekDay is 6 and $framed is \"leighton\" and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<elseif Time.weekDay is 6 and $framed is \"leighton\" and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Science Dissection Molestation Finish",
+					"findString": "<<if $delinquency lt 400 and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<if $delinquency lt 400 and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Lockers Fight Finish",
+					"findString": "<<if $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<if $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Pool Locker Take",
+					"findString": "<<if $locker_suspicion gte random(21, 30) and $daily.lockerMason isnot 1>>",
+					"replace": "<<if $locker_suspicion gte random(21, 30) and $daily.lockerMason isnot 1 and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Widgets School Events",
+					"findString": "<<if $schoolfameboard is undefined and ($schoolfameblackmail gte 3 or $schoolfamerefused is 1)>>",
+					"replace": "<<if $schoolfameboard is undefined and ($schoolfameblackmail gte 3 or $schoolfamerefused is 1) and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Science Undress Desk",
+					"findString": "<<if $phase is 3>>",
+					"replace": "<<if $phase is 3 or C.npc.Leighton.state is \"dismissed\">>"
+				},
+				{
+					"passage": "Lesson Effects Widget",
+					"findString": "<<if _args.includesAll(\"delinquency\", \"Leighton\") and $delinquency lt 400 and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<if _args.includesAll(\"delinquency\", \"Leighton\") and $delinquency lt 400 and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "Lesson Effects Widget",
+					"findString": "<<elseif _args.includes(\"Leighton\") and $pillory.tenant.special.name isnot \"Leighton\">>",
+					"replace": "<<elseif _args.includes(\"Leighton\") and $pillory.tenant.special.name isnot \"Leighton\" and C.npc.Leighton.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Lockers Fight Finish",
+					"findString": "<<else>>",
+					"replace": "<<elseif C.npc.Winter.state isnot \"dismissed\">>"
+				},
+				{
+					"passage": "School Lockers Fight Finish",
+					"findString": "\t<</if>>\n\t<<gdelinquency>><<detention 4>>",
+					"replaceFile": "game/DismissWinter/locker-fight.txt"
 				}
 			]
 		},
@@ -1543,7 +1765,10 @@
 		"game/DismissHarper/hospital-bed-Sydney.txt",
 		"game/DismissHarper/hospital-bed-Sydney-exam.txt",
 		"game/DismissHarper/farm-Alex-birth.txt",
-		"game/DismissHarper/farm-PC-birth.txt"
+		"game/DismissHarper/farm-PC-birth.txt",
+		"game/DismissLeighton/piss-rescue.txt",
+		"game/DismissLeighton/change-room-knee.txt",
+		"game/DismissWinter/locker-fight.txt"
 	],
 	"dependenceInfo": [
 		{

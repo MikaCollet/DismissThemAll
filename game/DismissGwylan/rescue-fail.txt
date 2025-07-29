@@ -1,0 +1,3 @@
+  <<if C.npc.Gwylan.state is "dismissed">>
+    <span class="red">格威岚现在不知道去哪里了<<if _args[0] isnot "hunter" and isLoveInterest("Eden")>>，而且伊甸不在这一带<</if>>。</span>
+  <<elseif $gwylan_rescue is 1>>

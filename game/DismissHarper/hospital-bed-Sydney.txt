@@ -1,0 +1,6 @@
+<<if C.npc.Harper.state is "dismissed">>
+  <<generate1>><<person1>><<npc "Sydney" 2>><<person2>>没过多久，你看到一个穿着白大褂，胳膊夹着病例板的<<person1>><<personsimple>>走了进来。
+	<br><br>
+	<<He>>对你笑了笑。"你好，哈珀医生现在不在镇里，由我来给你进行诊断。"<<He>>在你的床边坐下，撩起挡在眼前的刘海。
+	<br><br>
+<<else>>

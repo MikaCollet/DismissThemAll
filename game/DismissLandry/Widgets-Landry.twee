@@ -1,0 +1,7 @@
+:: Widgets Landry [widget]
+
+<<widget "dismissLandry">>
+	<<npcset Landry state "dismissed">>
+	<span class = "red">兰德里不会再出现在酒吧里了。</span>
+	<br><br>
+<</widget>>

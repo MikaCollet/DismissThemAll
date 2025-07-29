@@ -1,0 +1,4 @@
+<<set $outside to 0>><<schooleffects>><<effects>>
+<<if C.npc.Leighton.state is "dismissed">>
+突然间，老师的声音出现在队伍后面，没过多久人群就散去了。你在某处找到了你的衣服。
+<<else>>

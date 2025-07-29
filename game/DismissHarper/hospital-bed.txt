@@ -1,0 +1,16 @@
+<<set $stress -= 2000>>
+
+<<if C.npc.Harper.state is "dismissed">>
+  你在医院的病床上醒来。
+
+	<<generate1>><<person1>>
+	护士解释说，你遭受了<<= $passoutReason || "严重的应激反应">>，不过其他方面并无大碍。<<He>>让你稍等片刻，自己去叫医生来。
+	<br><br>
+	<<endevent>>
+
+	<<generate2>><<person2>>没过多久，你看到一个穿着白大褂，胳膊夹着病例板的<<personsimple>>走了进来。
+	<br><br>
+
+	<<He>>对你笑了笑。"你好，哈珀医生现在不在镇里，由我来给你进行诊断。"<<He>>在你的床边坐下，撩起挡在眼前的刘海。
+	<br><br>
+<<else>>

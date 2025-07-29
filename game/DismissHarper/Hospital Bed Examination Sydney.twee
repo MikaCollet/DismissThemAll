@@ -1,0 +1,33 @@
+:: Hospital Bed Examination Sydney wo []
+<div id="passage-content">
+<<effects>>
+你听到悉尼打了个哈欠。<<person2>><<His>>睁开了双眼，露出了虚弱的微笑。"很高兴你是我醒来后见到的第一个人。"但当<<His>>看到医生时，表情变得有些警惕。
+<br>
+"但第二个就不是很高兴了。"
+<br><br>
+悉尼挡在了你的面前，把你护在了身后。"我行使拒绝治疗的权利。我的<<sydneymum>>将处理文书工作。"
+<br><br>
+那个医生叹了口气。"非常好，但我仍然必须评估<<phim>>。"
+<<person1>>
+<<if $trauma lte ($traumamax / 10) * 2>>
+	<<He>>温柔地询问你关于你的家庭生活、学校的情况以及你的健康状况等各种问题。<<He>>告诉你，据<<He>>所知，一切都还好，但你将来应该更加小心。
+	<br><br>
+	<<wash>>
+	悉尼把你扶起来，很快你就被允许出院了。
+	<br><br>
+
+	<<link [[离开 (0:10)|Hospital Journey Home Sydney]]>><<pass 10>><<endevent>><</link>>
+	<br>
+<<else>>
+	<<He>>关切地询问你有关你家庭生活、学校情况和身体状况的各种问题。不久之后，<<he>>召来一名护士，他们在房间角落里进行了简短的交谈。谈话的声音很小，不久后，护士点了点头，随后离开了房间。
+	<br><br>
+	<<He>>告诉你，据<<He>>所知，你的状态不容乐观，应该多加注意。
+	<br><br>
+	<<wash>>
+	悉尼把你扶起来，很快你就被允许出院了。
+	<br><br>
+
+	<<link [[离开 (0:10)|Hospital Journey Home Sydney]]>><<pass 10>><<endevent>><</link>>
+	<br>
+<</if>>
+</div>

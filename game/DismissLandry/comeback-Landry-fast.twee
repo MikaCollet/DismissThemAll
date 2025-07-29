@@ -1,0 +1,6 @@
+:: Landry Comeback Fast []
+兰德里回来了。
+<br><br>
+<<npcset Landry state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

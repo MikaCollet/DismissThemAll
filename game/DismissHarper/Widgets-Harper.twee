@@ -1,0 +1,7 @@
+:: Widgets Harper [widget]
+
+<<widget "dismissHarper">>
+	<<npcset Harper state "dismissed">>
+	<span class = "red">哈珀不会再出现在医院中了。</span>
+	<br><br>
+<</widget>>

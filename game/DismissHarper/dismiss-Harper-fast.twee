@@ -1,0 +1,13 @@
+:: Harper Dismiss Fast []
+哈珀离开镇子去做手术了。
+<br><br>
+
+<span class = "green">精神病院荒废了。</span>
+<br><br>
+<<if $asylumintro>>
+  那些苦难的回忆，再也不会重现了。
+  <br><br>
+<</if>>
+<<dismissHarper>>
+
+<<link [[继续|dismiss all]]>><</link>>

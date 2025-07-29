@@ -1,0 +1,10 @@
+:: Widgets Leighton [widget]
+
+<<widget "dismissLeighton">>
+	<<if $pillory.tenant.special.name is "Leighton">>
+		<<clear_pillory>>
+	<</if>>
+	<<npcset Leighton state "dismissed">>
+	<span class = "red">礼顿进监狱了。</span>
+	<br><br>
+<</widget>>

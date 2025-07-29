@@ -1,0 +1,7 @@
+	<<else>>
+    <<generate2>><<person2>>
+    一个看起来像保安的<<person>>冲进现场。<<He>>一来<<person1>><<person>>就跑了。
+		<<endevent>><<person2>>
+		"在校内打架是违规的，"<<he>>注视着你，"我会向<<nnpc_title "Leighton">>汇报这件事。"
+  <</if>>
+	<<gdelinquency>><<detention 4>>

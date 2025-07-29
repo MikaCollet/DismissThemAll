@@ -1,0 +1,6 @@
+<div id="passage-content">
+<<if C.npc.Gwylan.state is "dismissed">>
+  格威岚不在商店里。
+  <br><br>
+  <<getouticon>><<link [[离开|Forest]]>><</link>>
+<<else>>

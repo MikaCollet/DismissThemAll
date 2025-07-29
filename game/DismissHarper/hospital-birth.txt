@@ -1,0 +1,16 @@
+<<set $first_birth to !$pregnancyStats.humanToysUnlocked>>
+<<if C.npc.Harper.state is "dismissed">>
+  <<generate1>><<person1>>
+  <<setKnowsAboutPregnancy "pc">>
+  <<if $phase is 1>>
+		你在医院的病床上醒来。几个模糊的身影在四处走动。有个人靠近了些，<<his>>看起来好像是个青年<<personsimple>>，“哈珀医生现在不在镇上，现在由我来代班。”<<he>>把刘海从眼睛上撩开，“请不要惊慌，你的羊水破了，不过你人在医院。”
+		<br><br>
+	<<else>>
+		接待员点点头，“请稍坐，医生马上就来。”
+		<br><br>
+		你无需久候，一个穿得像个医生的年轻<<personsimple>>走了过来，“哈珀医生现在不在镇上，现在由我来代班，”<<he>>将<<his>>的刘海从双眼上拨开。“我们给你准备了一张床，这边走。”
+		<br><br>
+		<<He>>带你穿过医院，来到产房的一个房间。助产士在床旁调整仪器。
+		<br><br>
+	<</if>>
+<<else>>

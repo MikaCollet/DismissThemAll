@@ -1,0 +1,8 @@
+:: Harper Comeback Fast []
+哈珀回到了镇上。
+<br><br>
+<span class = "red">潜藏于深处的恶意，它们仍然想要控制你的思想。</span>
+<br><br>
+<<npcset Harper state "active">>
+
+<<link [[继续|dismiss all]]>><</link>>

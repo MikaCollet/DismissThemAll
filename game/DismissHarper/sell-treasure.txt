@@ -1,0 +1,4 @@
+<<elseif $brothelshowdata.type is "virginity" and C.npc.Harper.state is "dismissed">>
+  这个表演需要一个医生预先进行贞洁检查，<span class="red">但哈珀现在不在镇上。</span>
+	<br>
+<<elseif $brothelshowdata.type is "virginity" and unableTakeVirginity()>>
